@@ -18,18 +18,20 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare browser assets
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assemble and verify browser files
+        run: python3 web/scripts/assemble-pages.py
+      - name: Check browser behavior and saved data compatibility
         run: |
-          unzip -nq web/assets.zip -d web/dist
-          test -f web/dist/index.html
-          test -f web/dist/art/music-vignette-reference.png
-          test -f web/dist/intro/thades-front-en.png
-          test -z "$(find web/dist -type f \( -name '*.apk' -o -name '*.jks' -o -name '*.keystore' \) -print)"
+          node web/scripts/check.cjs
+          node web/scripts/campaign-check.cjs
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: web/dist
+          path: _site
       - uses: actions/deploy-pages@v4
         id: deploy

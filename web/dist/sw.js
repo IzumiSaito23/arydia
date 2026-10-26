@@ -35,6 +35,8 @@ async function audioResponse(request){
   return new Response(blob.slice(part.start,part.end+1),{status:206,headers});
 }
 self.addEventListener('fetch',event=>{
+  const assetURL=new URL(event.request.url);if(assetURL.origin===base.origin&&(/\/(?:maps|cards)\//.test(assetURL.pathname))){event.respondWith((async()=>{const cache=await caches.open('arydia-art-v75');const saved=await cache.match(event.request);if(saved)return saved;const response=await fetch(event.request);if(response.ok)await cache.put(event.request,response.clone());return response;})());return;}
+
   const r=event.request,u=new URL(r.url);
   if(r.method!=='GET'||u.origin!==base.origin||!u.pathname.startsWith(base.pathname))return;
   if(u.pathname.startsWith(base.pathname+'music/')){event.respondWith(audioResponse(r));return;}

@@ -2,12 +2,12 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=path.resolve(__dirname,'../dist');
 for(const name of fs.readdirSync(root).filter(x=>x.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(root,name),'utf8'),{filename:name});
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-assert(html.includes("connect-src 'self'"));assert(html.includes('webapp.js'));assert(html.includes('polish38.css'));
+assert(html.includes("connect-src 'self'"));assert(html.includes('webapp.js'));assert(html.includes('app38.css'));
 for(const [,ref] of html.matchAll(/(?:src|href)="([^"]+)"/g))assert(fs.existsSync(path.join(root,ref)),ref);
 for(const name of fs.readdirSync(root).filter(x=>x.endsWith('.css'))){for(const [,ref] of fs.readFileSync(path.join(root,name),'utf8').matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)){if(!ref.startsWith('data:'))assert(fs.existsSync(path.join(root,ref)),`${name}: ${ref}`);}}
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.webmanifest'),'utf8'));assert.equal(manifest.display,'standalone');for(const icon of manifest.icons)assert(fs.existsSync(path.join(root,icon.src)));
 const dataCtx={window:{},console};dataCtx.window=dataCtx;vm.createContext(dataCtx);
-for(const file of ['data.js','legacy-records.js','core.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),dataCtx);
+for(const file of ['data.js','legacy-records.js','skill-rules.js','core.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),dataCtx);
 const C=dataCtx.Core,backup=C.defaults();assert.deepEqual(C.validate(JSON.parse(JSON.stringify(backup))),backup);
 console.log('PASS syntax, referenced assets, PWA manifest, existing backup schema');
 for(const r of dataCtx.DATA.records.filter(r=>r.titleAliases))for(const title of r.titleAliases)assert(C.search(title,{stage:1}).some(x=>x.id===r.id));
@@ -16,6 +16,17 @@ assert(!C.search('').some(r=>/^(SKL|MAG|RNG|BRD|ROG|CLR|WAR)-/.test(r.id)));
 const character=C.create('Test',dataCtx.DATA.races[0].id,dataCtx.DATA.paths[0].id,0);
 assert.throws(()=>C.toggleMark(character,-1,5));C.toggleMark(character,-1,1);assert.throws(()=>C.toggleMark(character,0,5));
 console.log('PASS old title aliases, complete search, excluded categories and sequential growth');
+for(const p of dataCtx.DATA.paths){
+ const c=C.create('Skills',dataCtx.DATA.races[0].id,p.id,0);
+ c.skills={};
+ for(const [from,to] of dataCtx.SKILL_EDGES[p.id]){
+  c.skills={};assert.throws(()=>C.toggleSkill(c,to,'learned'));
+  for(const n of C.prerequisites(c,to))c.skills[n]={learned:true,mastered:false,equipped:false};
+  C.toggleSkill(c,to,'learned');assert(c.skills[to].learned);
+  assert.throws(()=>C.toggleSkill(c,from,'learned'));
+ }
+}
+console.log('PASS every prerequisite edge in all six paths and dependent unlearning guards');
 
 // Exercise the real worker using native Fetch API objects and a browser-like cache store.
 const stores=new Map(),handlers={};let networkCalls=0,offline=false;
