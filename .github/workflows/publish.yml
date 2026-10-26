@@ -27,6 +27,7 @@ jobs:
         run: |
           node web/scripts/check.cjs
           node web/scripts/campaign-check.cjs
+          node web/scripts/release77-check.cjs
       - uses: actions/configure-pages@v5
         with:
           enablement: true

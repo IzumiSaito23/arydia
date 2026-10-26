@@ -1,0 +1,16 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../dist'),ctx={console,crypto:require('node:crypto').webcrypto};ctx.window=ctx;vm.createContext(ctx);
+for(const name of ['data.js','legacy-records.js','skill-rules.js','core.js','campaign-model.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),ctx);
+const M=ctx.CampaignModel,C=ctx.Core,s=C.defaults(),cards=JSON.parse(fs.readFileSync(path.join(root,'catalog/card-database.json'))).cards,meta=JSON.parse(fs.readFileSync(path.join(root,'catalog/team-inventory-catalog.json'))).cards;
+s.characters.push(C.create('first',ctx.DATA.races[0].id,ctx.DATA.paths[0].id,0),C.create('second',ctx.DATA.races[1].id,ctx.DATA.paths[1].id,0));
+const owner=s.characters[0].id,other=s.characters[1].id,key=M.exact(cards,'98A')[0];M.add(s,key,meta);M.add(s,key,meta,owner);M.add(s,key,meta,other);
+const team=M.held(s)[0],personal=M.held(s,owner)[0];M.setNote(s,team.id,'队伍的线索');M.setNote(s,personal.id,'个人的种族剧情',owner);
+assert.equal(team.note,'队伍的线索');assert.equal(personal.note,'个人的种族剧情');assert.equal(M.held(s,other)[0].note,'');assert(!Object.hasOwn(team,'customKeywords'));
+assert.throws(()=>M.setNote(s,personal.id,'wrong owner'));assert.throws(()=>M.setNote(s,team.id,'x'.repeat(20001)));
+s.webMap={version:1,party:'E2',selected:'D2',explored:['E2'],showAll:false,notes:{E2:'已完成委托'}};
+M.mapArrive(s.webMap,'D2');assert.equal(s.webMap.party,'D2');assert(s.webMap.explored.includes('D2'));M.mapUndo(s.webMap);assert.equal(s.webMap.party,'E2');assert.deepEqual([...s.webMap.explored],['E2']);assert.equal(s.webMap.notes.E2,'已完成委托');
+for(let i=0;i<40;i++)M.mapArrive(s.webMap,i%2?'D2':'E2');assert.equal(s.webMap.undoHistory.length,30);
+const restored=C.validate(JSON.parse(JSON.stringify(s)));assert.equal(M.held(restored)[0].note,team.note);assert.equal(M.held(restored,owner)[0].note,personal.note);assert.equal(restored.webMap.undoHistory.length,30);
+const bad=JSON.parse(JSON.stringify(s));bad.webMap.undoHistory[0].party='ZZ';assert.throws(()=>C.validate(bad));
+const announcements=fs.readFileSync(path.join(root,'campaign.js'),'utf8');assert(!announcements.includes('camp-update-skip'));assert(announcements.includes("arydia-web-update-seen','3.9.0"));
+console.log('PASS independent per-entry/per-owner memos, unchanged keywords, old/new backup round-trip, 30-step map undo and note preservation, invalid history rejected, once-per-version update notice');
