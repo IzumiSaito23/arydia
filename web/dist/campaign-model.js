@@ -81,6 +81,11 @@ function lanMapUrl(raw){
  if(port<1||port>65535||host!=='localhost'&&(parts.some(n=>n>255)||!(parts[0]===10||parts[0]===192&&parts[1]===168||parts[0]===172&&parts[1]>=16&&parts[1]<=31||parts[0]===127||parts[0]===169&&parts[1]===254)))throw Error('请使用 APP 提供的局域网地址，并连接同一 Wi-Fi');
  return 'http://'+host+':'+port+'/';
 }
-const M={lanMapUrl,clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
+function cardRelations(card,direction,core,startOnly=false){
+ if(!card||!core?.relationships||!['before','after'].includes(direction))return [];
+ const ids=new Set((card.references?.length?card.references:[card.key||card.number]).filter(Boolean).map(ref=>core.resolve(ref)?.id||identifier(ref)));
+ return [...new Set([...ids].flatMap(id=>core.relationships(id,direction,startOnly)))];
+}
+const M={cardRelations,lanMapUrl,clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
 root.CampaignModel=M;if(root.Core){const original=root.Core.validate;root.Core.validate=raw=>preserveModernState(raw,original(raw));}
 })(typeof window==='undefined'?globalThis:window);

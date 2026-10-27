@@ -30,10 +30,14 @@ for archive in archives:
             if name not in files:
                 continue
             target = web / 'dist' / name
-            if archive.name == 'assets.zip' and target.exists():
+            # Older maintenance bundles must not overwrite newer checked-in fixes.
+            payload = z.read(info)
+            if hashlib.sha256(payload).hexdigest() != files[name]:
+                continue
+            if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() == files[name]:
                 continue
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(z.read(info))
+            target.write_bytes(payload)
 
 for name, expected in files.items():
     data = (web / 'dist' / name).read_bytes()
