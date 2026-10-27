@@ -32,6 +32,7 @@ jobs:
           node web/scripts/search78-check.cjs
           node web/scripts/lan79-check.cjs
           node web/scripts/relations82-check.cjs
+          node web/scripts/parity83-check.cjs
           node web/scripts/navigation80-check.cjs
       - uses: actions/configure-pages@v5
         with:

@@ -1,0 +1,200 @@
+{
+  "elf": {
+    "name": "脚步轻快",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "当你进行移动时：将困难格边视为标准格边，并获得+3{move}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "山林采摘",
+      "sections": [
+        {
+          "type": "反应",
+          "cost": "1{marker}",
+          "body": "经花草、草地、森林或山地地形旅行时：刷新一个小包上的所有{marker}。"
+        }
+      ],
+      "notes": "刷新标记：休息时。按地图对应的花丛、草地、树木和山峰符号判定地形。"
+    }
+  },
+  "halfling": {
+    "name": "靠谱",
+    "sections": [
+      {
+        "type": "即时",
+        "cost": "1{marker}",
+        "body": "获得2{combo}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "大厨",
+      "sections": [
+        {
+          "type": "持续",
+          "cost": "",
+          "body": "当任一流放者食用小包中的食物时，其还会治疗{hp}，数量等同于该小包的{sp}数值。"
+        }
+      ],
+      "notes": ""
+    }
+  },
+  "dwarf": {
+    "name": "坚韧",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "当你的{hp}将要降至0时：改为将你的{hp}设为1。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "饮品大师",
+      "sections": [
+        {
+          "type": "持续",
+          "cost": "",
+          "body": "当任一流放者饮用药水时，其还会获得{sp}，数量等同于该药水的{hp}数值。"
+        }
+      ],
+      "notes": ""
+    }
+  },
+  "moon": {
+    "name": "无视挫折",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "受到攻击后：减少2{threat}，并2{move}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "喧闹好动",
+      "sections": [
+        {
+          "type": "即时",
+          "cost": "1{marker}，并增加2{threat}",
+          "body": "治疗1{hp}，获得1{combo}和1{mp}，然后获得2{move}。"
+        }
+      ],
+      "notes": "刷新标记：休息时。"
+    }
+  },
+  "orc": {
+    "name": "不知疲倦",
+    "sections": [
+      {
+        "type": "行动 · 仅在非战斗时",
+        "cost": "1{marker}",
+        "body": "获得1{sp}。刷新所有旅行指示物。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "头脑冷静",
+      "sections": [
+        {
+          "type": "反应",
+          "cost": "1{marker}，以及最多3{combo}",
+          "body": "当{threat}即将增加时：减少等同于所支付{combo}数量的此次{threat}增加。"
+        }
+      ],
+      "notes": "刷新标记：休息时。"
+    }
+  },
+  "cat": {
+    "name": "身手敏捷",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "当你受到攻击时：对本次攻击+2{defense}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "讨人喜欢",
+      "sections": [
+        {
+          "type": "反应",
+          "cost": "",
+          "body": "当你完成一个委托时：进行魅力检定，根据结果额外获得{kae}。\n2–19：1{kae}。\n20–29：2{kae}。\n30及以上：3{kae}。"
+        }
+      ],
+      "notes": ""
+    }
+  },
+  "stone": {
+    "name": "石肤",
+    "sections": [
+      {
+        "type": "即时",
+        "cost": "1{marker}",
+        "body": "直到你的下一个回合开始前，你对所有受到的攻击+1{defense}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "饱经风霜",
+      "sections": [
+        {
+          "type": "行动 · 仅非战斗时",
+          "cost": "1{marker}",
+          "body": "根据已经耗尽的旅行指示物，每名流放者分别获得：\n羽毛指示物耗尽：1{mp}。\n干肉指示物耗尽：2{sp}。\n营火指示物耗尽：治疗3{hp}。"
+        }
+      ],
+      "notes": "刷新标记：休息时。"
+    }
+  },
+  "human": {
+    "name": "随机应变",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "当一名流放者掷20面骰时（在掷骰后，且在结算结果前）：该流放者重掷20面骰，并取此两次结果中的较高者作为最终结果。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "坚定决心",
+      "sections": [
+        {
+          "type": "持续",
+          "cost": "",
+          "body": "当你支付{rp}时，治疗1{hp}或获得1{sp}。"
+        }
+      ],
+      "notes": ""
+    }
+  },
+  "crimson": {
+    "name": "秘术亲和",
+    "sections": [
+      {
+        "type": "反应",
+        "cost": "1{marker}",
+        "body": "当使用一个技能时：将该技能的法力费用降低最多2{mp}。"
+      }
+    ],
+    "notes": "刷新{marker}：休息时。",
+    "second": {
+      "name": "瞬间移动",
+      "sections": [
+        {
+          "type": "即时",
+          "cost": "1{marker}",
+          "body": "获得3{move}，或者与3{distance}（{ranged}）内的一名盟友交换位置。"
+        }
+      ],
+      "notes": "刷新标记：休息时。"
+    }
+  }
+}
