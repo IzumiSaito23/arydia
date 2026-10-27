@@ -1,0 +1,14 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../dist'),ctx={console};ctx.window=ctx;vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'campaign-model.js'),'utf8'),ctx);const M=ctx.CampaignModel;
+const make=(id,title,body,state='A')=>({key:id,category:id.split('-')[0]==='KEY'?'键钥':'事件',number:id,display:id,state,references:[id],title,faces:[{title,workbookText:body}]});
+const fixture=[make('EVT-1A','远方','持有事件-10与键钥-21。你看到了一条鱼。'),make('EVT-10A','灯塔','请阅读事件-1。'),make('KEY-21A','鱼钩','拥有1个标记。'),make('KEY-1B','旧事','book65 内部信息应忽略。','B'),make('EVT-000A','破晓',''),make('EVT-0A','失踪的假人','')];
+assert.deepEqual([...M.searchCards(fixture,{},'1')].map(c=>c.key),['EVT-1A','KEY-1B']);assert.deepEqual([...M.searchCards(fixture,{},'事件1')].map(c=>c.key),['EVT-1A']);assert.deepEqual([...M.searchCards(fixture,{},'１')].map(c=>c.key),['EVT-1A','KEY-1B']);
+assert.deepEqual([...M.searchCards(fixture,{},'鱼')].map(c=>c.key),['KEY-21A']);assert.equal(M.searchCards(fixture,{},'你').length,0);assert.equal(M.searchCards(fixture,{},'{hp}').length,0);
+assert.deepEqual([...M.searchCards(fixture,{},'一条鱼')].map(c=>c.key),['EVT-1A']);assert.equal(M.searchCards(fixture,{},'灯塔 一条鱼').length,0);
+assert.deepEqual([...M.searchCards(fixture,{},'0')].map(c=>c.key),['EVT-0A']);assert.deepEqual([...M.searchCards(fixture,{},'000')].map(c=>c.key),['EVT-000A']);assert.equal(M.identifier('事件000'),'EVT-000');
+const cards=JSON.parse(fs.readFileSync(path.join(root,'catalog/card-database.json'))).cards,meta=JSON.parse(fs.readFileSync(path.join(root,'catalog/team-inventory-catalog.json'))).cards;
+const result=M.searchCards(cards,meta,'16');assert(result.length);for(const card of result)assert(card.references.some(ref=>/^[A-Z]+-16[A-E]?$/.test(M.identifier(ref))));
+assert.equal(M.searchCards(cards,meta,'book65').length,0);assert(M.searchCards(cards,meta,'人物0B').every(c=>c.references.some(ref=>M.identifier(ref)==='NPC-0B')));
+const names=M.searchCards(cards,meta,'流放者营地');assert.equal(names[0].title,'流放者营地');const keyword=M.searchCards(cards,meta,'一面精美的传家宝镜子');assert(keyword.some(c=>c.references.some(ref=>M.identifier(ref)==='KEY-98A')));
+console.log('PASS exact numeric/typed IDs, full-width input, Event000 separate from0, single-character title/keyword scope, multi-word AND, real title priority and source keyword search');
+console.log(JSON.stringify(['1','16','你','月','流放者营地'].map(q=>({query:q,old:cards.filter(c=>c.search?.includes(q)||c.references.some(ref=>ref.includes(q))).length,current:M.searchCards(cards,meta,q).length}))));
