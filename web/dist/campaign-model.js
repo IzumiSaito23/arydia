@@ -74,6 +74,13 @@ function preserveModernState(raw,validated){
  if(raw.webMap!==undefined){validateMap(raw.webMap);result.webMap=clone(raw.webMap);}
  result.prefs={...clone(raw.prefs||{}),...validated.prefs};for(const key of ['databaseText','databaseTitles'])if(result.prefs[key]!==undefined&&typeof result.prefs[key]!=='boolean')throw Error('检索显示设置无效');for(const key of ['bookmarks','recent'])if(Array.isArray(raw[key])&&raw[key].length<=10000&&raw[key].every(v=>typeof v==='string'&&v.length<=80))result[key]=[...new Set(raw[key])];return result;
 }
-const M={clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
+function lanMapUrl(raw){
+ const text=String(raw||'').trim(),m=/^http:\/\/(localhost|(?:[0-9]{1,3}\.){3}[0-9]{1,3}):([0-9]{1,5})\/?$/i.exec(text);
+ if(!m)throw Error('请粘贴 APP 房间里的完整浏览器加入地址，例如 http://192.168.1.8:12345/');
+ const host=m[1].toLowerCase(),port=Number(m[2]),parts=host.split('.').map(Number);
+ if(port<1||port>65535||host!=='localhost'&&(parts.some(n=>n>255)||!(parts[0]===10||parts[0]===192&&parts[1]===168||parts[0]===172&&parts[1]>=16&&parts[1]<=31||parts[0]===127||parts[0]===169&&parts[1]===254)))throw Error('请使用 APP 提供的局域网地址，并连接同一 Wi-Fi');
+ return 'http://'+host+':'+port+'/';
+}
+const M={lanMapUrl,clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
 root.CampaignModel=M;if(root.Core){const original=root.Core.validate;root.Core.validate=raw=>preserveModernState(raw,original(raw));}
 })(typeof window==='undefined'?globalThis:window);

@@ -30,6 +30,7 @@ jobs:
           node web/scripts/release77-check.cjs
           node web/scripts/map78-check.cjs
           node web/scripts/search78-check.cjs
+          node web/scripts/lan79-check.cjs
       - uses: actions/configure-pages@v5
         with:
           enablement: true
