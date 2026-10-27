@@ -1,11 +1,11 @@
-/* Hold and scrub navigation; content gestures leave scrollable tables and editing alone. */
+/* Drag directly across navigation; content gestures leave scrollable tables and editing alone. */
 (()=>{
  'use strict';
- const nav=document.getElementById('nav');let timer,hold,active=false,blockUntil=0;
- const clear=()=>{clearTimeout(timer);timer=null;active=false;hold=null;nav?.classList.remove('is-scrubbing');nav?.querySelectorAll('.nav-preview').forEach(b=>b.classList.remove('nav-preview'));};
+ const nav=document.getElementById('nav');let hold,active=false,blockUntil=0;
+ const clear=()=>{active=false;hold=null;nav?.classList.remove('is-scrubbing');nav?.querySelectorAll('.nav-preview').forEach(b=>b.classList.remove('nav-preview'));};
  const preview=x=>{const buttons=[...nav.querySelectorAll('[data-action="navigate"]')],bounds=nav.getBoundingClientRect();if(!buttons.length)return;const index=Math.max(0,Math.min(buttons.length-1,Math.floor((x-bounds.left)/bounds.width*buttons.length)));buttons.forEach((b,i)=>b.classList.toggle('nav-preview',i===index));nav.style.setProperty('--scrub-x',Math.max(28,Math.min(bounds.width-28,x-bounds.left))+'px');return buttons[index];};
- nav?.addEventListener('pointerdown',e=>{if(e.button!==0)return;clear();hold={id:e.pointerId,x:e.clientX,y:e.clientY};timer=setTimeout(()=>{if(!hold)return;active=true;nav.classList.add('is-scrubbing');nav.setPointerCapture(hold.id);preview(hold.x);},450);});
- nav?.addEventListener('pointermove',e=>{if(!hold)return;if(!active){if(Math.hypot(e.clientX-hold.x,e.clientY-hold.y)>8)clear();return;}e.preventDefault();preview(e.clientX);});
+ nav?.addEventListener('pointerdown',e=>{if(e.button!==0)return;if(hold&&hold.id!==e.pointerId){blockUntil=Date.now()+500;clear();return;}clear();blockUntil=0;hold={id:e.pointerId,x:e.clientX,y:e.clientY};});
+ nav?.addEventListener('pointermove',e=>{if(!hold)return;if(e.pointerId!==hold.id)return;const dx=Math.abs(e.clientX-hold.x),dy=Math.abs(e.clientY-hold.y);if(!active){if(dy>8&&dy>dx*1.35){blockUntil=Date.now()+500;return clear();}if(dx<8||dx<dy*1.35)return;active=true;nav.classList.add('is-scrubbing');nav.setPointerCapture(hold.id);preview(hold.x);}const bounds=nav.getBoundingClientRect();if(e.clientY<bounds.top-38||e.clientY>bounds.bottom+38){blockUntil=Date.now()+500;return clear();}e.preventDefault();preview(e.clientX);});
  nav?.addEventListener('pointerup',e=>{if(!active)return clear();const button=preview(e.clientX);blockUntil=Date.now()+500;clear();if(button){button.dataset.scrubOpen='yes';button.click();delete button.dataset.scrubOpen;}e.preventDefault();});
  nav?.addEventListener('pointercancel',clear);
  nav?.addEventListener('click',e=>{if(Date.now()<blockUntil&&!e.target.closest('[data-scrub-open]')){e.preventDefault();e.stopImmediatePropagation();}},true);
