@@ -29,14 +29,14 @@ for(const p of dataCtx.DATA.paths){
 console.log('PASS every prerequisite edge in all six paths and dependent unlearning guards');
 
 // Exercise the real worker using native Fetch API objects and a browser-like cache store.
-const stores=new Map(),handlers={};let networkCalls=0,offline=false;
+const stores=new Map(),handlers={};let networkCalls=0,offline=false,activationRequests=0;
 function cacheStore(name){if(!stores.has(name))stores.set(name,new Map());const items=stores.get(name);return {match:async key=>items.get(typeof key==='string'?key:key.url)?.clone(),put:async(key,res)=>{items.set(typeof key==='string'?key:key.url,res.clone());},addAll:async list=>{for(const request of list)items.set(request.url,new Response('cached '+request.url));}};}
-const ctx={URL,Request,Response,Headers,Blob,Set,console,importScripts:()=>{},self:{location:{href:'https://example.test/app/sw.js'},ARYDIA_BUILD:'test',ARYDIA_FILES:['index.html','app.js'],clients:{claim:async()=>{}},skipWaiting:()=>{},addEventListener:(type,fn)=>handlers[type]=fn},caches:{open:async name=>cacheStore(name),keys:async()=>[...stores.keys()],delete:async name=>stores.delete(name)},fetch:async req=>{networkCalls++;if(offline)throw Error('offline');return new Response('network');}};
+const ctx={URL,Request,Response,Headers,Blob,Set,console,importScripts:()=>{},self:{location:{href:'https://example.test/app/sw.js'},ARYDIA_BUILD:'test',ARYDIA_FILES:['index.html','app.js','art/lazy.png','music/optional.mp3'],clients:{claim:async()=>{}},skipWaiting:()=>{activationRequests++;},addEventListener:(type,fn)=>handlers[type]=fn},caches:{open:async name=>cacheStore(name),keys:async()=>[...stores.keys()],delete:async name=>stores.delete(name)},fetch:async req=>{networkCalls++;if(offline)throw Error('offline');return new Response('network');}};
 vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'sw.js'),'utf8'),ctx);
 function lifecycle(name){let p;handlers[name]({waitUntil:x=>p=x});return p;}
 function response(req){let p;handlers.fetch({request:req,respondWith:x=>p=x});return p;}
 (async()=>{
- await lifecycle('install');await ctx.caches.open('other-app-cache');await ctx.caches.open('arydia-shell-old');await lifecycle('activate');
+ await lifecycle('install');assert.equal(activationRequests,1);assert(!stores.get('arydia-shell-test').has('https://example.test/app/art/lazy.png'));assert(!stores.get('arydia-shell-test').has('https://example.test/app/music/optional.mp3'));await ctx.caches.open('other-app-cache');await ctx.caches.open('arydia-shell-old');await lifecycle('activate');
  assert(stores.has('other-app-cache'));assert(!stores.has('arydia-shell-old'));
  offline=true;
  const shell=await response({method:'GET',url:'https://example.test/app/?home',mode:'navigate'});assert((await shell.text()).includes('index.html'));assert.equal(networkCalls,0);

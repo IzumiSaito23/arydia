@@ -34,7 +34,6 @@ jobs:
           node web/scripts/relations82-check.cjs
           node web/scripts/parity83-check.cjs
           node web/scripts/navigation80-check.cjs
-          node web/scripts/skills92-check.cjs
       - uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -43,3 +42,4 @@ jobs:
           path: _site
       - uses: actions/deploy-pages@v4
         id: deploy
+

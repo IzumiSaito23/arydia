@@ -4,7 +4,8 @@
   const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   const AUDIO_CACHE = 'arydia-audio-v1';
-  let registration, installPrompt, downloading = false, musicCount = 0, musicProgress = '', offlineReady = false, offlineError = '', reloadRequested = false;
+  let registration, installPrompt, downloading = false, musicCount = 0, musicProgress = '', offlineReady = false, offlineError = '', reloadRequested = false, updateAvailable = false, checkingUpdate = false, preparingUpdate = false, updateStatus = '', lastUpdateCheck = 0, updateFailed = false;
+  const pageBuild=window.ARYDIA_BUILD||'';
   const tracks = () => window.Music?.tracks || [];
   const audioURL = track => new URL('music/' + track.file, document.baseURI).href;
   function status(message) { window.nativeStatus?.(message); }
@@ -30,13 +31,17 @@
     document.querySelectorAll('[data-web-offline]').forEach(el => { el.textContent = offlineReady ? '角色与检索已可离线使用' : offlineError || '正在准备离线页面…'; });
     document.querySelectorAll('[data-web-music-status]').forEach(el => { el.textContent = musicProgress || (musicCount === tracks().length && musicCount ? '音乐已全部下载，可离线播放。' : `已下载 ${musicCount}/${tracks().length} 首；全部约 25 MB。`); });
     document.querySelectorAll('[data-web-action="downloadMusic"]').forEach(el => { el.disabled = downloading || (musicCount === tracks().length && musicCount > 0); el.textContent = downloading ? '正在下载…' : musicCount === tracks().length && musicCount ? '音乐已下载' : '下载离线音乐'; });
-    document.querySelectorAll('[data-web-action="update"]').forEach(el => { el.hidden = !registration?.waiting; });
+    document.querySelectorAll('[data-web-action="update"]').forEach(el => { el.hidden=false;el.disabled=checkingUpdate;el.textContent=checkingUpdate?'正在检查…':updateAvailable||registration?.waiting?'更新并刷新':'检查网页版更新'; });
+    document.querySelectorAll('[data-web-update-status]').forEach(el=>{el.textContent=updateStatus;});
+    let banner=document.getElementById('web-update-banner');
+    if(!banner){banner=document.createElement('aside');banner.id='web-update-banner';banner.className='web-update-banner';banner.setAttribute('role','status');banner.innerHTML='<span>新版网页已准备好</span><button type="button" data-web-action="update">更新并刷新</button>';document.body.append(banner);}
+    banner.hidden=!updateAvailable&&!registration?.waiting;
   }
   const musicControls = () => '<div class="web-music-tools"><button class="btn" data-web-action="downloadMusic">下载离线音乐</button><p class="muted" data-web-music-status role="status"></p></div>';
   function mount(page) {
     if (page === 'settings') {
       const section = document.createElement('section'); section.className = 'panel web-settings';
-      section.innerHTML = `<h2>网页版与离线</h2><p class="web-offline" data-web-offline role="status"></p><div class="web-actions">${!standalone() ? '<button class="btn primary" data-web-action="install">添加到主屏幕</button>' : ''}<button class="btn" data-web-action="help">使用说明</button><button class="btn" data-web-action="update" hidden>更新网页版</button></div>${musicControls()}<p class="muted">记录保存在当前设备，不会自动同步。清理网站数据或更换设备前，请导出备份。</p>`;
+      section.innerHTML = `<h2>网页版与离线</h2><p class="web-offline" data-web-offline role="status"></p><div class="web-actions">${!standalone() ? '<button class="btn primary" data-web-action="install">添加到主屏幕</button>' : ''}<button class="btn" data-web-action="help">使用说明</button><button class="btn" data-web-action="update">检查网页版更新</button></div><p class="muted" data-web-update-status role="status"></p>${musicControls()}<p class="muted">记录保存在当前设备，不会自动同步。清理网站数据或更换设备前，请导出备份。</p>`;
       document.querySelector('#main')?.append(section);
     } else if (page === 'music') {
       document.querySelector('.music-detail')?.insertAdjacentHTML('beforeend', musicControls());
@@ -89,26 +94,43 @@
     } catch (e) { if (e.name !== 'AbortError') status('导出未完成：请在 Safari 中重试'); }
   }
   window.WebApp = {mount, exportBackup};
+  function requestBuild(){navigator.serviceWorker.controller?.postMessage({type:'GET_BUILD'});}
+  async function checkUpdate(manual=false){
+    if(!registration){if(manual)status('网页更新尚未就绪，请联网稍后再试。');return;}
+    if(checkingUpdate)return;
+    if(manual&&(updateAvailable||registration.waiting)){
+      reloadRequested=true;
+      if(registration.waiting)registration.waiting.postMessage({type:'ACTIVATE_UPDATE'});else location.reload();
+      return;
+    }
+    if(!manual&&Date.now()-lastUpdateCheck<60000)return;
+    lastUpdateCheck=Date.now();updateFailed=false;checkingUpdate=true;updateStatus='正在检查网页版更新…';refresh();
+    try{await registration.update();requestBuild();updateStatus=preparingUpdate?'正在准备新版页面，完成后会提示刷新。':updateAvailable||registration.waiting?'新版已准备好，点击“更新并刷新”。':'当前已是最新网页版。';}
+    catch(_){updateFailed=true;updateStatus='暂时无法检查更新，已保存的记录和离线页面会保留。';}
+    finally{checkingUpdate=false;refresh();}
+  }
   document.addEventListener('click', e => {
     const action = e.target.closest('[data-web-action]')?.dataset.webAction;
     if (action === 'install') install();
     if (action === 'downloadMusic') downloadMusic();
-    if (action === 'update' && registration?.waiting) { reloadRequested = true; registration.waiting.postMessage({type: 'ACTIVATE_UPDATE'}); }
+    if (action === 'update') checkUpdate(true);
     if (action === 'help') dialog('网页版使用说明', '<p>建议在 iPhone 的 Safari 中添加到主屏幕，再从桌面图标创建角色。</p><p>页面准备完成后，角色记录和编号检索可离线使用；音乐需单独下载。</p><p>记录仅保存在当前设备。安卓版导出的 JSON 备份，可以在“存档与备份”中导入。导入前可预览并确认，不会直接覆盖。</p><p>在 iPhone 导出时，请在分享菜单中选择“存储到文件”。不要把浏览器缓存当作唯一备份。</p><p>锁屏音乐受浏览器及系统限制。若播放暂停，请回到页面点播放。</p>');
   });
   document.addEventListener('click', () => { navigator.storage?.persist?.().catch(() => {}); }, {once: true});
   window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installPrompt = e; });
   if ('serviceWorker' in navigator && window.isSecureContext) {
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (reloadRequested) location.reload(); });
+    navigator.serviceWorker.addEventListener('message',e=>{if(e.data?.type==='ARYDIA_BUILD'&&pageBuild){updateAvailable=e.data.build!==pageBuild;if(updateAvailable)updateStatus='新版已准备好，点击“更新并刷新”。';else if(!updateFailed)updateStatus='当前已是最新网页版。';refresh();}});
+    navigator.serviceWorker.addEventListener('controllerchange', () => {preparingUpdate=false;if(reloadRequested)location.reload();else requestBuild();});
     navigator.serviceWorker.register('./sw.js', {updateViaCache: 'none'}).then(reg => {
       registration = reg;
-      const observe = worker => worker?.addEventListener('statechange', () => {
-        if (worker.state === 'redundant' && !reg.active) { offlineError = '离线页面准备失败，请联网刷新重试。'; refresh(); }
-        if (worker.state === 'installed') refresh();
-      });
+      const observe = worker => {if(!worker)return;preparingUpdate=true;worker.addEventListener('statechange', () => {
+        if (worker.state === 'redundant') {preparingUpdate=false;if(!reg.active)offlineError='离线页面准备失败，请联网刷新重试。';else updateStatus='新版准备未完成，原有记录和页面会保留；请稍后重试。';refresh();}
+        if (worker.state === 'installed') {preparingUpdate=false;updateStatus='新版页面已准备好。';refresh();}
+      });};
       observe(reg.installing); reg.addEventListener('updatefound', () => observe(reg.installing));
-      refresh(); return navigator.serviceWorker.ready;
-    }).then(() => { offlineReady = true; refresh(); checkMusic(); }).catch(() => { offlineError = '当前浏览器未能启用离线使用，请使用 Safari 并联网刷新。'; refresh(); });
+      refresh();checkUpdate();return navigator.serviceWorker.ready;
+    }).then(() => { offlineReady = true; refresh();requestBuild();checkMusic(); }).catch(() => { offlineError = '当前浏览器未能启用离线使用，请使用 Safari 并联网刷新。'; refresh(); });
   } else { offlineError = '当前打开方式不支持离线使用，请从 HTTPS 网址访问。'; }
-  window.addEventListener('online', refresh); window.addEventListener('offline', refresh);
+  window.addEventListener('online',()=>{refresh();checkUpdate();});window.addEventListener('offline',refresh);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkUpdate();});
 })();
