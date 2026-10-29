@@ -1,0 +1,1154 @@
+{
+  "sourceApp": 91,
+  "skills": 84,
+  "sourceHashes": {
+    "skill-tiles.json": "43fd7e8359cbdceba218581e01660aae2927cf4a9f30b035a329511f2afe9a1b",
+    "skill-rules-text.json": "fde2efb505927adb0be3ace973b62511b5828485f3c35fe396c2498a06560d67",
+    "skill-faq.json": "e411a08395ed495f30e4d8ac42919c081d4185b5f0b2ae6efbff89cf00818b32",
+    "card-layout.json": "cb2f0e05c3b7b53aa99036d52c21ac1d03562c3ebc7a55d3f00a7288b44f0f31",
+    "refresh-vectors.json": "574732d6c60914c8f2a75e799b3aee5df551db2a7186914e20df01b9a02fc0cf"
+  },
+  "originalMaterials": {
+    "art50_title_blue": "f716482ad05f9a9960cb3d6e32dffd85ff3cb7099a3b17c05fe8c85de7c68d0a",
+    "art50_title_gold": "04456b27b46b29f7f6926929011f6982dec6e70c9c4db2c166e61f06338d240d",
+    "art50_title_green": "f22e78b8bc7b3c05996d30365f518a1589a64e4e11a2d7b6611928b3045b443e",
+    "art50_title_orange": "c492a00ec1a3761d9f28737743971701d55fec34f461c68367d82e98f98af204",
+    "art50_title_purple": "334e2f5a7b263b0b4d3ce9db5724601ae5e1969046f0ffdd1705593ab236bdbe",
+    "art50_title_red": "22053fcd9d62dff2942bff574964368604817feee77c520b716643c3c703ca64",
+    "art50_card_blue": "2f691f059fc74ad8c793a80897fe0df71ed2d85f1ab7f8f3b5fc386513a46756",
+    "art50_card_gold": "c87fd88e462f8aed02afc8b34ab6714f90192726f2b34f74d8d38910115a9803",
+    "art50_card_green": "3bdecee66c0eb273ae1c9ef82e0a46e3b6b5c8c1dd5f8e5cfe6a7f6ccbf2892d",
+    "art50_card_orange": "e5fcd337bcae85aa77a1abfa22b38f51b06ddc2667d26b5c79685a8ed9aadad0",
+    "art50_card_purple": "0d00fe9e980d6fa0474f6335e6d509b18c48a7e1d164dcbbfc4b70fabe852a4e",
+    "art50_card_red": "1d84c608dbb3b56175b485d6d58e71733e6a3bb47f7926fbd2bc5dc540446f4b",
+    "art50_badge_arcana": "fe029c2119aabbac82b4bd74586a22fba2635cf09b97de5d217ea3891b3364d0",
+    "art50_badge_inspiration": "7e8877be299aaba0f2511f64cff000c2ce16d99812861d47a0f163c78b4959b6",
+    "art50_badge_light": "a66214716c97c56920ee939dc042dbfa9c0dcb6a30bd30c83f95d5c08e748918",
+    "art50_badge_shadow": "d00834dcd587177e9fb9a4b55566b2ae34159e1f6050526aa06c6d4fc34fe1b8",
+    "art50_badge_valor": "943f4765d6a90f0593e52aa873492d0dc70cd0c965fcf5a8876127f19ee4f3e6",
+    "art50_badge_wandering": "41f199d3cf36084e9ca0086ae7aa57a78a63f4fa695653d18a4302d7a63d6c1d",
+    "art50_learn": "b0c42fe7c27f5e45532c4d4eab44b63e6c75d8a3a623e07be688dbd8fa87a8db",
+    "art50_mastery": "bebff3c4a8159435db15bcd84e76c0d3741f79de17b8a00f207294fb58582bb7",
+    "art50_checkbox": "6f410be8a4967dacf89aea8fe8f5386681c28860344865710ae514b509de0ab4",
+    "art50_checked": "0c58658d081d2cb5cb1b5e1c8ee3932efe2cf79efea7a24c330821a222c3a399"
+  },
+  "cardTextsMatchWeb": true,
+  "damageFixtures": [
+    {
+      "path": "inspiration",
+      "id": 11,
+      "index": 0,
+      "name": "极速拨弹",
+      "source": "work\\update381\\pdf-review\\upright-04.jpg",
+      "sourceSha256": "e40d09ca2442a048d4f4ba1aa9bc3f5d4d1394ac933bfe7197ef79446d4f550b",
+      "expected": {
+        "attribute": "乐曲",
+        "thresholds": [
+          0,
+          1,
+          2
+        ],
+        "nodes": [
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "start": [
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "inspiration",
+      "id": 12,
+      "index": 0,
+      "name": "介意跳一曲吗？",
+      "source": "work\\update381\\pdf-review\\upright-04.jpg",
+      "sourceSha256": "e40d09ca2442a048d4f4ba1aa9bc3f5d4d1394ac933bfe7197ef79446d4f550b",
+      "expected": {
+        "attribute": "魅力",
+        "thresholds": [
+          2,
+          12,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "path": "light",
+      "id": 11,
+      "index": 0,
+      "name": "光芒普照",
+      "source": "work\\update381\\pdf-review\\upright-06.jpg",
+      "sourceSha256": "c85ef0647f16b6d76ad4c71ec354779b49151249c4b1ecf8655eb926244247d5",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "light",
+      "id": 12,
+      "index": 0,
+      "name": "光束",
+      "source": "work\\update381\\pdf-review\\upright-06.jpg",
+      "sourceSha256": "c85ef0647f16b6d76ad4c71ec354779b49151249c4b1ecf8655eb926244247d5",
+      "expected": {
+        "attribute": "感知",
+        "thresholds": [
+          2,
+          12,
+          18
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "light",
+      "id": 15,
+      "index": 0,
+      "name": "粉碎击",
+      "source": "work\\update381\\pdf-review\\upright-06.jpg",
+      "sourceSha256": "c85ef0647f16b6d76ad4c71ec354779b49151249c4b1ecf8655eb926244247d5",
+      "expected": {
+        "attribute": "力量",
+        "thresholds": [
+          2,
+          10,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "tier": 2,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "start": [
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "path": "light",
+      "id": 16,
+      "index": 0,
+      "name": "命运射线",
+      "source": "work\\update381\\pdf-review\\upright-06.jpg",
+      "sourceSha256": "c85ef0647f16b6d76ad4c71ec354779b49151249c4b1ecf8655eb926244247d5",
+      "expected": {
+        "attribute": "力量",
+        "thresholds": [
+          2,
+          12,
+          18
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "path": "light",
+      "id": 17,
+      "index": 0,
+      "name": "黎明之柱",
+      "source": "work\\update381\\pdf-review\\upright-06.jpg",
+      "sourceSha256": "c85ef0647f16b6d76ad4c71ec354779b49151249c4b1ecf8655eb926244247d5",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          }
+        ],
+        "edges": [],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 5,
+      "index": 0,
+      "name": "闪电箭",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "start": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 10,
+      "index": 0,
+      "name": "时空裂爪",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "智力",
+        "thresholds": [
+          2,
+          14,
+          22
+        ],
+        "nodes": [
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [],
+        "starts": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 13,
+      "index": 0,
+      "name": "急速冻结",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          }
+        ],
+        "edges": [],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 14,
+      "index": 0,
+      "name": "火球术",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "智力",
+        "thresholds": [
+          2,
+          10,
+          17
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": -1,
+            "y": -1,
+            "tier": 2,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 1,
+            "y": -1,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 15,
+      "index": 0,
+      "name": "旋风",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          }
+        ],
+        "edges": [],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "arcana",
+      "id": 16,
+      "index": 0,
+      "name": "风压刺",
+      "source": "work\\update381\\pdf-review\\upright-10.jpg",
+      "sourceSha256": "12d0401ebb0c74846570b2a67dd127c52d19191ff2b567bc3c8c7340f14d7fb0",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [],
+        "start": [
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "wandering",
+      "id": 5,
+      "index": 0,
+      "name": "狙击",
+      "source": "work\\update381\\pdf-review\\rng5full.png",
+      "sourceSha256": "c74814b1c485d50f7b215471ff088f84c0d8a74c2c15ee58c15e6f71f1549439",
+      "expected": {
+        "attribute": "耐力",
+        "thresholds": [
+          2,
+          12,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": -1,
+            "y": -1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": -1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 1,
+            "tier": 2,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "wandering",
+      "id": 17,
+      "index": 0,
+      "name": "火焰箭",
+      "source": "work\\update381\\pdf-review\\upright-08.jpg",
+      "sourceSha256": "6939ae8345afb2c41ab048213cb938b0dabbf0551d7d0b06a1c0372b24b03275",
+      "expected": {
+        "attribute": "耐力",
+        "thresholds": [
+          2,
+          12,
+          18
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 2,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "path": "shadow",
+      "id": 5,
+      "index": 0,
+      "name": "背刺",
+      "source": "work\\update381\\pdf-review\\upright-15.jpg",
+      "sourceSha256": "3c0720b2b2b4fb8eed820bc0466b1c107d3980178b3765d65518a89c258051be",
+      "expected": {
+        "attribute": "敏捷",
+        "thresholds": [
+          2,
+          15,
+          25
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "start": [
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "path": "shadow",
+      "id": 9,
+      "index": 0,
+      "name": "凶刃",
+      "source": "work\\update381\\pdf-review\\upright-14.jpg",
+      "sourceSha256": "47ab25b3d094879e5591df618507e928e116df3b4d37734209c727a872c5b442",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "entry": "cross"
+      }
+    },
+    {
+      "path": "shadow",
+      "id": 11,
+      "index": 0,
+      "name": "开膛",
+      "source": "work\\update381\\pdf-review\\upright-14.jpg",
+      "sourceSha256": "47ab25b3d094879e5591df618507e928e116df3b4d37734209c727a872c5b442",
+      "expected": {
+        "attribute": "敏捷",
+        "thresholds": [
+          2,
+          15,
+          25
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 4,
+      "index": 0,
+      "name": "旋风斩",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "力量",
+        "thresholds": [
+          2,
+          10,
+          18
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 1,
+            "piercing": false
+          },
+          {
+            "x": -2,
+            "y": 0,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "start": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 5,
+      "index": 0,
+      "name": "架盾冲锋",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [],
+        "start": [
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 5,
+      "index": 1,
+      "name": "架盾冲锋",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [],
+        "start": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 9,
+      "index": 0,
+      "name": "重击",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "力量",
+        "thresholds": [
+          2,
+          10,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 0,
+            "y": 1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": -1,
+            "y": 1,
+            "tier": 2,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "tier": 2,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "start": [
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 10,
+      "index": 0,
+      "name": "顺劈斩",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          },
+          {
+            "x": 1,
+            "y": -1,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "start": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 10,
+      "index": 1,
+      "name": "顺劈斩",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "",
+        "thresholds": [],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": false
+          }
+        ],
+        "edges": [],
+        "start": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 11,
+      "index": 0,
+      "name": "十字斩",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "耐力",
+        "thresholds": [
+          2,
+          10,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -1,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "path": "valor",
+      "id": 11,
+      "index": 1,
+      "name": "十字斩",
+      "source": "work\\update381\\pdf-review\\upright-12.jpg",
+      "sourceSha256": "3dd63d68fe5e3f053272cbb5201968cb78e8f87e2155708bad19e95890393d61",
+      "expected": {
+        "attribute": "耐力",
+        "thresholds": [
+          2,
+          10,
+          16
+        ],
+        "nodes": [
+          {
+            "x": 0,
+            "y": 0,
+            "tier": 0,
+            "piercing": true
+          },
+          {
+            "x": -1,
+            "y": 0,
+            "tier": 1,
+            "piercing": true
+          },
+          {
+            "x": -2,
+            "y": 0,
+            "tier": 2,
+            "piercing": true
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "start": [
+          1,
+          0
+        ]
+      }
+    }
+  ]
+}
