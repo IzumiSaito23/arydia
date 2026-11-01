@@ -1,0 +1,1 @@
+(()=>{'use strict';try{if(parent===window||parent.location.origin!==location.origin||!parent.Combat95Web)return;const host=parent.Combat95Web;window.AndroidCombat={load:()=>host.load(),save:raw=>host.save(raw),close:()=>host.close()};host.applyTheme(document);}catch(e){window.AndroidCombat={load(){throw e;},save(){return '战斗记录未能读取，原记录已保留';},close(){}};}})();

@@ -112,6 +112,7 @@ function validate(raw){
  if(!Array.isArray(raw.squills)||raw.squills.some(x=>!num(x,35)||x<1))throw Error('梓昆币记录无效');s.squills=[...new Set(raw.squills)];
  if(!str(raw.notes,50000))throw Error('旅程笔记无效');s.notes=raw.notes;
  if(raw.prefs){for(const key of ['titles','locations','before','after','startOnly'])if(typeof raw.prefs[key]==='boolean')s.prefs[key]=raw.prefs[key];if(num(raw.prefs.stage,3)&&raw.prefs.stage>0)s.prefs.stage=raw.prefs.stage;if(num(raw.prefs.cap,10)&&raw.prefs.cap>0)s.prefs.cap=raw.prefs.cap;}
+ if(raw.combat95!==undefined){if(!root.Combat95||!root.COMBAT_DATA)throw Error('战斗记录读取组件未加载');s.combat95=root.Combat95.validate(raw.combat95,root.COMBAT_DATA.templates);}
  if(raw.battle!==undefined){if(!root.LegacyRecords)throw Error('旧版存档读取组件未加载');s.battle=root.LegacyRecords.validate(raw.battle);}
  return s;
 }

@@ -12,5 +12,5 @@ M.mapArrive(s.webMap,'D2');assert.equal(s.webMap.party,'D2');assert(s.webMap.exp
 for(let i=0;i<40;i++)M.mapArrive(s.webMap,i%2?'D2':'E2');assert.equal(s.webMap.undoHistory.length,30);
 const restored=C.validate(JSON.parse(JSON.stringify(s)));assert.equal(M.held(restored)[0].note,team.note);assert.equal(M.held(restored,owner)[0].note,personal.note);assert.equal(restored.webMap.undoHistory.length,30);
 const bad=JSON.parse(JSON.stringify(s));bad.webMap.undoHistory[0].party='ZZ';assert.throws(()=>C.validate(bad));
-const announcements=fs.readFileSync(path.join(root,'campaign.js'),'utf8');assert(!announcements.includes('camp-update-skip'));assert(announcements.includes("arydia-web-update-seen','3.9.0"));
+const announcements=fs.readFileSync(path.join(root,'campaign.js'),'utf8');assert(!announcements.includes('camp-update-skip'));assert(announcements.includes("arydia-web-update-seen','3.9.1"));
 console.log('PASS independent per-entry/per-owner memos, unchanged keywords, old/new backup round-trip, 30-step map undo and note preservation, invalid history rejected, once-per-version update notice');
