@@ -188,3 +188,20 @@
 .battle-settings .setting-line + .setting-line {margin-top:3px}
 .battle-settings .setting-section > p {margin:2px 0 0;font-size:16px;font-weight:500}
 .sheet:has(.battle-settings) h2 {font-size:23px}
+.ai-heading{flex-wrap:wrap}
+.ai-classes{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.ai-class{padding:2px 8px;border-radius:99px;background:var(--sage);color:var(--pine);font-size:12px;font-weight:800}
+.ai-class[data-class="首领"]{background:#a5322f;color:#fff5e7}
+.ai-class[data-class="悍卒"]{background:#1c6771;color:#fff}
+#card-actions{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:5px 10px;color:var(--pine);font-size:13px;font-weight:700;flex:none}
+#card-actions[hidden]{display:none}
+#card-actions button{min-height:32px;padding:3px 11px;border-radius:99px;background:var(--sage);color:var(--pine);font-weight:750}
+#card-value-form{display:grid;gap:12px}
+#card-value-form input{display:block;width:100%;margin-top:8px}
+.heal-target{fill:none;stroke:#1d9566;pointer-events:none}
+@media(min-width:1000px) and (min-aspect-ratio:6/5){
+ #field.tracks-open:has(#card-actions:not([hidden])){grid-template-rows:minmax(0,1fr) auto auto}
+ #field.tracks-open #card-actions{grid-column:1;grid-row:2}
+ #field.tracks-open:has(#card-actions:not([hidden])) #focus-tools{grid-row:3}
+ #field.tracks-open:has(#card-actions:not([hidden])) #track-dock{grid-row:1 / 4}
+}

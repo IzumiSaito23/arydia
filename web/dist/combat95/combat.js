@@ -21,7 +21,7 @@ const icon = name => {
   : `<path d="${path}" fill="currentColor" fill-rule="evenodd"/>`).join('');
  return `<svg viewBox="0 0 24 24" aria-hidden="true">${marks}</svg>`;
 };
-let state,loadError=null,page='field',scene='overview',mode='free',draft=null,node=0,nodeTier=0,builderHistory=[],builderDrag=null,builderCamera=null,builderCameraTarget=null,builderCameraFrame=0;
+let state,loadError=null,page='field',scene='overview',mode='free',draft=null,node=0,nodeTier=0,builderHistory=[],builderDrag=null,builderCamera=null,builderCameraTarget=null,builderCameraFrame=0,spiritOverride=null;
 let options={hitStyle:'cube',tilt:false,haptics:true,sound:true,trajectories:false,viewVersion:105},session={role:'solo',connected:false,members:[],revision:0,browser:location.pathname.startsWith('/combat/')},pending=false,proposal=null,proposalOwner=null,shelfOpen=false,closed=false,roomPoll=0;
 const requests=new Map(),spriteCache=new Map();
 const current=()=>state.foes[state.selected],template=f=>D.templates.find(t=>t.key===f?.template),attack=()=>state.attacks.find(w=>w.id===state.attack)||state.attacks[0];
@@ -32,7 +32,7 @@ function haptic(kind='click'){if(options.haptics&&!reducedMotion)window.AndroidC
 function optionsSave(){try{const raw=JSON.stringify(options);if(window.AndroidCombat?.setOptions97){const error=AndroidCombat.setOptions97(raw);if(error)throw Error(error);}else localStorage.setItem('arydia-combat97-options',raw);}catch(e){toast(e.message);}}
 function applyRemote(data){
  const focused=current(),chosen=state.attack,tier=state.tier,next=B.validate(data,D.templates),oldAttack=attack();next.selected=Math.max(0,next.foes.findIndex(f=>f.id===focused?.id));if(next.attacks.some(w=>w.id===chosen)){next.attack=chosen;next.tier=tier;}
- const sameTarget=focused&&JSON.stringify(next.foes[next.selected]?.marks)===JSON.stringify(focused.marks)&&next.foes[next.selected]?.id===focused.id,sameAttack=JSON.stringify(next.attacks.find(w=>w.id===chosen))===JSON.stringify(oldAttack);
+ const nextFoe=next.foes[next.selected],sameTarget=focused&&nextFoe?.id===focused.id&&B.signature(nextFoe)===B.signature(focused),sameAttack=JSON.stringify(next.attacks.find(w=>w.id===chosen))===JSON.stringify(oldAttack);
  state=next;if(!sameTarget&&focused){inputMarks.delete(focused.id);actionQueue=actionQueue.filter(a=>a.id!==focused.id);}if(!sameTarget||!sameAttack){cancelEffects();pointers.clear();gesture=null;drawPoints=[];drawHits=[];cancelProposal();attackPhase='browse';}reconcileCards();renderAttacks();
 }
 function onSession(envelope){if(!envelope||closed)return;const sameRoom=(envelope.room??session.room??'')===(session.room??''),sameRole=(envelope.role??session.role)===session.role;if(sameRoom&&sameRole&&Number.isFinite(envelope.revision)&&envelope.revision<session.revision)return;const changed=!sameRoom||!sameRole||envelope.revision!==session.revision;session={...session,...envelope};if(Object.prototype.hasOwnProperty.call(envelope,'battle')&&changed&&!pending){applyRemote(envelope.battle||B.defaults());}renderSession();}
@@ -57,6 +57,41 @@ function chooseEnemy(id){const ts=D.templates.filter(t=>t.cardId==='FOE-'+id),pr
 function roster(){modal('本场敌人',state.foes.map((f,i)=>`<div class="roster-row"><button class="selection" data-focus="${i}"><b>${E(template(f).name)}</b><small>${E(template(f).cardId.replace('FOE','敌人'))} · ${B.woundCount(template(f),f)}/${template(f).nodes.filter(B.hasWound).length}处受伤</small></button><button class="remove" data-remove="${E(f.id)}">移出</button></div>`).join('')+(state.foes.length?'<button id="end-battle" class="wide-button">结束本场战斗</button>':'<p>尚未加入敌人</p>'),()=>{document.querySelectorAll('[data-focus]').forEach(b=>b.onclick=()=>{close();focusEnemy(+b.dataset.focus);});document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{const f=state.foes.find(x=>x.id===b.dataset.remove);modal('移出敌人',`<p>移出 ${E(template(f).name)} 及其本场损伤记录？其他敌人保持原样。</p><div class="confirm-actions"><button id="keep-enemy">保留</button><button id="remove-enemy" class="primary">移出</button></div>`,()=>{$('keep-enemy').onclick=modalBack;$('remove-enemy').onclick=async()=>{if(await mutate(s=>{const focus=s.foes[s.selected]?.id;s.foes=s.foes.filter(x=>x.id!==f.id);const retained=s.foes.findIndex(x=>x.id===focus);s.selected=retained>=0?retained:Math.max(0,Math.min(s.selected,s.foes.length-1));})){reconcileCards();roster();}};},true);});if($('end-battle'))$('end-battle').onclick=()=>modal('结束本场战斗','<p>移出本场所有敌人及损伤记录。</p><div class="confirm-actions"><button id="keep-battle">继续战斗</button><button id="clear-battle" class="primary">结束本场</button></div>',()=>{$('keep-battle').onclick=modalBack;$('clear-battle').onclick=async()=>{if(await mutate(s=>{s.foes=[];s.selected=0;})){scene='overview';close();reconcileCards();}};},true);});}
 
 function battleSettings(){modal('战斗设置',`<div class="battle-settings"><section class="setting-section"><h3>命中表现</h3><div class="setting-choices"><button data-style="cube" class="${options.hitStyle==='cube'?'selected':''}">${icon('cube')}<b>方块</b><small>半透明红色方块</small></button><button data-style="scar" class="${options.hitStyle==='scar'?'selected':''}">${icon('sword')}<b>斩击</b><small>刀光与暗红受损点</small></button></div></section><section class="setting-section"><label class="setting-line"><span>音效</span><button id="sound-setting" role="switch" aria-label="音效" aria-checked="${options.sound}"><span></span></button></label><label class="setting-line"><span>触感反馈</span><button id="haptic-setting" role="switch" aria-label="触感反馈" aria-checked="${options.haptics}"><span></span></button></label></section><section class="setting-section"><p>随意划过或点按命中点即可攻击。划过暴击标记会沿原卡箭头结算；在全部敌人视图中可双指缩放和移动。长按点位可修正状态。</p></section></div>`,()=>{document.querySelectorAll('[data-style]').forEach(b=>b.onclick=()=>{options.hitStyle=b.dataset.style;optionsSave();paintAll();battleSettings();playCue('hit',{index:0,before:0});haptic();});$('sound-setting').onclick=()=>{options.sound=!options.sound;optionsSave();$('sound-setting').setAttribute('aria-checked',options.sound);if(audioBus)audioBus.gain.setTargetAtTime(options.sound?.28:0,audioContext.currentTime,.015);if(options.sound){unlockAudio();playCue('select');}};$('haptic-setting').onclick=()=>{options.haptics=!options.haptics;optionsSave();$('haptic-setting').setAttribute('aria-checked',options.haptics);haptic();};});}
+function updateCardActions(){
+ const f=current(),box=$('card-actions'),t=template(f),effects=f?.effects;
+ let note='',actions='';
+ const button=(action,label)=>`<button type="button" data-card-action="${action}">${label}</button>`;
+ if(scene==='focus'&&t){
+  if(effects?.phase==='bones'){
+   note='骸骨堆';
+   actions=button('rise','复苏')+button('destroyBones','确认摧毁')+button('bonesRules','规则');
+  }else if(effects?.phase==='bonesDestroyed')note='骸骨堆已摧毁';
+  else if(['FOE-59','FOE-60','FOE-61'].includes(t.cardId)&&B.defeated(t,f))actions=button('markBones','翻到骸骨堆');
+  else if(effects?.phase==='iceArmor')note='护甲已清空 · 翻转事件-15，放到大型-2';
+  else if(effects?.phase==='iceWounds')note='生命点耗尽 · 人物-21 转 B，再翻转事件-15，放到大型-2';
+  else if(effects?.regen){
+   note='再生 · 先输入弱点生效前的威胁值';
+   actions=button('regenerate','输入威胁')+button('endHealing','结束治疗');
+  }else if(effects?.heal){
+   note='点选伤口 · 还可治疗 '+effects.heal+' 处';
+   actions=button('endHealing','结束治疗');
+  }else if(B.canRespawn(t,f))actions=button('respawn','确认重生');
+  else if(t.cardId==='FOE-167'){
+   note=effects?.leaf===undefined?'叶盾次数待设置':'叶盾 '+effects.leaf+' / 3';
+   actions=button('setLeaf','调整');
+  }else if(t.cardId==='FOE-179'&&!B.defeated(t,f)){
+   const count=effects?.storm||0;
+   note='风暴计数 '+count;
+   actions=button('charge','充能')+(count>=5?button('discharge','结算放电'):'');
+  }else if(t.cardId==='FOE-194'&&!B.defeated(t,f)){
+   note=spiritOverride===f.id?'释放已生效 · 本次攻击可命中':'灵体免疫';
+   actions=button('spiritOverride',spiritOverride===f.id?'取消':'宝珠释放');
+  }else if(effects?.phase==='revived'&&!B.defeated(t,f))note='不灭已触发 · 1 个力量标记';
+ }
+ const html=(note?`<span role="status">${E(note)}</span>`:'')+actions;
+ if(box.innerHTML!==html)box.innerHTML=html;
+ box.hidden=!html;
+}
 function updateChrome(){
  $('count').textContent=state.foes.length+' 名敌人';$('enemy-ai').disabled=!state.foes.length;$('empty').hidden=!!state.foes.length;
  for(const id of ['enemy-strip','focus-tools','scene-hint'])$(id).hidden=!state.foes.length;
@@ -64,10 +99,64 @@ function updateChrome(){
  $('undo').disabled=!current()?.history?.length||pending||!!gesture;
  $('undo').setAttribute('aria-label','撤回当前敌人的上次攻击');$('stage').classList.toggle('is-focus',scene==='focus');
  $('show-overview').setAttribute('aria-pressed',scene==='overview');$('scene-hint').textContent=lastSummary;
+ updateCardActions();
 }
 function cancelProposal(){proposal=null;proposalOwner=null;paintAll();}
 function showProposal(result,owner){proposal=result;proposalOwner=owner;paintAll();}
-async function undoEnemy(){const f=current();if(!f?.history?.length||pending||gesture)return;cancelEffects();if(await mutate(s=>B.undo(s.foes.find(x=>x.id===f.id)),true)){cancelProposal();paintAll();updateThumbnails();playCue('undo');haptic();}}
+async function undoEnemy(){const f=current();if(!f?.history?.length||pending||gesture||draining)return;cancelEffects();if(await mutate(s=>B.undo(s.foes.find(x=>x.id===f.id)),true)){cancelWeapon103();reconcileCards();playCue('undo');haptic();}}
+
+async function performCardAction(id,action,value){
+ const f=state.foes.find(foe=>foe.id===id);
+ if(!f||pending||draining)return;
+ if(await mutate(s=>{
+  const target=s.foes.find(foe=>foe.id===id);
+  if(!B.settleCardAction(template(target),target,action,value))throw Error('当前卡面无法执行此操作');
+ },true)){
+  close();cancelWeapon103();cancelEffects();reconcileCards();haptic('select');
+ }
+}
+$('card-actions').addEventListener('click',event=>{
+ const action=event.target.closest('button')?.dataset.cardAction,f=current();
+ if(!action||!f||pending||draining)return;
+ if(action==='regenerate'||action==='setLeaf'){
+  const regen=action==='regenerate',label=regen?'弱点生效前的威胁值':'剩余叶盾';
+  modal(regen?'再生':'调整叶盾',`<form id="card-value-form"><label>${label}<input id="card-value" type="number" min="0" max="${regen?999:3}" inputmode="numeric" value="${regen?'':f.effects?.leaf??3}" required></label><button class="primary" type="submit">确认</button></form>`,()=>{
+   $('card-value-form').onsubmit=e=>{e.preventDefault();performCardAction(f.id,action,$('card-value').valueAsNumber);};
+  });
+  return;
+ }
+ if(action==='bonesRules'){
+  modal('骸骨堆','<p>骸骨堆无法主动移动或攻击，仍消耗威胁值。任一敌人发动「复苏」时，可翻回网格面，清除伤口，护甲不恢复，当回合不行动。</p><p>流放者可用次级行动尝试重踏，力量 14 检定成功即摧毁。受到至少 1 点治疗也会被摧毁。</p>');
+  return;
+ }
+ if(action==='spiritOverride'){
+  if(spiritOverride===f.id){spiritOverride=null;cancelWeapon103();updateChrome();return;}
+  modal('宝珠释放','<p>确认已从森黛宝珠花费 1 层充能。本次攻击可以无视灵体免疫。</p><button id="card-rule-confirm" class="primary">确认释放</button>',()=>{
+   $('card-rule-confirm').onclick=()=>{spiritOverride=f.id;close();cancelWeapon103();updateChrome();};
+  });
+  return;
+ }
+ if(action==='charge'||action==='discharge'){
+  if(action==='charge'){
+   modal('风暴充能','<p>抽取威胁卡时记 +1。按本次 AI 行动的充能数选择 +2、+3 或 +5。</p><div class="confirm-actions">'+[1,2,3,5].map(n=>`<button data-charge="${n}">+${n}</button>`).join('')+'</div>',()=>{
+    document.querySelectorAll('[data-charge]').forEach(button=>button.onclick=()=>performCardAction(f.id,action,+button.dataset.charge));
+   });
+  }else{
+   modal('放电',`<p>确认风暴使者已行动。冲击波对 4 格内每名流放者造成 ${f.effects.storm} 点伤害，结算后清空计数。</p><button id="card-rule-confirm" class="primary">清空计数</button>`,()=>{
+    $('card-rule-confirm').onclick=()=>performCardAction(f.id,action);
+   });
+  }
+  return;
+ }
+ if(action==='destroyBones'||action==='respawn'){
+  const respawn=action==='respawn';
+  modal(respawn?'水元素重生':'摧毁骸骨堆',`<p>${respawn?'确认有效缚灵球旁有可通行格。重生会移除伤口并恢复护甲，请在实体地图上移动模型，并移除流放者施加的效果。':'确认重踏检定成功，或骸骨堆已受到至少 1 点治疗。'}</p><button id="card-rule-confirm" class="primary">确认</button>`,()=>{
+   $('card-rule-confirm').onclick=()=>performCardAction(f.id,action);
+  });
+  return;
+ }
+ performCardAction(f.id,action);
+});
 
 // Original wound.png artwork, enlarged uniformly; no replacement badge or glyph.
 function woundedPoint104(x,y,r,index){
@@ -160,31 +249,33 @@ function defeatStamp(id){
 }
 const cardNodes=new Map(),poses=new Map(),goals=new Map(),velocities=new Map();
 let camera={x:0,y:0,z:1},cameraGoal={...camera},cameraVelocity={x:0,y:0,z:0},sceneFrame=0,sceneLast=0,pointers=new Map(),gesture=null,drawPoints=[],drawHits=[],shelfLift=0,visualMarks=null,sceneBounds={w:1,h:1};
-function makeCard(f,i){const t=template(f),card=document.createElement('div');card.className='foe-card';card.dataset.id=f.id;card.dataset.foe=i;card.style.height=512*t.height/t.width+'px';
+function makeCard(f,i){const t=B.cardFace(D.templates,template(f),f),card=document.createElement('div');card.className='foe-card';card.dataset.id=f.id;card.dataset.foe=i;card.dataset.face=t.key;card.style.height=512*t.height/t.width+'px';
  const rotated=t.imageRotation?`style="position:absolute;left:50%;top:50%;width:${t.height/t.width*100}%;height:${t.width/t.height*100}%;transform:translate(-50%,-50%) rotate(90deg)"`:'';
  card.innerHTML=`<div class="card-surface"><div class="card-art"><img src="${E(t.image)}" ${rotated} alt="${E(t.name)}" draggable="false" decoding="async"></div>${cardLettering(t)}<svg class="overlay" viewBox="0 0 ${t.width} ${t.height}"></svg><canvas class="hit-fx" aria-hidden="true"></canvas><div class="card-shine"></div></div><span class="defeated-badge" role="status" aria-label="已击败">${defeatStamp(f.id)}</span>`;
  const arrowLayer=document.createElementNS('http://www.w3.org/2000/svg','svg');arrowLayer.setAttribute('class','forecast-arrows');arrowLayer.setAttribute('viewBox',`0 0 ${t.width} ${t.height}`);arrowLayer.setAttribute('aria-hidden','true');card.append(arrowLayer);
  const image=card.querySelector('img');Promise.all([image.decode(),t.repair?warmSprite(t.repair.file):Promise.resolve()]).then(()=>{if(card.isConnected)card.querySelector('.card-surface').classList.add('ready');}).catch(()=>{if(card.isConnected){card.querySelector('.card-surface').classList.add('ready');toast('有一张卡面未能加载，请重新进入战斗');}});return card;
 }
-function reconcileCards(){const ids=new Set(state.foes.map(f=>f.id));for(const [id,c]of cardNodes)if(!ids.has(id)){c.remove();cardNodes.delete(id);poses.delete(id);goals.delete(id);velocities.delete(id);}state.foes.forEach((f,i)=>{let c=cardNodes.get(f.id);if(!c){c=makeCard(f,i);cardNodes.set(f.id,c);$('cards').append(c);}c.dataset.foe=i;});if(!state.foes.length)scene='overview';else if(state.foes.length===1)scene='focus';updateThumbnails();paintAll();updateChrome();layoutScene();}
+function reconcileCards(){const ids=new Set(state.foes.map(f=>f.id));for(const [id,c]of cardNodes)if(!ids.has(id)){c.remove();cardNodes.delete(id);poses.delete(id);goals.delete(id);velocities.delete(id);}state.foes.forEach((f,i)=>{let c=cardNodes.get(f.id);if(c&&c.dataset.face!==B.cardFace(D.templates,template(f),f).key){c.remove();c=null;}if(!c){c=makeCard(f,i);cardNodes.set(f.id,c);$('cards').append(c);}c.dataset.foe=i;});if(!state.foes.length)scene='overview';else if(state.foes.length===1)scene='focus';updateThumbnails();paintAll();updateChrome();layoutScene();}
 function paintAll(){
  if(!state)return;state.foes.forEach((f,i)=>{
   const card=cardNodes.get(f.id);if(!card)return;const t=template(f),predicted=proposal?.valid&&proposalOwner===f.id,actual=visualMarks?.id===f.id?visualMarks.marks:f.marks,marks=predicted?proposal.marks:actual;
-  const selected=i===state.selected,trackPreview=weaponPreview103&&predicted;
-  const stamp=marks.join(',')+options.hitStyle+selected+predicted+(trackPreview?JSON.stringify([weaponPreview103.index,proposal.events.map(e=>e.index),proposal.paths]):'');if(card.dataset.paintStamp===stamp)return;card.dataset.paintStamp=stamp;
+  const selected=i===state.selected,trackPreview=weaponPreview103&&predicted,face=B.cardFace(D.templates,t,f);
+  const stamp=marks.join(',')+options.hitStyle+selected+predicted+JSON.stringify(f.effects)+(trackPreview?JSON.stringify([weaponPreview103.index,proposal.events.map(e=>e.index),proposal.paths]):'');if(card.dataset.paintStamp===stamp)return;card.dataset.paintStamp=stamp;
   const forecastTargets=trackPreview?new Set(proposal.events.map(e=>e.index)):null;
   let out='';
-  for(let j=0;j<t.nodes.length;j++){
+  const healTargets=new Set(f.effects?.heal?B.eligibleHealing(t,f):[]);
+  for(let j=0;j<face.nodes.length;j++){
    const n=t.nodes[j],x=(n.drawX??n.x)*t.width,y=(n.drawY??n.y)*t.height,r=n.r*t.width;
    out+=marker(t,n,trackPreview?actual[j]:marks[j],f.id);
    out+=`<circle class="hp-target" data-hp="${j}" data-enemy="${E(f.id)}" cx="${x}" cy="${y}" r="${r*1.55}"/>`;
+   if(healTargets.has(j))out+=`<circle class="heal-target" cx="${x}" cy="${y}" r="${r*1.22}" stroke-width="${t.width*.009}"/>`;
   }
   if(forecastTargets)for(const index of forecastTargets){
    const n=t.nodes[index],x=(n.drawX??n.x)*t.width,y=(n.drawY??n.y)*t.height,r=forecastTargetRadius(t);
    out+=`<g class="forecast-target" aria-hidden="true"><circle class="forecast-target-rim" cx="${x}" cy="${y}" r="${r}" stroke-width="${t.width*.013}"/><circle class="weapon-preview-point" cx="${x}" cy="${y}" r="${r}" stroke-width="${t.width*.009}"/></g>`;
   }
   card.querySelector('.forecast-arrows').innerHTML=trackPreview?forecastArrows104(proposal,t):'';
-  card.querySelector('.overlay').innerHTML=out;motionStats.overlayWrites++;card.classList.toggle('is-defeated',B.defeated(t,{...f,marks:actual}));card.classList.toggle('is-selected',selected);card.classList.toggle('is-forecast',!!predicted);renderPointTokens(card,t,trackPreview?actual:marks,f.id);
+  card.querySelector('.overlay').innerHTML=out;motionStats.overlayWrites++;card.classList.toggle('is-defeated',B.defeated(t,{...f,marks:actual}));card.classList.toggle('is-selected',selected);card.classList.toggle('is-forecast',!!predicted);renderPointTokens(card,face,trackPreview?actual:marks,f.id);
  });
 }
 function updateThumbnails(){const strip=$('enemy-strip'),ids=state.foes.map(f=>f.id).join(',');if(strip.dataset.ids!==ids){strip.dataset.ids=ids;strip.innerHTML=state.foes.map((f,i)=>`<button class="enemy-code" data-focus="${i}" data-id="${E(f.id)}" style="--foe-tone:${template(f).tone||'#b5aca0'}" aria-label="顺位${f.index}，${E(template(f).cardId.replace('FOE','敌人'))} ${E(template(f).name)}">${f.index}</button>`).join('');}strip.querySelectorAll('[data-focus]').forEach((b,i)=>{b.classList.toggle('selected',i===state.selected);b.setAttribute('aria-pressed',i===state.selected);b.classList.toggle('is-defeated',B.defeated(template(state.foes[i]),state.foes[i]));});}
@@ -193,7 +284,7 @@ function layoutScene(){
  const gap=18,pad=16;let cols=1,L=0;
  for(let c=1;c<=Math.min(6,n);c++){const rows=Math.ceil(n/c),fit=Math.min((w-pad*2-gap*(c-1))/c,(h-pad*2-gap*(rows-1))/rows);if(fit>L){L=fit;cols=c;}}
  const rows=Math.ceil(n/cols);L=Math.max(32,L);sceneBounds={w:cols*(L+gap)-gap,h:rows*(L+gap)-gap};
- state.foes.forEach((f,i)=>{const t=template(f),d=i-state.selected;let p;
+ state.foes.forEach((f,i)=>{const t=B.cardFace(D.templates,template(f),f),d=i-state.selected;let p;
   if(scene==='overview'){const row=Math.floor(i/cols),col=i%cols,items=Math.min(cols,n-row*cols);p={x:(col-(items-1)/2)*(L+gap),y:(row-(rows-1)/2)*(L+gap),s:L*t.width/Math.max(t.width,t.height)/512,rx:0,ry:0,rz:0,a:1};}
   else{const longEdge=Math.min(w*.965,Math.max(32,h-24-shelfLift)),cw=longEdge*t.width/Math.max(t.width,t.height);p={x:Math.max(-2.4,Math.min(2.4,d))*w*1.14,y:0,s:cw/512,rx:0,ry:0,rz:0,a:d?0:1};}
   goals.set(f.id,p);if(!poses.has(f.id)){poses.set(f.id,{...p,s:p.s*.94,y:p.y+10,a:0});velocities.set(f.id,{x:0,y:0,s:0,rx:0,ry:0,rz:0,a:0});}
@@ -204,7 +295,7 @@ function tickScene(now){if(closed)return;const dt=Math.min(.025,Math.max(.001,(n
  for(const k of ['x','y','z']){if(reducedMotion){camera[k]=cameraGoal[k];cameraVelocity[k]=0;continue;}cameraVelocity[k]+=(cameraGoal[k]-camera[k])*340*dt;cameraVelocity[k]*=Math.exp(-28*dt);camera[k]+=cameraVelocity[k]*dt;const eps=k==='z'?.0005:.05;if(Math.abs(cameraGoal[k]-camera[k])>eps||Math.abs(cameraVelocity[k])>eps*8)moving=true;else{camera[k]=cameraGoal[k];cameraVelocity[k]=0;}}$('camera').style.transform=`translate(${camera.x}px,${camera.y}px) scale(${camera.z})`;sceneFrame=moving?requestAnimationFrame(tickScene):0;
 }
 function resetCamera(){cameraGoal={x:0,y:0,z:1};layoutScene();}
-function focusEnemy(index){cancelCurrentGesture();cancelProposal();state.selected=Math.max(0,Math.min(state.foes.length-1,index));scene='focus';lastSummary='';resetCamera();paintAll();updateThumbnails();updateChrome();$('enemy-strip').querySelector(`[data-focus="${state.selected}"]`)?.scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'nearest',inline:'center'});playCue('select');haptic();}
+function focusEnemy(index){cancelCurrentGesture();cancelProposal();state.selected=Math.max(0,Math.min(state.foes.length-1,index));if(spiritOverride!==current()?.id)spiritOverride=null;scene='focus';lastSummary='';resetCamera();paintAll();updateThumbnails();updateChrome();$('enemy-strip').querySelector(`[data-focus="${state.selected}"]`)?.scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'nearest',inline:'center'});playCue('select');haptic();}
 function overviewScene(){if(state.foes.length<2)return;cancelCurrentGesture();cancelProposal();scene='overview';lastSummary='';resetCamera();paintAll();updateChrome();}
 function zoom(factor){if(scene!=='overview'||state.foes.length<2)return;cameraGoal.z=Math.max(.35,Math.min(4,cameraGoal.z*factor));startScene();}
 function pointData(id,onlyActive=false){
@@ -336,7 +427,8 @@ function aiTrait(text){const i=text.indexOf('：');return i>0&&i<14?`<p><strong>
 function enemyAI(tab='action'){
  const f=current(),t=template(f);if(!t)return;const id=t.cardId.replace('FOE-',''),data=window.COMBAT_AI?.[id];
  if(!data){toast('这个敌人的AI卡暂未收录');return;}
- const heading=`<div class="ai-heading"><small>敌人-${E(id)}</small><h3>${E(t.name)}</h3></div>`;
+ const classes=(data.classes||[]).map(v=>`<span class="ai-class" data-class="${E(v)}">${E(v==='首领'?'BOSS':v)}</span>`).join('');
+ const heading=`<div class="ai-heading"><small>敌人-${E(id)}</small><h3>${E(t.name)}</h3>${classes?`<div class="ai-classes" aria-label="敌人类别">${classes}</div>`:''}</div>`;
  const tabs=`<div class="ai-tabs" role="tablist" aria-label="AI卡内容"><button id="ai-action" role="tab" aria-selected="${tab==='action'}">AI 卡</button><button id="ai-faq" role="tab" aria-selected="${tab==='faq'}">常见问答${data.faq.length?' · '+data.faq.length:''}</button></div>`;
  const behaviors=data.behaviors.length?`<div class="ai-behavior-scroll"><table class="ai-behaviors"><thead><tr><th>威胁</th><th>目标</th><th>移动</th><th>行动</th></tr></thead><tbody>${data.behaviors.map(([threat,target,move,action])=>`<tr><td><b>${E(threat)}</b></td><td>${aiTarget(target)}</td><td>${move===null?'—':`<b>${E(move)}</b>${AI_SYMBOLS.move}`}</td><td>${aiText(action)}</td></tr>`).join('')}</tbody></table></div>`:'';
  const abilities=data.abilities.map(a=>`<article class="ai-ability"><h3>${a.die?AI_SYMBOLS['die_'+a.die]:''}${E(a.name)}${a.attackType?`<span class="ai-attack-type">${AI_SYMBOLS[a.attackType]}<small>${AI_NAMES[a.attackType]}</small></span>`:''}</h3><div class="ai-ability-content ${a.grid?'has-range':''}"><div>${aiText(a.body)}</div>${aiGrid(a)}</div></article>`).join('');
@@ -378,23 +470,30 @@ function paintBlade(now){
 function scheduleSlice(){if(!sliceFrame)sliceFrame=requestAnimationFrame(()=>{sliceFrame=0;refreshSlice();});}
 function flushSlice(){cancelAnimationFrame(sliceFrame);sliceFrame=0;refreshSlice();}
 function refreshSlice(quiet=false){
- const d=gesture;if(d?.kind!=='draw')return;motionStats.sliceFrames++;const f=state.foes.find(f=>f.id===d.id);if(!f)return;const t=template(f),result=B.slicePreview(t,d.base,d.points,d.extraRadius,d.contactCache);if(!quiet&&options.hitStyle==='cube')for(const e of result.events){const key=e.index+'_'+e.before+'_'+e.after+'_'+!!e.critical;if(!d.played.has(key)&&(e.before===1||e.before===3))releaseArmorToken(d.id,e.index);}motionStats.contactChecks=d.contactCache.checks;showProposal(result,d.id);d.result=result;
+ const d=gesture;if(d?.kind!=='draw')return;motionStats.sliceFrames++;const f=state.foes.find(f=>f.id===d.id);if(!f)return;const t=template(f),result=B.slicePreview(t,d.base,d.points,d.extraRadius,d.contactCache,spiritOverride===d.id);if(!quiet&&options.hitStyle==='cube')for(const e of result.events){const key=e.index+'_'+e.before+'_'+e.after+'_'+!!e.critical;if(!d.played.has(key)&&(e.before===1||e.before===3))releaseArmorToken(d.id,e.index);}motionStats.contactChecks=d.contactCache.checks;showProposal(result,d.id);d.result=result;
  if(quiet)return;
  for(const e of result.events){const key=e.index+'_'+e.before+'_'+e.after+'_'+!!e.critical;if(d.played.has(key))continue;d.played.add(key);strike(d.id,e);playCue('hit',e);haptic('select');}
  for(const c of result.criticals){if(d.criticals.has(c))continue;d.criticals.add(c);flashCritical(d.id,c,result.criticalPaths);playCue('critical');}
+}
+function reportAttack(t,result){
+ if(result.message)toast(result.message);
+ else if(result.defeated)toast(t.cardId.replace('FOE','敌人')+' 已击败');
+ else if(result.weak.length)toast('请结算 '+result.weak.length+' 处弱点效果');
+ if(result.defeated)playCue('victory');
 }
 async function processSliceQueue(){
  if(draining)return;draining=true;
  try{while(actionQueue.length){const action=actionQueue.shift(),f=state.foes.find(f=>f.id===action.id);if(!f)continue;
   if(action.kind==='heal'){
-   const ok=await mutate(s=>{const target=s.foes.find(f=>f.id===action.id);if(!target)return;const marks=[...target.marks];if(marks[action.index]!==2||!B.hasWound(template(target).nodes[action.index]))return;marks[action.index]=0;B.record(target,marks);},true);
+   if(!B.restoreWound(template(f),B.clone(f),action.index)){inputMarks.delete(action.id);cancelProposal();continue;}
+   const ok=await mutate(s=>{const target=s.foes.find(f=>f.id===action.id);B.restoreWound(template(target),target,action.index);},true);
    if(!actionQueue.some(a=>a.id===action.id)||!ok)inputMarks.delete(action.id);if(ok){playCue('undo');haptic('select');}
    if(gesture?.kind==='draw')refreshSlice(true);else if(!actionQueue.length)cancelProposal();updateThumbnails();updateChrome();continue;
   }
-  const result=B.slicePreview(template(f),f,action.points,action.extraRadius);if(!result.valid){if(!gesture&&!actionQueue.length)cancelProposal();continue;}
-  const ok=await mutate(s=>{const target=s.foes.find(f=>f.id===action.id);if(!target)throw Error('这个敌人已被移出');B.record(target,result.marks);},true);
+  const result=B.slicePreview(template(f),f,action.points,action.extraRadius,null,spiritOverride===action.id);if(!result.valid){if(result.message)toast(result.message);if(!gesture&&!actionQueue.length)cancelProposal();continue;}
+  const ok=await mutate(s=>{const target=s.foes.find(f=>f.id===action.id);if(!target)throw Error('这个敌人已被移出');B.record(target,result.marks,result.effects);},true);
   if(!actionQueue.some(a=>a.id===action.id))inputMarks.delete(action.id);
-  if(ok){const latest=state.foes.find(f=>f.id===action.id);lastSummary=[result.wounds?result.wounds+'处命中':'',result.armor?result.armor+'处破甲':''].filter(Boolean).join(' · ');clearTimeout(summaryTimer);summaryTimer=setTimeout(()=>{lastSummary='';updateChrome();},1500);if(B.defeated(template(latest),latest)){toast(template(latest).cardId.replace('FOE','敌人')+' 已击败');playCue('victory');}else if(result.weak.length)toast('请结算 '+result.weak.length+' 处弱点效果');}
+  if(ok){if(spiritOverride===action.id)spiritOverride=null;lastSummary=[result.wounds?result.wounds+'处命中':'',result.armor?result.armor+'处破甲':''].filter(Boolean).join(' · ');clearTimeout(summaryTimer);summaryTimer=setTimeout(()=>{lastSummary='';updateChrome();},1500);reportAttack(template(f),result);if(result.effects?.phase!==f.effects?.phase)reconcileCards();}
   else{inputMarks.delete(action.id);actionQueue=actionQueue.filter(a=>a.id!==action.id);}
   if(gesture?.kind==='draw')refreshSlice(true);else if(!actionQueue.length)cancelProposal();updateThumbnails();updateChrome();
  }}finally{draining=false;}
@@ -422,9 +521,9 @@ function releaseScene(e,cancel=false){
  if(cancel){gesture=null;cancelProposal();return;}
  if(d.kind==='draw'){d.last={x:e.clientX,y:e.clientY};
   const tapHit=!d.moved&&Math.hypot(d.last.x-d.from.x,d.last.y-d.from.y)<7?nearestPoint(d.last,pointData(d.id)):null;
-  if(tapHit&&d.base.marks[tapHit.i]===2&&B.hasWound(template(state.foes.find(f=>f.id===d.id)).nodes[tapHit.i])){
+  if(tapHit&&B.restoreWound(template(state.foes.find(f=>f.id===d.id)),B.clone(d.base),tapHit.i)){
    cancelAnimationFrame(sliceFrame);sliceFrame=0;gesture=null;cancelWeapon103();const marks=[...d.base.marks];marks[tapHit.i]=0;inputMarks.set(d.id,marks);showProposal({valid:true,marks,events:[],paths:[]},d.id);actionQueue.push({id:d.id,index:tapHit.i,kind:'heal'});processSliceQueue();
-  }else{const q=cardPoint(d.id,d.last);if(q)d.points.push(q);flushSlice();gesture=null;if(d.result?.valid){inputMarks.set(d.id,[...d.result.marks]);actionQueue.push({id:d.id,points:d.points,extraRadius:d.extraRadius});processSliceQueue();}else cancelProposal();}
+  }else{const q=cardPoint(d.id,d.last);if(q)d.points.push(q);flushSlice();gesture=null;if(d.result?.valid){inputMarks.set(d.id,[...d.result.marks]);actionQueue.push({id:d.id,points:d.points,extraRadius:d.extraRadius});processSliceQueue();}else{if(d.result?.message)toast(d.result.message);cancelProposal();}}
  }
  else{gesture=null;if(Math.hypot(d.last.x-d.from.x,d.last.y-d.from.y)<10&&d.index!==null)focusEnemy(d.index);}
  pointers.clear();updateChrome();
@@ -544,9 +643,9 @@ function paintWeapon103(x,y){
  const f=current();if(!f)return;const hit=nearestPoint({x,y},pointData(f.id,true));
  if(!hit){weaponPreview103=null;baseCancel103();$('forecast-copy').textContent='点击一个命中点';$('confirm-track').disabled=true;return;}
  if(weaponPreview103?.id===f.id&&weaponPreview103.index===hit.i)return;
- const t=template(f),result=B.preview(t,f,attack(),state.tier,hit.i);weaponPreview103={id:f.id,index:hit.i,result,base:JSON.stringify(f.marks),attack:JSON.stringify(attack()),tier:state.tier};
+ const t=template(f),result=B.preview(t,f,attack(),state.tier,hit.i,spiritOverride===f.id);weaponPreview103={id:f.id,index:hit.i,result,base:B.signature(f),attack:JSON.stringify(attack()),tier:state.tier};
  showProposal(result,f.id);$('attack-forecast').hidden=false;$('confirm-track').disabled=!result.valid;
- $('forecast-copy').textContent=result.valid?[result.wounds?result.wounds+'处命中':'',result.armor?result.armor+'处破甲':'',result.weak.length?result.weak.length+'处弱点':''].filter(Boolean).join(' · '):'此点不符合轨迹起点，请换一个命中点';
+ $('forecast-copy').textContent=result.message||(result.valid?[result.wounds?result.wounds+'处命中':'',result.armor?result.armor+'处破甲':'',result.weak.length?result.weak.length+'处弱点':''].filter(Boolean).join(' · '):'此点不符合轨迹起点，请换一个命中点');
 }
 $('track-tray').addEventListener('click',e=>{const b=e.target.closest('[data-track]');if(!b||pending)return;cancelCurrentGesture();unlockAudio();chooseTrack104(b.dataset.track);});
 $('stage').addEventListener('pointerdown',e=>{
@@ -556,10 +655,11 @@ $('stage').addEventListener('pointerdown',e=>{
 },true);
 $('confirm-track').onclick=async()=>{
  const p=weaponPreview103,f=current();if(!p||!p.result.valid||pending)return;
- if(f?.id!==p.id||JSON.stringify(f.marks)!==p.base||JSON.stringify(attack())!==p.attack){cancelWeapon103();toast('战斗记录已变化，请重新预览');return;}
- const result=B.preview(template(f),f,attack(),p.tier,p.index);if(!result.valid){cancelWeapon103();return;}
- if(await mutate(s=>{const target=s.foes.find(x=>x.id===p.id);if(!target)throw Error('敌人已被移出');B.record(target,result.marks);},true)){
-  cancelWeapon103();for(const e of result.events){strike(p.id,e);playCue('hit',e);}for(const c of result.criticals){flashCritical(p.id,c,result.paths);playCue('critical');}paintAll();updateThumbnails();haptic('select');if(result.weak.length)toast('请结算 '+result.weak.length+' 处弱点效果');if(result.defeated)playCue('victory');
+ if(f?.id!==p.id||B.signature(f)!==p.base||JSON.stringify(attack())!==p.attack){cancelWeapon103();toast('战斗记录已变化，请重新预览');return;}
+ const result=B.preview(template(f),f,attack(),p.tier,p.index,spiritOverride===f.id);if(!result.valid){cancelWeapon103();return;}
+ if(await mutate(s=>{const target=s.foes.find(x=>x.id===p.id);if(!target)throw Error('敌人已被移出');B.record(target,result.marks,result.effects);},true)){
+  if(spiritOverride===f.id)spiritOverride=null;
+  cancelWeapon103();for(const e of result.events){strike(p.id,e);playCue('hit',e);}for(const c of result.criticals){flashCritical(p.id,c,result.paths);playCue('critical');}reconcileCards();haptic('select');reportAttack(template(f),result);
  }
 };
 $('cancel-track').onclick=cancelWeapon103;
@@ -573,7 +673,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||
 document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelWeapon103();});
 window.addEventListener('pagehide',()=>{cancelWeapon103();cancelAnimationFrame(editorTween);editorPointers.clear();});
 const baseRemote103=applyRemote;
-applyRemote=function(data){const prior=current(),before=JSON.stringify(prior?.marks),id=prior?.id;const selectedAttack=JSON.stringify(attack());baseRemote103(data);if(current()?.id!==id||JSON.stringify(current()?.marks)!==before||JSON.stringify(attack())!==selectedAttack)cancelWeapon103();};
+applyRemote=function(data){const prior=current(),before=prior&&B.signature(prior),id=prior?.id;const selectedAttack=JSON.stringify(attack());baseRemote103(data);const next=current();if(next?.id!==id||(next&&B.signature(next))!==before||JSON.stringify(attack())!==selectedAttack)cancelWeapon103();};
 
 function back(){if(!$('modal').hidden){modalBack();return;}if(scene==='overview'&&state.foes.length){focusEnemy(state.selected);return;}if(window.AndroidCombat)AndroidCombat.close();else if(location.pathname.startsWith('/combat'))location.href='/';}
 async function refreshBrowserSession(){if(window.AndroidCombat||closed)return;try{const response=await fetch('/api/combat',{cache:'no-store'});if(!response.ok){if(response.status===401&&location.pathname.startsWith('/combat/'))location.replace('/');return;}const envelope=await response.json();if(envelope.theme)for(const[key,value]of Object.entries({paper:envelope.theme.paper,ink:envelope.theme.ink,muted:envelope.theme.muted,line:envelope.theme.line,pine:envelope.theme['accent-text'],solid:envelope.theme.accent,sage:envelope.theme.tint,card:envelope.theme.tint,accent:envelope.theme.tint}))if(typeof value==='string'&&/^#[a-f0-9]{6}$/i.test(value))document.documentElement.style.setProperty('--'+key,value);envelope.browser=true;onSession(envelope);}catch{if(session.browser&&session.connected){session.connected=false;renderSession();}}}
