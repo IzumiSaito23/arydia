@@ -1,6 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../dist'),handlers={},values=new Map(),nodes=new Map();let modal,state;
 const ctx={console,Date,Math,Set,Map,setTimeout,clearTimeout,URL,crypto:require('node:crypto').webcrypto};ctx.window=ctx;
+ctx.addEventListener=(type,fn)=>{handlers[type]=fn;};
 ctx.document={addEventListener(type,fn){handlers[type]=fn;},getElementById(id){if(!nodes.has(id))nodes.set(id,{addEventListener(){},checked:false});return nodes.get(id);},querySelectorAll(){return[];},body:{classList:{add(){},remove(){}}}};
 ctx.localStorage={getItem:key=>values.get(key)||null,setItem:(key,value)=>values.set(key,String(value)),removeItem:key=>values.delete(key)};
 ctx.fetch=async file=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,file),'utf8'))});vm.createContext(ctx);

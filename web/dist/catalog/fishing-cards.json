@@ -23,8 +23,8 @@
               "text": "旅行前往岩誓村。"
             },
             {
-              "kind": "body",
-              "text": "当与人物-9相邻时抽取事件-74。"
+              "kind": "instruction",
+              "text": "当与人物-9 相邻时，抽取事件-74。"
             },
             {
               "kind": "body",
@@ -35,10 +35,10 @@
           "physicalSide": "front",
           "label": "正面",
           "proofread": true,
-          "workbookText": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9相邻时抽取事件-74。\n来了便知真假！"
+          "workbookText": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9 相邻时，抽取事件-74。\n来了便知真假！"
         }
       ],
-      "search": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9相邻时抽取事件-74。\n来了便知真假！",
+      "search": "传奇垂钓\n“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9 相邻时，抽取事件-74。\n来了便知真假！",
       "workbookRows": []
     },
     {
@@ -941,47 +941,43 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-1-front.webp",
+              "asset": "cards/fishing/fish-1-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-1 图鉴",
-              "text": "鱼类-1 图鉴"
+              "card": "旧靴子",
+              "text": "旧靴子插画"
+            },
+            {
+              "kind": "body",
+              "text": "抽取时进行感知 12 检定。失败：将此卡放到鱼类卡组底部。成功：刷新钓竿上的 1 个标记方块，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-1/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "抽取时进行感知 12 检定。失败：将此卡放到鱼类卡组底部。成功：刷新钓竿上的 1 个标记方块，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "旧靴子",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-1-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-1 可垂钓地点",
-              "text": "鱼类-1 可垂钓地点"
+              "kind": "body",
+              "text": "你可在所有可垂钓地点捕获本物品。"
             }
           ],
           "source": "fishing/FISH-1/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "你可在所有可垂钓地点捕获本物品。"
         }
       ],
-      "search": "\n",
+      "search": "抽取时进行感知 12 检定。失败：将此卡放到鱼类卡组底部。成功：刷新钓竿上的 1 个标记方块，然后将此卡放到鱼类卡组底部。\n你可在所有可垂钓地点捕获本物品。",
       "workbookRows": []
     },
     {
@@ -1000,47 +996,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-2-front.webp",
+              "asset": "cards/fishing/fish-2-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                708
               ],
-              "card": "鱼类-2 图鉴",
-              "text": "鱼类-2 图鉴"
+              "card": "瓶中字条",
+              "text": "瓶中字条插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "获得键钥-148，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-2/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-148，然后移除此卡。"
         },
         {
           "title": "瓶中字条",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-2-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-2 可垂钓地点",
-              "text": "鱼类-2 可垂钓地点"
+              "kind": "body",
+              "text": "大型-1、大型-5、大型-62、大型-70、大型-81"
+            },
+            {
+              "kind": "body",
+              "text": "中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-55、小型-84"
+            },
+            {
+              "kind": "body",
+              "text": "长条-13、长条-14、长条-67"
             }
           ],
           "source": "fishing/FISH-2/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-148，然后移除此卡。\n大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67",
       "workbookRows": []
     },
     {
@@ -1059,47 +1075,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-3-front.webp",
+              "asset": "cards/fishing/fish-3-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-3 图鉴",
-              "text": "鱼类-3 图鉴"
+              "card": "孔雀鱼（Guppy）",
+              "text": "孔雀鱼（Guppy）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "谦逊：此鱼不会获得强化指示物。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满 1 个药水，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-3/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 1\n谦逊：此鱼不会获得强化指示物。\n捕获奖励\n完全回满 1 个药水，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "孔雀鱼（Guppy）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-3-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-3 可垂钓地点",
-              "text": "鱼类-3 可垂钓地点"
+              "kind": "body",
+              "text": "大型-1、大型-5、大型-62、大型-70、大型-81"
+            },
+            {
+              "kind": "body",
+              "text": "中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-55、小型-84"
+            },
+            {
+              "kind": "body",
+              "text": "长条-13、长条-14、长条-67"
             }
           ],
           "source": "fishing/FISH-3/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 1\n谦逊：此鱼不会获得强化指示物。\n捕获奖励\n完全回满 1 个药水，然后将此卡放到鱼类卡组底部。\n大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67",
       "workbookRows": []
     },
     {
@@ -1118,47 +1154,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-4-front.webp",
+              "asset": "cards/fishing/fish-4-art.webp",
               "box": [
                 0,
                 0,
-                586,
-                804
+                1172,
+                692
               ],
-              "card": "鱼类-4 图鉴",
-              "text": "鱼类-4 图鉴"
+              "card": "黄油鱼（Butterfin）",
+              "text": "黄油鱼（Butterfin）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "滑溜：当移除 1 个鱼鳞指示物时，进行敏捷 8 或智力 8 检定。失败时，保留该鱼鳞。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满 1 个小包，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-4/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n滑溜：当移除 1 个鱼鳞指示物时，进行敏捷 8 或智力 8 检定。失败时，保留该鱼鳞。\n捕获奖励\n完全回满 1 个小包，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "黄油鱼（Butterfin）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-4-back.webp",
-              "box": [
-                0,
-                0,
-                584,
-                819
-              ],
-              "card": "鱼类-4 可垂钓地点",
-              "text": "鱼类-4 可垂钓地点"
+              "kind": "body",
+              "text": "大型-1、大型-5、大型-62、大型-70、大型-81"
+            },
+            {
+              "kind": "body",
+              "text": "中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-55、小型-84"
+            },
+            {
+              "kind": "body",
+              "text": "长条-13、长条-14、长条-67"
             }
           ],
           "source": "fishing/FISH-4/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n滑溜：当移除 1 个鱼鳞指示物时，进行敏捷 8 或智力 8 检定。失败时，保留该鱼鳞。\n捕获奖励\n完全回满 1 个小包，然后将此卡放到鱼类卡组底部。\n大型-1、大型-5、大型-62、大型-70、大型-81\n中型-1、中型-8、中型-9、中型-18、中型-38、中型-68、中型-70\n小型-27、小型-55、小型-84\n长条-13、长条-14、长条-67",
       "workbookRows": []
     },
     {
@@ -1177,47 +1233,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-5-front.webp",
+              "asset": "cards/fishing/fish-5-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-5 图鉴",
-              "text": "鱼类-5 图鉴"
+              "card": "须鱼（Whiskerfish）",
+              "text": "须鱼（Whiskerfish）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "光滑：展示首领威胁卡时，逃离 2。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "冒险模式：刷新所有旅行指示物，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-5/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n光滑：展示首领威胁卡时，逃离 2。\n捕获奖励\n冒险模式：刷新所有旅行指示物，然后移除此卡。"
         },
         {
           "title": "须鱼（Whiskerfish）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-5-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-5 可垂钓地点",
-              "text": "鱼类-5 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-84、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-5/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n光滑：展示首领威胁卡时，逃离 2。\n捕获奖励\n冒险模式：刷新所有旅行指示物，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1236,47 +1312,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-6-front.webp",
+              "asset": "cards/fishing/fish-6-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-6 图鉴",
-              "text": "鱼类-6 图鉴"
+              "card": "毛背鲤（Shaggy Carp）",
+              "text": "毛背鲤（Shaggy Carp）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "饥肠辘辘：轮次开始时，消耗鱼饵。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "冒险模式：所有流放者完全回满体力，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-6/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 2\n饥肠辘辘：轮次开始时，消耗鱼饵。\n捕获奖励\n冒险模式：所有流放者完全回满体力，然后移除此卡。"
         },
         {
           "title": "毛背鲤（Shaggy Carp）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-6-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-6 可垂钓地点",
-              "text": "鱼类-6 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-84、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-6/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 2\n饥肠辘辘：轮次开始时，消耗鱼饵。\n捕获奖励\n冒险模式：所有流放者完全回满体力，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1295,47 +1391,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-7-front.webp",
+              "asset": "cards/fishing/fish-7-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-7 图鉴",
-              "text": "鱼类-7 图鉴"
+              "card": "拉链鱼（Zipperfin）",
+              "text": "拉链鱼（Zipperfin）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "灵活：鱼类回合后，获得 1 个强化指示物。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：变位 1 格，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-7/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 1\n灵活：鱼类回合后，获得 1 个强化指示物。\n捕获奖励\n即时行动：变位 1 格，然后移除此卡。"
         },
         {
           "title": "拉链鱼（Zipperfin）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-7-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-7 可垂钓地点",
-              "text": "鱼类-7 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-84、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-7/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 1\n灵活：鱼类回合后，获得 1 个强化指示物。\n捕获奖励\n即时行动：变位 1 格，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-62、大型-68、大型-69、大型-77、大型-80、大型-82\n中型-8、中型-9、中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-84、小型-88\n长条-14、长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1354,47 +1470,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-8-front.webp",
+              "asset": "cards/fishing/fish-8-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-8 图鉴",
-              "text": "鱼类-8 图鉴"
+              "card": "盆地石鲈（Basin Grouper）",
+              "text": "盆地石鲈（Basin Grouper）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "不安：鱼类回合后，如果威胁和连击正好相差 1 个位置，则逃离 1。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "与岩誓村的人物-8 对话时，获得 3{kae}，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-8/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n不安：鱼类回合后，如果威胁和连击正好相差 1 个位置，则逃离 1。\n捕获奖励\n与岩誓村的人物-8 对话时，获得 3{kae}，然后移除此卡。"
         },
         {
           "title": "盆地石鲈（Basin Grouper）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-8-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-8 可垂钓地点",
-              "text": "鱼类-8 可垂钓地点"
+              "kind": "body",
+              "text": "大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-1、中型-18、中型-19、中型-28、中型-36、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-51、小型-55、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
             }
           ],
           "source": "fishing/FISH-8/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90\n中型-1、中型-18、中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-55、小型-93、小型-94\n长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n不安：鱼类回合后，如果威胁和连击正好相差 1 个位置，则逃离 1。\n捕获奖励\n与岩誓村的人物-8 对话时，获得 3{kae}，然后移除此卡。\n大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90\n中型-1、中型-18、中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-55、小型-93、小型-94\n长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62",
       "workbookRows": []
     },
     {
@@ -1413,47 +1549,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-9-front.webp",
+              "asset": "cards/fishing/fish-9-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-9 图鉴",
-              "text": "鱼类-9 图鉴"
+              "card": "虚幻彩虹（Hollow Rainbow）",
+              "text": "虚幻彩虹（Hollow Rainbow）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "虚幻：当移除 1 个鱼鳞指示物时，将威胁设为 1，将连击设为 6。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "反应：任意流放者为一次检定投掷一颗 20 面骰后，重掷该骰子，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-9/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 3\n虚幻：当移除 1 个鱼鳞指示物时，将威胁设为 1，将连击设为 6。\n捕获奖励\n反应：任意流放者为一次检定投掷一颗 20 面骰后，重掷该骰子，然后移除此卡。"
         },
         {
           "title": "虚幻彩虹（Hollow Rainbow）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-9-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-9 可垂钓地点",
-              "text": "鱼类-9 可垂钓地点"
+              "kind": "body",
+              "text": "大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-1、中型-18、中型-19、中型-28、中型-36、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-51、小型-55、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
             }
           ],
           "source": "fishing/FISH-9/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90\n中型-1、中型-18、中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-55、小型-93、小型-94\n长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 3\n虚幻：当移除 1 个鱼鳞指示物时，将威胁设为 1，将连击设为 6。\n捕获奖励\n反应：任意流放者为一次检定投掷一颗 20 面骰后，重掷该骰子，然后移除此卡。\n大型-1、大型-5、大型-20、大型-28、大型-38、大型-39、大型-70、大型-77、大型-78、大型-90\n中型-1、中型-18、中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-55、小型-93、小型-94\n长条-13、长条-15、长条-29、长条-30、长条-32、长条-33、长条-62",
       "workbookRows": []
     },
     {
@@ -1472,47 +1628,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-10-front.webp",
+              "asset": "cards/fishing/fish-10-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-10 图鉴",
-              "text": "鱼类-10 图鉴"
+              "card": "光鱼（Glowfin）",
+              "text": "光鱼（Glowfin）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "发光：展示钓技卡后，先攻权编号最低的流放者展示并结算钓技卡组顶部的卡牌，然后正常结算本轮卡牌。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "行动：在一张敌人网格卡上放置一个标记。本场战斗中，攻击该敌人的掷骰获得 +5 加成，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-10/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n发光：展示钓技卡后，先攻权编号最低的流放者展示并结算钓技卡组顶部的卡牌，然后正常结算本轮卡牌。\n捕获奖励\n行动：在一张敌人网格卡上放置一个标记。本场战斗中，攻击该敌人的掷骰获得 +5 加成，然后移除此卡。"
         },
         {
           "title": "光鱼（Glowfin）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-10-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-10 可垂钓地点",
-              "text": "鱼类-10 可垂钓地点"
+              "kind": "body",
+              "text": "长条-12"
             }
           ],
           "source": "fishing/FISH-10/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "长条-12"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n发光：展示钓技卡后，先攻权编号最低的流放者展示并结算钓技卡组顶部的卡牌，然后正常结算本轮卡牌。\n捕获奖励\n行动：在一张敌人网格卡上放置一个标记。本场战斗中，攻击该敌人的掷骰获得 +5 加成，然后移除此卡。\n长条-12",
       "workbookRows": []
     },
     {
@@ -1531,47 +1695,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-11-front.webp",
+              "asset": "cards/fishing/fish-11-art.webp",
               "box": [
                 0,
                 0,
-                586,
-                804
+                1172,
+                692
               ],
-              "card": "鱼类-11 图鉴",
-              "text": "鱼类-11 图鉴"
+              "card": "幽灵鱼（Ghost Fish）",
+              "text": "幽灵鱼（Ghost Fish）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "异变：按先攻权编号由高到低的顺序结算钓技卡。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "反应：所有流放者的生命均为 0 时，在一名流放者的回合开始时使用。每名流放者治疗 3 点生命，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-11/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n异变：按先攻权编号由高到低的顺序结算钓技卡。\n捕获奖励\n反应：所有流放者的生命均为 0 时，在一名流放者的回合开始时使用。每名流放者治疗 3 点生命，然后移除此卡。"
         },
         {
           "title": "幽灵鱼（Ghost Fish）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-11-back.webp",
-              "box": [
-                0,
-                0,
-                584,
-                819
-              ],
-              "card": "鱼类-11 可垂钓地点",
-              "text": "鱼类-11 可垂钓地点"
+              "kind": "body",
+              "text": "中型-999"
             }
           ],
           "source": "fishing/FISH-11/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "中型-999"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n异变：按先攻权编号由高到低的顺序结算钓技卡。\n捕获奖励\n反应：所有流放者的生命均为 0 时，在一名流放者的回合开始时使用。每名流放者治疗 3 点生命，然后移除此卡。\n中型-999",
       "workbookRows": []
     },
     {
@@ -1590,47 +1762,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-12-front.webp",
+              "asset": "cards/fishing/fish-12-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-12 图鉴",
-              "text": "鱼类-12 图鉴"
+              "card": "瓶中字条",
+              "text": "瓶中字条插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "获得键钥-149，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-12/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-149，然后移除此卡。"
         },
         {
           "title": "瓶中字条",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-12-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-12 可垂钓地点",
-              "text": "鱼类-12 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-21、长条-29、长条-32、长条-33"
             }
           ],
           "source": "fishing/FISH-12/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-149，然后移除此卡。\n大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33",
       "workbookRows": []
     },
     {
@@ -1649,47 +1841,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-13-front.webp",
+              "asset": "cards/fishing/fish-13-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                708
               ],
-              "card": "鱼类-13 图鉴",
-              "text": "鱼类-13 图鉴"
+              "card": "三文鱼（Salmon）",
+              "text": "三文鱼（Salmon）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "稳定：将威胁卡上所有的「1」视为「2」。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满 2 个药水，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-13/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 1\n稳定：将威胁卡上所有的「1」视为「2」。\n捕获奖励\n完全回满 2 个药水，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "三文鱼（Salmon）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-13-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-13 可垂钓地点",
-              "text": "鱼类-13 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-21、长条-29、长条-32、长条-33"
             }
           ],
           "source": "fishing/FISH-13/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 1\n稳定：将威胁卡上所有的「1」视为「2」。\n捕获奖励\n完全回满 2 个药水，然后将此卡放到鱼类卡组底部。\n大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33",
       "workbookRows": []
     },
     {
@@ -1708,47 +1920,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-14-front.webp",
+              "asset": "cards/fishing/fish-14-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-14 图鉴",
-              "text": "鱼类-14 图鉴"
+              "card": "红鳞鲟（Red-Scale Sturgeon）",
+              "text": "红鳞鲟（Red-Scale Sturgeon）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "神出鬼没：轮次开始时，逃离 1。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满 2 个小包，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-14/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 1\n神出鬼没：轮次开始时，逃离 1。\n捕获奖励\n完全回满 2 个小包，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "红鳞鲟（Red-Scale Sturgeon）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-14-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-14 可垂钓地点",
-              "text": "鱼类-14 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-21、长条-29、长条-32、长条-33"
             }
           ],
           "source": "fishing/FISH-14/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 1\n神出鬼没：轮次开始时，逃离 1。\n捕获奖励\n完全回满 2 个小包，然后将此卡放到鱼类卡组底部。\n大型-20、大型-21、大型-27、大型-28、大型-39、大型-79、大型-80、大型-90\n中型-19、中型-25、中型-26、中型-28、中型-36、中型-38、中型-41、中型-42、中型-67\n小型-20、小型-27、小型-34、小型-35、小型-49、小型-51、小型-93、小型-94\n长条-15、长条-21、长条-29、长条-32、长条-33",
       "workbookRows": []
     },
     {
@@ -1767,47 +1999,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-15-front.webp",
+              "asset": "cards/fishing/fish-15-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-15 图鉴",
-              "text": "鱼类-15 图鉴"
+              "card": "水晶鳟（Crystal Trout）",
+              "text": "水晶鳟（Crystal Trout）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "准备：在连击轨的 1、3、5 和 7 位置各放置 1 个磨损指示物。闪亮：鱼类回合后，若连击位于其中一个磨损指示物的位置，移除该磨损指示物并逃离 2。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "冒险模式：完全修复团队护甲的所有磨损，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-15/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n准备：在连击轨的 1、3、5 和 7 位置各放置 1 个磨损指示物。闪亮：鱼类回合后，若连击位于其中一个磨损指示物的位置，移除该磨损指示物并逃离 2。\n捕获奖励\n冒险模式：完全修复团队护甲的所有磨损，然后移除此卡。"
         },
         {
           "title": "水晶鳟（Crystal Trout）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-15-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-15 可垂钓地点",
-              "text": "鱼类-15 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-15/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n准备：在连击轨的 1、3、5 和 7 位置各放置 1 个磨损指示物。闪亮：鱼类回合后，若连击位于其中一个磨损指示物的位置，移除该磨损指示物并逃离 2。\n捕获奖励\n冒险模式：完全修复团队护甲的所有磨损，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1826,47 +2078,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-16-front.webp",
+              "asset": "cards/fishing/fish-16-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-16 图鉴",
-              "text": "鱼类-16 图鉴"
+              "card": "胡子梭（Bearded Pike）",
+              "text": "胡子梭（Bearded Pike）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "莫测：抽取首领威胁卡时，总是使威胁下降，无视钓技卡的移动方向。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "反应：进行一次基本攻击时，所有伤害变为穿甲伤害，且你的掷骰获得 +10 加成，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-16/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n莫测：抽取首领威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n反应：进行一次基本攻击时，所有伤害变为穿甲伤害，且你的掷骰获得 +10 加成，然后移除此卡。"
         },
         {
           "title": "胡子梭（Bearded Pike）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-16-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-16 可垂钓地点",
-              "text": "鱼类-16 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-16/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n莫测：抽取首领威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n反应：进行一次基本攻击时，所有伤害变为穿甲伤害，且你的掷骰获得 +10 加成，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1885,47 +2157,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-17-front.webp",
+              "asset": "cards/fishing/fish-17-art.webp",
               "box": [
                 0,
                 0,
-                586,
-                804
+                1172,
+                692
               ],
-              "card": "鱼类-17 图鉴",
-              "text": "鱼类-17 图鉴"
+              "card": "箭首鱼（Arrowhead）",
+              "text": "箭首鱼（Arrowhead）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "疏离：鱼类回合后，如果威胁和连击相隔 2 个或更多位置，获得 1 个强化指示物。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：本回合的远程攻击掷骰获得 +10 加成，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-17/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 2\n疏离：鱼类回合后，如果威胁和连击相隔 2 个或更多位置，获得 1 个强化指示物。\n捕获奖励\n即时行动：本回合的远程攻击掷骰获得 +10 加成，然后移除此卡。"
         },
         {
           "title": "箭首鱼（Arrowhead）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-17-back.webp",
-              "box": [
-                0,
-                0,
-                584,
-                820
-              ],
-              "card": "鱼类-17 可垂钓地点",
-              "text": "鱼类-17 可垂钓地点"
+              "kind": "body",
+              "text": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-25、中型-26、中型-41、中型-42、中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-20、小型-34、小型-35、小型-49、小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-21、长条-22、长条-38、长条-42、长条-56"
             }
           ],
           "source": "fishing/FISH-17/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 2\n疏离：鱼类回合后，如果威胁和连击相隔 2 个或更多位置，获得 1 个强化指示物。\n捕获奖励\n即时行动：本回合的远程攻击掷骰获得 +10 加成，然后移除此卡。\n大型-21、大型-27、大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-79、大型-80、大型-82\n中型-25、中型-26、中型-41、中型-42、中型-44、中型-52\n小型-20、小型-34、小型-35、小型-49、小型-88\n长条-21、长条-22、长条-38、长条-42、长条-56",
       "workbookRows": []
     },
     {
@@ -1944,47 +2236,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-18-front.webp",
+              "asset": "cards/fishing/fish-18-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                978
               ],
-              "card": "鱼类-18 图鉴",
-              "text": "鱼类-18 图鉴"
+              "card": "剑鱼（Swordfish）",
+              "text": "剑鱼（Swordfish）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "准备：在威胁轨的 2、4 和 6 位置各放置 1 个强化指示物。预备：鱼类回合后，若威胁位于其中一个强化指示物的位置，将该指示物移至鱼上。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：本回合的近战攻击掷骰获得 +10 加成，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-18/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 3\n准备：在威胁轨的 2、4 和 6 位置各放置 1 个强化指示物。预备：鱼类回合后，若威胁位于其中一个强化指示物的位置，将该指示物移至鱼上。\n捕获奖励\n即时行动：本回合的近战攻击掷骰获得 +10 加成，然后移除此卡。"
         },
         {
           "title": "剑鱼（Swordfish）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-18-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-18 可垂钓地点",
-              "text": "鱼类-18 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-28、中型-36、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
             }
           ],
           "source": "fishing/FISH-18/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 3\n准备：在威胁轨的 2、4 和 6 位置各放置 1 个强化指示物。预备：鱼类回合后，若威胁位于其中一个强化指示物的位置，将该指示物移至鱼上。\n捕获奖励\n即时行动：本回合的近战攻击掷骰获得 +10 加成，然后移除此卡。\n大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62",
       "workbookRows": []
     },
     {
@@ -2003,47 +2315,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-19-front.webp",
+              "asset": "cards/fishing/fish-19-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-19 图鉴",
-              "text": "鱼类-19 图鉴"
+              "card": "浪尖金枪鱼（Whitecap Tuna）",
+              "text": "浪尖金枪鱼（Whitecap Tuna）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "顽固：此鱼在威胁为 3 或 4 时逃脱，取代通常的 0 或 7。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：任意一名流放者可以移动 5 格，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-19/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n顽固：此鱼在威胁为 3 或 4 时逃脱，取代通常的 0 或 7。\n捕获奖励\n即时行动：任意一名流放者可以移动 5 格，然后移除此卡。"
         },
         {
           "title": "浪尖金枪鱼（Whitecap Tuna）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-19-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-19 可垂钓地点",
-              "text": "鱼类-19 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-28、中型-36、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
             }
           ],
           "source": "fishing/FISH-19/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n顽固：此鱼在威胁为 3 或 4 时逃脱，取代通常的 0 或 7。\n捕获奖励\n即时行动：任意一名流放者可以移动 5 格，然后移除此卡。\n大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62",
       "workbookRows": []
     },
     {
@@ -2062,47 +2394,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-20-front.webp",
+              "asset": "cards/fishing/fish-20-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                868
               ],
-              "card": "鱼类-20 图鉴",
-              "text": "鱼类-20 图鉴"
+              "card": "飞鱼（Flying Fish）",
+              "text": "飞鱼（Flying Fish）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "飞羽：鱼类回合前，逃离 1。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：变位 2 格，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-20/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n飞羽：鱼类回合前，逃离 1。\n捕获奖励\n即时行动：变位 2 格，然后移除此卡。"
         },
         {
           "title": "飞鱼（Flying Fish）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-20-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                820
-              ],
-              "card": "鱼类-20 可垂钓地点",
-              "text": "鱼类-20 可垂钓地点"
+              "kind": "body",
+              "text": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90"
+            },
+            {
+              "kind": "body",
+              "text": "中型-19、中型-28、中型-36、中型-67"
+            },
+            {
+              "kind": "body",
+              "text": "小型-27、小型-51、小型-93、小型-94"
+            },
+            {
+              "kind": "body",
+              "text": "长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
             }
           ],
           "source": "fishing/FISH-20/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n飞羽：鱼类回合前，逃离 1。\n捕获奖励\n即时行动：变位 2 格，然后移除此卡。\n大型-20、大型-28、大型-38、大型-39、大型-77、大型-78、大型-90\n中型-19、中型-28、中型-36、中型-67\n小型-27、小型-51、小型-93、小型-94\n长条-15、长条-29、长条-30、长条-32、长条-33、长条-62",
       "workbookRows": []
     },
     {
@@ -2121,47 +2473,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-21-front.webp",
+              "asset": "cards/fishing/fish-21-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                756
               ],
-              "card": "鱼类-21 图鉴",
-              "text": "鱼类-21 图鉴"
+              "card": "落井地精",
+              "text": "落井地精插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "井水飞溅：地精回合后，将威胁朝连击移动 1 格。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "地精向你鞠躬，把零钱包放在你脚边后匆匆跑开。获得 5{kae}，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-21/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n井水飞溅：地精回合后，将威胁朝连击移动 1 格。\n捕获奖励\n地精向你鞠躬，把零钱包放在你脚边后匆匆跑开。获得 5{kae}，然后移除此卡。"
         },
         {
           "title": "落井地精",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-21-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-21 可垂钓地点",
-              "text": "鱼类-21 可垂钓地点"
+              "kind": "body",
+              "text": "大型-32"
             }
           ],
           "source": "fishing/FISH-21/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-32"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n井水飞溅：地精回合后，将威胁朝连击移动 1 格。\n捕获奖励\n地精向你鞠躬，把零钱包放在你脚边后匆匆跑开。获得 5{kae}，然后移除此卡。\n大型-32",
       "workbookRows": []
     },
     {
@@ -2180,47 +2540,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-22-front.webp",
+              "asset": "cards/fishing/fish-22-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-22 图鉴",
-              "text": "鱼类-22 图鉴"
+              "card": "玄锦鲤（Mystic Koi）",
+              "text": "玄锦鲤（Mystic Koi）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "纷乱：无视先攻权。洗混打出的钓技卡并按随机顺序结算。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "刷新所有旅行指示物，移除威胁卡组中所有威胁-90，加入两张威胁-77，然后把玄锦鲤放回池塘（移除此卡）。"
             }
           ],
           "source": "fishing/FISH-22/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n纷乱：无视先攻权。洗混打出的钓技卡并按随机顺序结算。\n捕获奖励\n刷新所有旅行指示物，移除威胁卡组中所有威胁-90，加入两张威胁-77，然后把玄锦鲤放回池塘（移除此卡）。"
         },
         {
           "title": "玄锦鲤（Mystic Koi）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-22-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-22 可垂钓地点",
-              "text": "鱼类-22 可垂钓地点"
+              "kind": "body",
+              "text": "中型-40"
             }
           ],
           "source": "fishing/FISH-22/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "中型-40"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n纷乱：无视先攻权。洗混打出的钓技卡并按随机顺序结算。\n捕获奖励\n刷新所有旅行指示物，移除威胁卡组中所有威胁-90，加入两张威胁-77，然后把玄锦鲤放回池塘（移除此卡）。\n中型-40",
       "workbookRows": []
     },
     {
@@ -2239,47 +2607,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-23-front.webp",
+              "asset": "cards/fishing/fish-23-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-23 图鉴",
-              "text": "鱼类-23 图鉴"
+              "card": "深海璀钻（Deepwater Diamond）",
+              "text": "深海璀钻（Deepwater Diamond）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 0 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "复原：当移除 1 个鱼鳞指示物时，将其放在威胁轨的 1 至 6 任意位置。鱼类回合后，若威胁与一个鱼鳞同位置，将该鱼鳞放回鱼上。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "与克利普顿十字路口的人物-61 对话时进行魅力检定。1–10 获得 4{kae}，11–16 获得 5{kae}，17+ 获得 6{kae}，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-23/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 0 · 鱼鳞 2\n复原：当移除 1 个鱼鳞指示物时，将其放在威胁轨的 1 至 6 任意位置。鱼类回合后，若威胁与一个鱼鳞同位置，将该鱼鳞放回鱼上。\n捕获奖励\n与克利普顿十字路口的人物-61 对话时进行魅力检定。1–10 获得 4{kae}，11–16 获得 5{kae}，17+ 获得 6{kae}，然后移除此卡。"
         },
         {
           "title": "深海璀钻（Deepwater Diamond）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-23-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-23 可垂钓地点",
-              "text": "鱼类-23 可垂钓地点"
+              "kind": "body",
+              "text": "小型-18、小型-19"
             }
           ],
           "source": "fishing/FISH-23/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "小型-18、小型-19"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 0 · 鱼鳞 2\n复原：当移除 1 个鱼鳞指示物时，将其放在威胁轨的 1 至 6 任意位置。鱼类回合后，若威胁与一个鱼鳞同位置，将该鱼鳞放回鱼上。\n捕获奖励\n与克利普顿十字路口的人物-61 对话时进行魅力检定。1–10 获得 4{kae}，11–16 获得 5{kae}，17+ 获得 6{kae}，然后移除此卡。\n小型-18、小型-19",
       "workbookRows": []
     },
     {
@@ -2298,47 +2674,59 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-24-front.webp",
+              "asset": "cards/fishing/fish-24-art.webp",
               "box": [
                 0,
                 0,
-                586,
-                804
+                1172,
+                692
               ],
-              "card": "鱼类-24 图鉴",
-              "text": "鱼类-24 图鉴"
+              "card": "骑鳗龙虾（Eel-Riding Lobster）",
+              "text": "骑鳗龙虾（Eel-Riding Lobster）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "和谐：鱼类回合后，如果威胁高于连击，闪躲。如果威胁低于连击，夹紧。闪躲：逃离 2。夹紧：获得 1 个强化指示物。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "行动：完全修复团队护甲的所有磨损，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-24/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n和谐：鱼类回合后，如果威胁高于连击，闪躲。如果威胁低于连击，夹紧。闪躲：逃离 2。夹紧：获得 1 个强化指示物。\n捕获奖励\n行动：完全修复团队护甲的所有磨损，然后移除此卡。"
         },
         {
           "title": "骑鳗龙虾（Eel-Riding Lobster）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-24-back.webp",
-              "box": [
-                0,
-                0,
-                584,
-                819
-              ],
-              "card": "鱼类-24 可垂钓地点",
-              "text": "鱼类-24 可垂钓地点"
+              "kind": "body",
+              "text": "大型-39"
+            },
+            {
+              "kind": "body",
+              "text": "小型-50、小型-51、小型-52"
             }
           ],
           "source": "fishing/FISH-24/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-39\n小型-50、小型-51、小型-52"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n和谐：鱼类回合后，如果威胁高于连击，闪躲。如果威胁低于连击，夹紧。闪躲：逃离 2。夹紧：获得 1 个强化指示物。\n捕获奖励\n行动：完全修复团队护甲的所有磨损，然后移除此卡。\n大型-39\n小型-50、小型-51、小型-52",
       "workbookRows": []
     },
     {
@@ -2357,47 +2745,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-25-front.webp",
+              "asset": "cards/fishing/fish-25-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-25 图鉴",
-              "text": "鱼类-25 图鉴"
+              "card": "瓶中字条",
+              "text": "瓶中字条插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 3 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "获得键钥-150，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-25/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 3 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-150，然后移除此卡。"
         },
         {
           "title": "瓶中字条",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-25-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-25 可垂钓地点",
-              "text": "鱼类-25 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-25/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 3 · 鱼鳞 1\n准备：将威胁设为 7。浮沉：抽取威胁卡时，总是使威胁下降，无视钓技卡的移动方向。\n捕获奖励\n获得键钥-150，然后移除此卡。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2416,47 +2824,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-26-front.webp",
+              "asset": "cards/fishing/fish-26-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                708
               ],
-              "card": "鱼类-26 图鉴",
-              "text": "鱼类-26 图鉴"
+              "card": "呆口鲈（Slackjaw Bass）",
+              "text": "呆口鲈（Slackjaw Bass）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 1"
+            },
+            {
+              "kind": "body",
+              "text": "愿者上钩：鱼类回合后，若当前没有鱼饵，逃离 1。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满所有小包，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-26/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 1\n愿者上钩：鱼类回合后，若当前没有鱼饵，逃离 1。\n捕获奖励\n完全回满所有小包，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "呆口鲈（Slackjaw Bass）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-26-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-26 可垂钓地点",
-              "text": "鱼类-26 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-26/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 1\n愿者上钩：鱼类回合后，若当前没有鱼饵，逃离 1。\n捕获奖励\n完全回满所有小包，然后将此卡放到鱼类卡组底部。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2475,47 +2903,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-27-front.webp",
+              "asset": "cards/fishing/fish-27-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-27 图鉴",
-              "text": "鱼类-27 图鉴"
+              "card": "环河鳗（Rim-River Eel）",
+              "text": "环河鳗（Rim-River Eel）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 1 · 鱼鳞 0"
+            },
+            {
+              "kind": "body",
+              "text": "猛冲：每当展示一张带 X 的威胁卡时，额外抽取一张威胁卡。先结算 X 卡，再额外抽取一张。此能力可能连续触发。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "完全回满所有药水，然后将此卡放到鱼类卡组底部。"
             }
           ],
           "source": "fishing/FISH-27/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 1 · 鱼鳞 0\n猛冲：每当展示一张带 X 的威胁卡时，额外抽取一张威胁卡。先结算 X 卡，再额外抽取一张。此能力可能连续触发。\n捕获奖励\n完全回满所有药水，然后将此卡放到鱼类卡组底部。"
         },
         {
           "title": "环河鳗（Rim-River Eel）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-27-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-27 可垂钓地点",
-              "text": "鱼类-27 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-27/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 1 · 鱼鳞 0\n猛冲：每当展示一张带 X 的威胁卡时，额外抽取一张威胁卡。先结算 X 卡，再额外抽取一张。此能力可能连续触发。\n捕获奖励\n完全回满所有药水，然后将此卡放到鱼类卡组底部。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-69、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2534,47 +2982,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-28-front.webp",
+              "asset": "cards/fishing/fish-28-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                692
               ],
-              "card": "鱼类-28 图鉴",
-              "text": "鱼类-28 图鉴"
+              "card": "法师鱼（Magefin）",
+              "text": "法师鱼（Magefin）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "移形：展示首领威胁卡时，调换连击和威胁的数值，然后继续结算。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "冒险模式：刷新一个技能或物品，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-28/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 3\n移形：展示首领威胁卡时，调换连击和威胁的数值，然后继续结算。\n捕获奖励\n冒险模式：刷新一个技能或物品，然后移除此卡。"
         },
         {
           "title": "法师鱼（Magefin）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-28-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-28 可垂钓地点",
-              "text": "鱼类-28 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-28/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 3\n移形：展示首领威胁卡时，调换连击和威胁的数值，然后继续结算。\n捕获奖励\n冒险模式：刷新一个技能或物品，然后移除此卡。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2593,47 +3061,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-29-front.webp",
+              "asset": "cards/fishing/fish-29-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                708
               ],
-              "card": "鱼类-29 图鉴",
-              "text": "鱼类-29 图鉴"
+              "card": "牛头鱼（Bullhead）",
+              "text": "牛头鱼（Bullhead）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "狂暴咬钩：每当布下鱼饵时，获得 1 个强化指示物。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "即时行动：一名流放者本回合移动时可以免费移动 5 格，并可穿过敌人。不能停留在敌人所在的格子。每穿过一个敌人，获得 1{combo}，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-29/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 3\n狂暴咬钩：每当布下鱼饵时，获得 1 个强化指示物。\n捕获奖励\n即时行动：一名流放者本回合移动时可以免费移动 5 格，并可穿过敌人。不能停留在敌人所在的格子。每穿过一个敌人，获得 1{combo}，然后移除此卡。"
         },
         {
           "title": "牛头鱼（Bullhead）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-29-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-29 可垂钓地点",
-              "text": "鱼类-29 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-29/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 3\n狂暴咬钩：每当布下鱼饵时，获得 1 个强化指示物。\n捕获奖励\n即时行动：一名流放者本回合移动时可以免费移动 5 格，并可穿过敌人。不能停留在敌人所在的格子。每穿过一个敌人，获得 1{combo}，然后移除此卡。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2652,47 +3140,67 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-30-front.webp",
+              "asset": "cards/fishing/fish-30-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                840
               ],
-              "card": "鱼类-30 图鉴",
-              "text": "鱼类-30 图鉴"
+              "card": "巨型雀鳝（Monster Gar）",
+              "text": "巨型雀鳝（Monster Gar）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 2 · 鱼鳞 2"
+            },
+            {
+              "kind": "body",
+              "text": "凶险：当流放者展示一张先攻权为 8 或更低的钓技卡时，该流放者承受 5 点火焰伤害（红骰）。捕获本鱼过程中，流放者无法治疗生命。生命为 0 的流放者无法结算自己的钓技卡。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "冒险模式：与一名兵器匠相邻时，免费获得其提供的其中一件物品，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-30/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 2 · 鱼鳞 2\n凶险：当流放者展示一张先攻权为 8 或更低的钓技卡时，该流放者承受 5 点火焰伤害（红骰）。捕获本鱼过程中，流放者无法治疗生命。生命为 0 的流放者无法结算自己的钓技卡。\n捕获奖励\n冒险模式：与一名兵器匠相邻时，免费获得其提供的其中一件物品，然后移除此卡。"
         },
         {
           "title": "巨型雀鳝（Monster Gar）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-30-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-30 可垂钓地点",
-              "text": "鱼类-30 可垂钓地点"
+              "kind": "body",
+              "text": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82"
+            },
+            {
+              "kind": "body",
+              "text": "中型-44、中型-52"
+            },
+            {
+              "kind": "body",
+              "text": "小型-88"
+            },
+            {
+              "kind": "body",
+              "text": "长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
             }
           ],
           "source": "fishing/FISH-30/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 2 · 鱼鳞 2\n凶险：当流放者展示一张先攻权为 8 或更低的钓技卡时，该流放者承受 5 点火焰伤害（红骰）。捕获本鱼过程中，流放者无法治疗生命。生命为 0 的流放者无法结算自己的钓技卡。\n捕获奖励\n冒险模式：与一名兵器匠相邻时，免费获得其提供的其中一件物品，然后移除此卡。\n大型-50、大型-52、大型-53、大型-54、大型-57、大型-59、大型-68、大型-82\n中型-44、中型-52\n小型-88\n长条-22、长条-38、长条-42、长条-56、长条-63、长条-64",
       "workbookRows": []
     },
     {
@@ -2711,47 +3219,63 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-31-front.webp",
+              "asset": "cards/fishing/fish-31-art.webp",
               "box": [
                 0,
                 0,
-                586,
-                804
+                1172,
+                692
               ],
-              "card": "鱼类-31 图鉴",
-              "text": "鱼类-31 图鉴"
+              "card": "静水蛭蛇",
+              "text": "静水蛭蛇插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 3 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "水蛭：打出钓技卡需花费 1 点生命、1 点体力或 1 点法力。捕获本鱼过程中，流放者无法获得生命、体力或法力。生命为 0 的流放者无法结算自己的钓技卡。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "次级行动：每名流放者治疗 10 点生命，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-31/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 3 · 鱼鳞 3\n水蛭：打出钓技卡需花费 1 点生命、1 点体力或 1 点法力。捕获本鱼过程中，流放者无法获得生命、体力或法力。生命为 0 的流放者无法结算自己的钓技卡。\n捕获奖励\n次级行动：每名流放者治疗 10 点生命，然后移除此卡。"
         },
         {
           "title": "静水蛭蛇",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-31-back.webp",
-              "box": [
-                0,
-                0,
-                584,
-                819
-              ],
-              "card": "鱼类-31 可垂钓地点",
-              "text": "鱼类-31 可垂钓地点"
+              "kind": "body",
+              "text": "大型-76"
+            },
+            {
+              "kind": "body",
+              "text": "中型-64、中型-65"
+            },
+            {
+              "kind": "body",
+              "text": "长条-60"
             }
           ],
           "source": "fishing/FISH-31/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-76\n中型-64、中型-65\n长条-60"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 3 · 鱼鳞 3\n水蛭：打出钓技卡需花费 1 点生命、1 点体力或 1 点法力。捕获本鱼过程中，流放者无法获得生命、体力或法力。生命为 0 的流放者无法结算自己的钓技卡。\n捕获奖励\n次级行动：每名流放者治疗 10 点生命，然后移除此卡。\n大型-76\n中型-64、中型-65\n长条-60",
       "workbookRows": []
     },
     {
@@ -2770,47 +3294,55 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-32-front.webp",
+              "asset": "cards/fishing/fish-32-art.webp",
               "box": [
                 0,
                 0,
-                585,
-                804
+                1170,
+                784
               ],
-              "card": "鱼类-32 图鉴",
-              "text": "鱼类-32 图鉴"
+              "card": "赤帆巨舵鱼（Redsail Galleon）",
+              "text": "赤帆巨舵鱼（Redsail Galleon）插画"
+            },
+            {
+              "kind": "body",
+              "text": "威胁 X = 0 · 鱼鳞 3"
+            },
+            {
+              "kind": "body",
+              "text": "厌恶：展示首领威胁卡时，获得 1 个强化指示物，并从每名流放者身上偷取 1{kae}，放在本卡上。若此鱼逃脱，本卡上的钱币全部丢失。"
+            },
+            {
+              "kind": "heading",
+              "text": "捕获奖励"
+            },
+            {
+              "kind": "body",
+              "text": "获得本卡上所有的钱币，再额外获得 6{kae}，然后移除此卡。"
             }
           ],
           "source": "fishing/FISH-32/front",
           "physicalSide": "front",
           "label": "图鉴",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "威胁 X = 0 · 鱼鳞 3\n厌恶：展示首领威胁卡时，获得 1 个强化指示物，并从每名流放者身上偷取 1{kae}，放在本卡上。若此鱼逃脱，本卡上的钱币全部丢失。\n捕获奖励\n获得本卡上所有的钱币，再额外获得 6{kae}，然后移除此卡。"
         },
         {
           "title": "赤帆巨舵鱼（Redsail Galleon）",
           "blocks": [
             {
-              "kind": "map_scan",
-              "asset": "cards/fishing/fish-32-back.webp",
-              "box": [
-                0,
-                0,
-                583,
-                819
-              ],
-              "card": "鱼类-32 可垂钓地点",
-              "text": "鱼类-32 可垂钓地点"
+              "kind": "body",
+              "text": "大型-78"
             }
           ],
           "source": "fishing/FISH-32/back",
           "physicalSide": "back",
           "label": "可垂钓地点",
           "proofread": true,
-          "workbookText": ""
+          "workbookText": "大型-78"
         }
       ],
-      "search": "\n",
+      "search": "威胁 X = 0 · 鱼鳞 3\n厌恶：展示首领威胁卡时，获得 1 个强化指示物，并从每名流放者身上偷取 1{kae}，放在本卡上。若此鱼逃脱，本卡上的钱币全部丢失。\n捕获奖励\n获得本卡上所有的钱币，再额外获得 6{kae}，然后移除此卡。\n大型-78",
       "workbookRows": []
     },
     {
