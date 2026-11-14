@@ -42,7 +42,8 @@ self.addEventListener('fetch',event=>{
   if(r.method!=='GET'||u.origin!==base.origin||!u.pathname.startsWith(base.pathname))return;
   if(u.pathname.startsWith(base.pathname+'music/')){event.respondWith(audioResponse(r));return;}
   if(r.mode==='navigate'){
-    event.respondWith((async()=>await(await caches.open(SHELL)).match(new URL('index.html',base).href)||fetch(r))());return;
+    const page = u.pathname === new URL('combat95/index.html',base).pathname ? 'combat95/index.html' : 'index.html';
+    event.respondWith((async()=>await(await caches.open(SHELL)).match(new URL(page,base).href)||fetch(r))());return;
   }
   u.search='';
   if(shellURLs.has(u.href))event.respondWith((async()=>{const cache=await caches.open(SHELL),saved=await cache.match(u.href);if(saved)return saved;const response=await fetch(new Request(r,{cache:'no-cache'}));if(response.ok)await cache.put(u.href,response.clone());return response;})());

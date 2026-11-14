@@ -1,0 +1,3997 @@
+{
+  "cards": [
+    {
+      "key": "JOB-7",
+      "category": "委托",
+      "title": "垂钓者的传承",
+      "number": "委托-7",
+      "state": "",
+      "display": "委托-7",
+      "references": [
+        "JOB-7"
+      ],
+      "faces": [
+        {
+          "title": "垂钓者的传承",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦"
+            },
+            {
+              "kind": "instruction",
+              "text": "旅行前往岩誓村。"
+            },
+            {
+              "kind": "body",
+              "text": "当与人物-9相邻时抽取事件-74。"
+            },
+            {
+              "kind": "body",
+              "text": "来了便知真假！"
+            }
+          ],
+          "source": "fishing/JOB-7/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9相邻时抽取事件-74。\n来了便知真假！"
+        }
+      ],
+      "search": "“诚寻敢于放手一‘湿’的冒险者！友人托我将他的钓竿转交一位配得上它的人。来飞鱼旅店找我。”——格伦\n旅行前往岩誓村。\n当与人物-9相邻时抽取事件-74。\n来了便知真假！",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-74A",
+      "category": "事件",
+      "title": "挚友的请求",
+      "number": "事件-74",
+      "state": "A",
+      "display": "事件-74 · A",
+      "references": [
+        "EVT-74",
+        "EVT-74A"
+      ],
+      "faces": [
+        {
+          "title": "挚友的请求",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "“啊，你是为那根钓竿来的吧？这是我的挚友鲁多交给我的。我自己也试过几回，可实在不好掌控，结果啥也没钓着，就捞上来一只旧靴子！但愿你能比我走运些！”"
+            },
+            {
+              "kind": "body",
+              "text": "矮人拿起靠在墙边的一根钓竿向你走了过来，点了点头，将它递给了你。"
+            },
+            {
+              "kind": "body",
+              "text": "“钓鱼对鲁多来说就是一切。他说，我要是不喜欢垂钓，就把这钓竿‘传承’给其他人（他清了清嗓子），这人看来就是你了。祝你钓条大鱼！”"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/evt-74a-a.webp",
+              "box": [
+                0,
+                0,
+                289,
+                230
+              ],
+              "card": "事件-74",
+              "text": "事件-74"
+            }
+          ],
+          "source": "fishing/EVT-74A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "“啊，你是为那根钓竿来的吧？这是我的挚友鲁多交给我的。我自己也试过几回，可实在不好掌控，结果啥也没钓着，就捞上来一只旧靴子！但愿你能比我走运些！”\n矮人拿起靠在墙边的一根钓竿向你走了过来，点了点头，将它递给了你。\n“钓鱼对鲁多来说就是一切。他说，我要是不喜欢垂钓，就把这钓竿‘传承’给其他人（他清了清嗓子），这人看来就是你了。祝你钓条大鱼！”"
+        },
+        {
+          "title": "挚友的请求",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你拿起钓竿径直前往码头，准备碰碰运气！"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得键钥-144。将所有流放者放置在尽可能靠近码头（水域附近）的位置。"
+            },
+            {
+              "kind": "instruction",
+              "text": "如果你想要开始尝试垂钓，则你需要先阅读传奇垂钓规则。"
+            },
+            {
+              "kind": "body",
+              "text": "移除委托-7，然后移除本卡牌。"
+            }
+          ],
+          "source": "fishing/EVT-74A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "你拿起钓竿径直前往码头，准备碰碰运气！\n获得键钥-144。将所有流放者放置在尽可能靠近码头（水域附近）的位置。\n如果你想要开始尝试垂钓，则你需要先阅读传奇垂钓规则。\n移除委托-7，然后移除本卡牌。"
+        }
+      ],
+      "search": "“啊，你是为那根钓竿来的吧？这是我的挚友鲁多交给我的。我自己也试过几回，可实在不好掌控，结果啥也没钓着，就捞上来一只旧靴子！但愿你能比我走运些！”\n矮人拿起靠在墙边的一根钓竿向你走了过来，点了点头，将它递给了你。\n“钓鱼对鲁多来说就是一切。他说，我要是不喜欢垂钓，就把这钓竿‘传承’给其他人（他清了清嗓子），这人看来就是你了。祝你钓条大鱼！”\n你拿起钓竿径直前往码头，准备碰碰运气！\n获得键钥-144。将所有流放者放置在尽可能靠近码头（水域附近）的位置。\n如果你想要开始尝试垂钓，则你需要先阅读传奇垂钓规则。\n移除委托-7，然后移除本卡牌。",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-75A",
+      "category": "事件",
+      "title": "藏好的装备",
+      "number": "事件-75",
+      "state": "A",
+      "display": "事件-75 · A",
+      "references": [
+        "EVT-75",
+        "EVT-75A"
+      ],
+      "faces": [
+        {
+          "title": "藏好的装备",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你认为自己已经破解了瓶中的信息……"
+            },
+            {
+              "kind": "body",
+              "text": "答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。"
+            },
+            {
+              "kind": "body",
+              "text": "你查看四周，不知自己是否处于正确的位置……"
+            },
+            {
+              "kind": "body",
+              "text": "你当前是否处于坦谢克隘口？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+            }
+          ],
+          "source": "fishing/EVT-75A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你认为自己已经破解了瓶中的信息……\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你查看四周，不知自己是否处于正确的位置……\n你当前是否处于坦谢克隘口？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+        },
+        {
+          "title": "藏好的装备",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你解开了鲁多·G的瓶中谜题，循着线索前往坦谢克隘口。一番搜寻后，你找到了一个藏得极为隐蔽的包裹，外面系着一张字条。"
+            },
+            {
+              "kind": "body",
+              "text": "你好啊！谜题解得漂亮！能与这位钓友一同分享盆地的奇趣，我实在太开心了！这装备我用着颇为顺手，但愿它也能助你一臂之力！——鲁多·G"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得键钥-145。移除键钥-148，然后移除本卡牌。"
+            }
+          ],
+          "source": "fishing/EVT-75A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "你解开了鲁多·G的瓶中谜题，循着线索前往坦谢克隘口。一番搜寻后，你找到了一个藏得极为隐蔽的包裹，外面系着一张字条。\n你好啊！谜题解得漂亮！能与这位钓友一同分享盆地的奇趣，我实在太开心了！这装备我用着颇为顺手，但愿它也能助你一臂之力！——鲁多·G\n获得键钥-145。移除键钥-148，然后移除本卡牌。"
+        }
+      ],
+      "search": "你认为自己已经破解了瓶中的信息……\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你查看四周，不知自己是否处于正确的位置……\n你当前是否处于坦谢克隘口？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。\n你解开了鲁多·G的瓶中谜题，循着线索前往坦谢克隘口。一番搜寻后，你找到了一个藏得极为隐蔽的包裹，外面系着一张字条。\n你好啊！谜题解得漂亮！能与这位钓友一同分享盆地的奇趣，我实在太开心了！这装备我用着颇为顺手，但愿它也能助你一臂之力！——鲁多·G\n获得键钥-145。移除键钥-148，然后移除本卡牌。",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-76A",
+      "category": "事件",
+      "title": "遗留之物",
+      "number": "事件-76",
+      "state": "A",
+      "display": "事件-76 · A",
+      "references": [
+        "EVT-76",
+        "EVT-76A"
+      ],
+      "faces": [
+        {
+          "title": "遗留之物",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "仔细研读字条后，你似乎……已经找到了答案。"
+            },
+            {
+              "kind": "body",
+              "text": "答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。"
+            },
+            {
+              "kind": "body",
+              "text": "你定了定神。这里……就是鲁多·G要你前往的地方吗？"
+            },
+            {
+              "kind": "body",
+              "text": "你当前是否处于渡鸦大道？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+            }
+          ],
+          "source": "fishing/EVT-76A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "仔细研读字条后，你似乎……已经找到了答案。\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你定了定神。这里……就是鲁多·G要你前往的地方吗？\n你当前是否处于渡鸦大道？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+        },
+        {
+          "title": "遗留之物",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "长途跋涉登上高山，你停下稍作喘息。你取出那张瓶中的字条，再次核对方位。在一块突出岩石的小裂缝后，你发现了一个藏起来的包裹，外面系着一张字条。"
+            },
+            {
+              "kind": "body",
+              "text": "我一直觉得渡鸦大道就是藏这只哨子的绝佳地点。还请慎用，毕竟打扰到别人就不好了。我觉得一天最多吹它一次，这样刚刚好！——鲁多·G"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得键钥-146。移除键钥-149，然后移除本卡牌。"
+            }
+          ],
+          "source": "fishing/EVT-76A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "长途跋涉登上高山，你停下稍作喘息。你取出那张瓶中的字条，再次核对方位。在一块突出岩石的小裂缝后，你发现了一个藏起来的包裹，外面系着一张字条。\n我一直觉得渡鸦大道就是藏这只哨子的绝佳地点。还请慎用，毕竟打扰到别人就不好了。我觉得一天最多吹它一次，这样刚刚好！——鲁多·G\n获得键钥-146。移除键钥-149，然后移除本卡牌。"
+        }
+      ],
+      "search": "仔细研读字条后，你似乎……已经找到了答案。\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你定了定神。这里……就是鲁多·G要你前往的地方吗？\n你当前是否处于渡鸦大道？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。\n长途跋涉登上高山，你停下稍作喘息。你取出那张瓶中的字条，再次核对方位。在一块突出岩石的小裂缝后，你发现了一个藏起来的包裹，外面系着一张字条。\n我一直觉得渡鸦大道就是藏这只哨子的绝佳地点。还请慎用，毕竟打扰到别人就不好了。我觉得一天最多吹它一次，这样刚刚好！——鲁多·G\n获得键钥-146。移除键钥-149，然后移除本卡牌。",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-77A",
+      "category": "事件",
+      "title": "鱼获",
+      "number": "事件-77",
+      "state": "A",
+      "display": "事件-77 · A",
+      "references": [
+        "EVT-77",
+        "EVT-77A"
+      ],
+      "faces": [
+        {
+          "title": "鱼获",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "虽然费了一番功夫，但你觉得自己已经解开了……"
+            },
+            {
+              "kind": "body",
+              "text": "答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。"
+            },
+            {
+              "kind": "body",
+              "text": "你离目标肯定不远了。你环顾四周，仔细打量着周遭环境。"
+            },
+            {
+              "kind": "body",
+              "text": "你当前是否处于雪落峰？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+            }
+          ],
+          "source": "fishing/EVT-77A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "虽然费了一番功夫，但你觉得自己已经解开了……\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你离目标肯定不远了。你环顾四周，仔细打量着周遭环境。\n你当前是否处于雪落峰？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。"
+        },
+        {
+          "title": "鱼获",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你顶着刺骨寒风与严寒，仔细搜寻着瓶中字条指引的冰封峭壁。忽然，一点微光映入眼帘，你的目光被引向一棵枯树根部的树洞。你扒开积雪，找到了一件用布包裹的小物件，还有一张字迹褪色的字条。"
+            },
+            {
+              "kind": "body",
+              "text": "深海璀钻是这片海域中极为罕见的鱼类，它们颇为奇特，以吸收与释放能量的方式闻名。这种鱼会如同鹿褪落鹿角一般蜕下“钻石”，我很好奇若是将其镶嵌在盾牌或护甲上，会发生什么……——鲁多·G"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得键钥-147。移除键钥-150，然后移除本卡牌。"
+            }
+          ],
+          "source": "fishing/EVT-77A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "你顶着刺骨寒风与严寒，仔细搜寻着瓶中字条指引的冰封峭壁。忽然，一点微光映入眼帘，你的目光被引向一棵枯树根部的树洞。你扒开积雪，找到了一件用布包裹的小物件，还有一张字迹褪色的字条。\n深海璀钻是这片海域中极为罕见的鱼类，它们颇为奇特，以吸收与释放能量的方式闻名。这种鱼会如同鹿褪落鹿角一般蜕下“钻石”，我很好奇若是将其镶嵌在盾牌或护甲上，会发生什么……——鲁多·G\n获得键钥-147。移除键钥-150，然后移除本卡牌。"
+        }
+      ],
+      "search": "虽然费了一番功夫，但你觉得自己已经解开了……\n答案是一个字母和一个数字吗？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 继续阅读。\n你离目标肯定不远了。你环顾四周，仔细打量着周遭环境。\n你当前是否处于雪落峰？\n✗ 将本卡牌放回，不阅读剩余部分。\n✓ 将本卡牌翻面并继续阅读。\n你顶着刺骨寒风与严寒，仔细搜寻着瓶中字条指引的冰封峭壁。忽然，一点微光映入眼帘，你的目光被引向一棵枯树根部的树洞。你扒开积雪，找到了一件用布包裹的小物件，还有一张字迹褪色的字条。\n深海璀钻是这片海域中极为罕见的鱼类，它们颇为奇特，以吸收与释放能量的方式闻名。这种鱼会如同鹿褪落鹿角一般蜕下“钻石”，我很好奇若是将其镶嵌在盾牌或护甲上，会发生什么……——鲁多·G\n获得键钥-147。移除键钥-150，然后移除本卡牌。",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-78A",
+      "category": "事件",
+      "title": "唤鸟",
+      "number": "事件-78",
+      "state": "A",
+      "display": "事件-78 · A",
+      "references": [
+        "EVT-78",
+        "EVT-78A"
+      ],
+      "faces": [
+        {
+          "title": "唤鸟",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你吹响哨子，它发出一声轻柔而动听的鸣响，传至天边。片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，一只巨大的灌丛鸦落在你面前，身上还驮着一副鞍具。"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/evt-78a-a.webp",
+              "box": [
+                0,
+                0,
+                554,
+                434
+              ],
+              "card": "事件-78",
+              "text": "事件-78"
+            }
+          ],
+          "source": "fishing/EVT-78A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你吹响哨子，它发出一声轻柔而动听的鸣响，传至天边。片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，一只巨大的灌丛鸦落在你面前，身上还驮着一副鞍具。"
+        },
+        {
+          "title": "唤鸟",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "巨鸟伏低身子，一动不动，仿佛在等待着你。"
+            },
+            {
+              "kind": "body",
+              "text": "骑上这只鸟吗？\n✗ 你对着巨鸟摇了摇头，表示拒绝。前往告别。\n✓ 你刚在鞍上坐稳，巨鸟便振翅腾空。随着它不断高飞，脚下的景物渐渐缩小，树木、河流、群山与道路在脚下飞速掠过，最终，巨鸟将你送至目的地。\n将团队指示物放置在任意已探索的六角格，然后前往告别。"
+            },
+            {
+              "kind": "body",
+              "text": "告别\n你向巨鸟道别，灌丛鸦点了点头，便振翅飞向高空，片刻间便消失在了天际尽头。将本卡牌放回。"
+            }
+          ],
+          "source": "fishing/EVT-78A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "巨鸟伏低身子，一动不动，仿佛在等待着你。\n骑上这只鸟吗？\n✗ 你对着巨鸟摇了摇头，表示拒绝。前往告别。\n✓ 你刚在鞍上坐稳，巨鸟便振翅腾空。随着它不断高飞，脚下的景物渐渐缩小，树木、河流、群山与道路在脚下飞速掠过，最终，巨鸟将你送至目的地。\n将团队指示物放置在任意已探索的六角格，然后前往告别。\n告别\n你向巨鸟道别，灌丛鸦点了点头，便振翅飞向高空，片刻间便消失在了天际尽头。将本卡牌放回。"
+        }
+      ],
+      "search": "你吹响哨子，它发出一声轻柔而动听的鸣响，传至天边。片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，一只巨大的灌丛鸦落在你面前，身上还驮着一副鞍具。\n巨鸟伏低身子，一动不动，仿佛在等待着你。\n骑上这只鸟吗？\n✗ 你对着巨鸟摇了摇头，表示拒绝。前往告别。\n✓ 你刚在鞍上坐稳，巨鸟便振翅腾空。随着它不断高飞，脚下的景物渐渐缩小，树木、河流、群山与道路在脚下飞速掠过，最终，巨鸟将你送至目的地。\n将团队指示物放置在任意已探索的六角格，然后前往告别。\n告别\n你向巨鸟道别，灌丛鸦点了点头，便振翅飞向高空，片刻间便消失在了天际尽头。将本卡牌放回。",
+      "workbookRows": []
+    },
+    {
+      "key": "EVT-79A",
+      "category": "事件",
+      "title": "震奋人心",
+      "number": "事件-79",
+      "state": "A",
+      "display": "事件-79 · A",
+      "references": [
+        "EVT-79",
+        "EVT-79A"
+      ],
+      "faces": [
+        {
+          "title": "震奋人心",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你满心自豪地将最后一条鱼的详情记入日志，就在这时，口袋里有什么东西开始震动嗡鸣，你连忙将它掏了出来！"
+            },
+            {
+              "kind": "body",
+              "text": "你手中的鸟哨不停震动，险些脱手，震动越来越快，随即骤然停止。片刻之后，哨子发出一声尖锐的鸣叫，远远传向无尽天际。"
+            }
+          ],
+          "source": "fishing/EVT-79A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你满心自豪地将最后一条鱼的详情记入日志，就在这时，口袋里有什么东西开始震动嗡鸣，你连忙将它掏了出来！\n你手中的鸟哨不停震动，险些脱手，震动越来越快，随即骤然停止。片刻之后，哨子发出一声尖锐的鸣叫，远远传向无尽天际。"
+        },
+        {
+          "title": "震奋人心",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，你那熟悉的伙伴，那只巨型灌丛鸦从头顶飞过，它投下一个小小的卷轴，恰好落在你的掌心。"
+            },
+            {
+              "kind": "body",
+              "text": "你做到了！你已经钓遍了盆地里所有的鱼类！你理应为自己的成就感到骄傲！你我真是志同道合之人！真心希望有朝一日我们能当面相见，一同抛竿垂钓！\n祝你万事顺意——鲁多·G"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得25{xp}，然后移除本卡牌。"
+            },
+            {
+              "kind": "body",
+              "text": "感谢您完成传奇垂钓！——Alex和Luke"
+            }
+          ],
+          "source": "fishing/EVT-79A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，你那熟悉的伙伴，那只巨型灌丛鸦从头顶飞过，它投下一个小小的卷轴，恰好落在你的掌心。\n你做到了！你已经钓遍了盆地里所有的鱼类！你理应为自己的成就感到骄傲！你我真是志同道合之人！真心希望有朝一日我们能当面相见，一同抛竿垂钓！\n祝你万事顺意——鲁多·G\n获得25{xp}，然后移除本卡牌。\n感谢您完成传奇垂钓！——Alex和Luke"
+        }
+      ],
+      "search": "你满心自豪地将最后一条鱼的详情记入日志，就在这时，口袋里有什么东西开始震动嗡鸣，你连忙将它掏了出来！\n你手中的鸟哨不停震动，险些脱手，震动越来越快，随即骤然停止。片刻之后，哨子发出一声尖锐的鸣叫，远远传向无尽天际。\n片刻之后，你听见一阵猛烈的风声与响亮的鸣叫，你那熟悉的伙伴，那只巨型灌丛鸦从头顶飞过，它投下一个小小的卷轴，恰好落在你的掌心。\n你做到了！你已经钓遍了盆地里所有的鱼类！你理应为自己的成就感到骄傲！你我真是志同道合之人！真心希望有朝一日我们能当面相见，一同抛竿垂钓！\n祝你万事顺意——鲁多·G\n获得25{xp}，然后移除本卡牌。\n感谢您完成传奇垂钓！——Alex和Luke",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-144A",
+      "category": "键钥",
+      "title": "钓竿",
+      "number": "键钥-144",
+      "state": "A",
+      "display": "键钥-144 · A",
+      "references": [
+        "KEY-144",
+        "KEY-144A"
+      ],
+      "faces": [
+        {
+          "title": "钓竿",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "这是一根做工精美的柳树钓竿，是你从岩誓村的格伦那里得到的。他受朋友鲁多所托将这根钓竿转交给你，鲁多的愿望是有人能接过这根钓竿，将这份热爱传承下去。"
+            },
+            {
+              "kind": "body",
+              "text": "此物品规则详见背面。将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "body",
+              "text": "此物品不可出售。"
+            }
+          ],
+          "source": "fishing/KEY-144A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "这是一根做工精美的柳树钓竿，是你从岩誓村的格伦那里得到的。他受朋友鲁多所托将这根钓竿转交给你，鲁多的愿望是有人能接过这根钓竿，将这份热爱传承下去。\n此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。"
+        },
+        {
+          "title": "钓竿",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "本物品处于团队的背包中。仅用本卡来表示该物品（没有物品板块）。任意流放者可以使用它。"
+            },
+            {
+              "kind": "body",
+              "text": "垂钓－行动。费用为1{cube}。非战斗状态时，如果地图插画显示3个或更多连续的水域方格，当与水域相邻时，抽取第一张与你的地图标识匹配的鱼类！"
+            },
+            {
+              "kind": "body",
+              "text": "休息时刷新{cube}。"
+            },
+            {
+              "kind": "body",
+              "text": "常见问题解答：当你不确定能不能钓，先钓下试试！"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-144a-b.webp",
+              "box": [
+                0,
+                0,
+                289,
+                581
+              ],
+              "card": "键钥-144",
+              "text": "键钥-144"
+            }
+          ],
+          "source": "fishing/KEY-144A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "本物品处于团队的背包中。仅用本卡来表示该物品（没有物品板块）。任意流放者可以使用它。\n垂钓－行动。费用为1{cube}。非战斗状态时，如果地图插画显示3个或更多连续的水域方格，当与水域相邻时，抽取第一张与你的地图标识匹配的鱼类！\n休息时刷新{cube}。\n常见问题解答：当你不确定能不能钓，先钓下试试！"
+        }
+      ],
+      "search": "这是一根做工精美的柳树钓竿，是你从岩誓村的格伦那里得到的。他受朋友鲁多所托将这根钓竿转交给你，鲁多的愿望是有人能接过这根钓竿，将这份热爱传承下去。\n此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。\n本物品处于团队的背包中。仅用本卡来表示该物品（没有物品板块）。任意流放者可以使用它。\n垂钓－行动。费用为1{cube}。非战斗状态时，如果地图插画显示3个或更多连续的水域方格，当与水域相邻时，抽取第一张与你的地图标识匹配的鱼类！\n休息时刷新{cube}。\n常见问题解答：当你不确定能不能钓，先钓下试试！",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-145A",
+      "category": "键钥",
+      "title": "肩甲袋",
+      "number": "键钥-145",
+      "state": "A",
+      "display": "键钥-145 · A",
+      "references": [
+        "KEY-145",
+        "KEY-145A"
+      ],
+      "faces": [
+        {
+          "title": "肩甲袋",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你发现了一张瓶中字条，解开了其中谜题，并找到了这件独特的肩甲袋。它看起来还挺实用的！"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得物品 板块-垂钓1（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "body",
+              "text": "此物品不可出售。"
+            }
+          ],
+          "source": "fishing/KEY-145A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你发现了一张瓶中字条，解开了其中谜题，并找到了这件独特的肩甲袋。它看起来还挺实用的！\n获得物品 板块-垂钓1（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。"
+        },
+        {
+          "title": "肩甲袋",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。"
+            },
+            {
+              "kind": "body",
+              "text": "额外腰带槽。你可以将腰带物品装备至这两个槽位。"
+            },
+            {
+              "kind": "body",
+              "text": "常见问题解答：这些物品在使用时视为处于你的腰带。处于肩甲袋上的磨损指示物不会影响装备的腰带物品。"
+            }
+          ],
+          "source": "fishing/KEY-145A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。\n额外腰带槽。你可以将腰带物品装备至这两个槽位。\n常见问题解答：这些物品在使用时视为处于你的腰带。处于肩甲袋上的磨损指示物不会影响装备的腰带物品。"
+        }
+      ],
+      "search": "你发现了一张瓶中字条，解开了其中谜题，并找到了这件独特的肩甲袋。它看起来还挺实用的！\n获得物品 板块-垂钓1（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。\n此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。\n额外腰带槽。你可以将腰带物品装备至这两个槽位。\n常见问题解答：这些物品在使用时视为处于你的腰带。处于肩甲袋上的磨损指示物不会影响装备的腰带物品。",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-146A",
+      "category": "键钥",
+      "title": "鸟哨",
+      "number": "键钥-146",
+      "state": "A",
+      "display": "键钥-146 · A",
+      "references": [
+        "KEY-146",
+        "KEY-146A"
+      ],
+      "faces": [
+        {
+          "title": "鸟哨",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你发现了一张瓶中的字条，解开了上面的线索，并由此找到了这只哨子。它由木头制成，被雕刻成鸟儿的模样，你不禁好奇吹哨会发生什么？"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得物品 板块-垂钓2（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "body",
+              "text": "此物品不可出售。"
+            }
+          ],
+          "source": "fishing/KEY-146A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你发现了一张瓶中的字条，解开了上面的线索，并由此找到了这只哨子。它由木头制成，被雕刻成鸟儿的模样，你不禁好奇吹哨会发生什么？\n获得物品 板块-垂钓2（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。"
+        },
+        {
+          "title": "鸟哨",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。"
+            },
+            {
+              "kind": "body",
+              "text": "吹哨－行动。费用为1{cube}。当处于世界地图时，抽取事件-78。"
+            },
+            {
+              "kind": "body",
+              "text": "休息时刷新{cube}。"
+            },
+            {
+              "kind": "body",
+              "text": "常见问题解答：你不能在进入地点后使用此物品。"
+            }
+          ],
+          "source": "fishing/KEY-146A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。\n吹哨－行动。费用为1{cube}。当处于世界地图时，抽取事件-78。\n休息时刷新{cube}。\n常见问题解答：你不能在进入地点后使用此物品。"
+        }
+      ],
+      "search": "你发现了一张瓶中的字条，解开了上面的线索，并由此找到了这只哨子。它由木头制成，被雕刻成鸟儿的模样，你不禁好奇吹哨会发生什么？\n获得物品 板块-垂钓2（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。\n此为通用物品，任何流放者均可使用。装备此物品时可获得以下能力。\n吹哨－行动。费用为1{cube}。当处于世界地图时，抽取事件-78。\n休息时刷新{cube}。\n常见问题解答：你不能在进入地点后使用此物品。",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-147A",
+      "category": "键钥",
+      "title": "发光钻石",
+      "number": "键钥-147",
+      "state": "A",
+      "display": "键钥-147 · A",
+      "references": [
+        "KEY-147",
+        "KEY-147A"
+      ],
+      "faces": [
+        {
+          "title": "发光钻石",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你解开了瓶中字条的谜题，并由此找到了这颗瑰丽的钻石。字条上记载着深海璀钻——这片盆地里一种传说中的鱼类，据说这种鱼会在生长过程中蜕下这类“钻石”。"
+            },
+            {
+              "kind": "instruction",
+              "text": "获得物品 板块-垂钓3（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "body",
+              "text": "此物品不可出售。"
+            }
+          ],
+          "source": "fishing/KEY-147A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你解开了瓶中字条的谜题，并由此找到了这颗瑰丽的钻石。字条上记载着深海璀钻——这片盆地里一种传说中的鱼类，据说这种鱼会在生长过程中蜕下这类“钻石”。\n获得物品 板块-垂钓3（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。"
+        },
+        {
+          "title": "发光钻石",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "任何流放者皆可依照下述规则使用此指示物。"
+            },
+            {
+              "kind": "body",
+              "text": "行动。非战斗状态时，你可以将钻石指示物放在任意护甲物品上。"
+            },
+            {
+              "kind": "body",
+              "text": "反应。当该护甲被命中时，你可以从该护甲上移除1个磨损指示物，从而+1{combo}，且针对本次攻击+3{defense}。"
+            },
+            {
+              "kind": "body",
+              "text": "问：我可以针对一次攻击支付多个磨损指示物，从而获得更多防御和连击吗？\n答：不能，针对每次攻击你只能移除1个磨损指示物。"
+            }
+          ],
+          "source": "fishing/KEY-147A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "任何流放者皆可依照下述规则使用此指示物。\n行动。非战斗状态时，你可以将钻石指示物放在任意护甲物品上。\n反应。当该护甲被命中时，你可以从该护甲上移除1个磨损指示物，从而+1{combo}，且针对本次攻击+3{defense}。\n问：我可以针对一次攻击支付多个磨损指示物，从而获得更多防御和连击吗？\n答：不能，针对每次攻击你只能移除1个磨损指示物。"
+        }
+      ],
+      "search": "你解开了瓶中字条的谜题，并由此找到了这颗瑰丽的钻石。字条上记载着深海璀钻——这片盆地里一种传说中的鱼类，据说这种鱼会在生长过程中蜕下这类“钻石”。\n获得物品 板块-垂钓3（位于传奇垂钓的一个迷你板块包内）。此物品规则详见背面。将此卡牌保留在团队背包中。\n此物品不可出售。\n任何流放者皆可依照下述规则使用此指示物。\n行动。非战斗状态时，你可以将钻石指示物放在任意护甲物品上。\n反应。当该护甲被命中时，你可以从该护甲上移除1个磨损指示物，从而+1{combo}，且针对本次攻击+3{defense}。\n问：我可以针对一次攻击支付多个磨损指示物，从而获得更多防御和连击吗？\n答：不能，针对每次攻击你只能移除1个磨损指示物。",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-148A",
+      "category": "键钥",
+      "title": "瓶中字条",
+      "number": "键钥-148",
+      "state": "A",
+      "display": "键钥-148 · A",
+      "references": [
+        "KEY-148",
+        "KEY-148A"
+      ],
+      "faces": [
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你打开瓶子并阅读了其中的字条："
+            },
+            {
+              "kind": "body",
+              "text": "我已经离开盆地，且再也不会回来了！仓促离去之际，我留下了一样藏好的装备。如果你足够聪明，最终找到了它，那它就归你了！——鲁多·G\n值得寻觅的宝藏需要用心寻，以鱼类与数字为引。\n1, 1, 2, 5, 6, 10, 10"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-148a-a.webp",
+              "box": [
+                0,
+                0,
+                532,
+                262
+              ],
+              "card": "键钥-148",
+              "text": "键钥-148"
+            }
+          ],
+          "source": "fishing/KEY-148A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你打开瓶子并阅读了其中的字条：\n我已经离开盆地，且再也不会回来了！仓促离去之际，我留下了一样藏好的装备。如果你足够聪明，最终找到了它，那它就归你了！——鲁多·G\n值得寻觅的宝藏需要用心寻，以鱼类与数字为引。\n1, 1, 2, 5, 6, 10, 10"
+        },
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "instruction",
+              "text": "将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "instruction",
+              "text": "如果你自认为处于正确的世界地图位置，抽取事件-75。"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-148a-b.webp",
+              "box": [
+                0,
+                0,
+                485,
+                573
+              ],
+              "card": "键钥-148",
+              "text": "键钥-148"
+            }
+          ],
+          "source": "fishing/KEY-148A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-75。"
+        }
+      ],
+      "search": "你打开瓶子并阅读了其中的字条：\n我已经离开盆地，且再也不会回来了！仓促离去之际，我留下了一样藏好的装备。如果你足够聪明，最终找到了它，那它就归你了！——鲁多·G\n值得寻觅的宝藏需要用心寻，以鱼类与数字为引。\n1, 1, 2, 5, 6, 10, 10\n将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-75。",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-149A",
+      "category": "键钥",
+      "title": "奇怪的字条",
+      "number": "键钥-149",
+      "state": "A",
+      "display": "键钥-149 · A",
+      "references": [
+        "KEY-149",
+        "KEY-149A"
+      ],
+      "faces": [
+        {
+          "title": "奇怪的字条",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你打开瓶子并阅读了其中的字条："
+            },
+            {
+              "kind": "body",
+              "text": "你得对这些鱼类了如指掌，才能找到我留下的东西！——鲁多·G\n顽固的渔夫终将饥肠辘辘。"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-149a-a.webp",
+              "box": [
+                0,
+                0,
+                520,
+                409
+              ],
+              "card": "键钥-149",
+              "text": "键钥-149"
+            }
+          ],
+          "source": "fishing/KEY-149A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你打开瓶子并阅读了其中的字条：\n你得对这些鱼类了如指掌，才能找到我留下的东西！——鲁多·G\n顽固的渔夫终将饥肠辘辘。"
+        },
+        {
+          "title": "奇怪的字条",
+          "blocks": [
+            {
+              "kind": "instruction",
+              "text": "将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "instruction",
+              "text": "如果你自认为处于正确的世界地图位置，抽取事件-76。"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-149a-b.webp",
+              "box": [
+                0,
+                0,
+                544,
+                565
+              ],
+              "card": "键钥-149",
+              "text": "键钥-149"
+            }
+          ],
+          "source": "fishing/KEY-149A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-76。"
+        }
+      ],
+      "search": "你打开瓶子并阅读了其中的字条：\n你得对这些鱼类了如指掌，才能找到我留下的东西！——鲁多·G\n顽固的渔夫终将饥肠辘辘。\n将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-76。",
+      "workbookRows": []
+    },
+    {
+      "key": "KEY-150A",
+      "category": "键钥",
+      "title": "密封的字条",
+      "number": "键钥-150",
+      "state": "A",
+      "display": "键钥-150 · A",
+      "references": [
+        "KEY-150",
+        "KEY-150A"
+      ],
+      "faces": [
+        {
+          "title": "密封的字条",
+          "blocks": [
+            {
+              "kind": "body",
+              "text": "你打开瓶子并阅读了其中的字条："
+            },
+            {
+              "kind": "body",
+              "text": "我藏下了一件实用的宝物，等你来寻！只需证明你对这些珍稀鱼类的了解即可！——鲁多·G"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-150a-a.webp",
+              "box": [
+                0,
+                0,
+                520,
+                409
+              ],
+              "card": "键钥-150",
+              "text": "键钥-150"
+            }
+          ],
+          "source": "fishing/KEY-150A/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": "你打开瓶子并阅读了其中的字条：\n我藏下了一件实用的宝物，等你来寻！只需证明你对这些珍稀鱼类的了解即可！——鲁多·G"
+        },
+        {
+          "title": "密封的字条",
+          "blocks": [
+            {
+              "kind": "instruction",
+              "text": "将此卡牌保留在团队背包中。"
+            },
+            {
+              "kind": "instruction",
+              "text": "如果你自认为处于正确的世界地图位置，抽取事件-77。"
+            },
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/key-150a-b.webp",
+              "box": [
+                0,
+                0,
+                544,
+                565
+              ],
+              "card": "键钥-150",
+              "text": "键钥-150"
+            }
+          ],
+          "source": "fishing/KEY-150A/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": "将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-77。"
+        }
+      ],
+      "search": "你打开瓶子并阅读了其中的字条：\n我藏下了一件实用的宝物，等你来寻！只需证明你对这些珍稀鱼类的了解即可！——鲁多·G\n将此卡牌保留在团队背包中。\n如果你自认为处于正确的世界地图位置，抽取事件-77。",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-1",
+      "category": "鱼类",
+      "title": "旧靴子",
+      "number": "鱼类-1",
+      "state": "",
+      "display": "鱼类-1",
+      "references": [
+        "FISH-1"
+      ],
+      "faces": [
+        {
+          "title": "旧靴子",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-1-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-1 图鉴",
+              "text": "鱼类-1 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-1/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "旧靴子",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-1-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-1 可垂钓地点",
+              "text": "鱼类-1 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-1/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-2",
+      "category": "鱼类",
+      "title": "瓶中字条",
+      "number": "鱼类-2",
+      "state": "",
+      "display": "鱼类-2",
+      "references": [
+        "FISH-2"
+      ],
+      "faces": [
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-2-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-2 图鉴",
+              "text": "鱼类-2 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-2/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-2-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-2 可垂钓地点",
+              "text": "鱼类-2 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-2/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-3",
+      "category": "鱼类",
+      "title": "孔雀鱼（Guppy）",
+      "number": "鱼类-3",
+      "state": "",
+      "display": "鱼类-3",
+      "references": [
+        "FISH-3"
+      ],
+      "faces": [
+        {
+          "title": "孔雀鱼（Guppy）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-3-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-3 图鉴",
+              "text": "鱼类-3 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-3/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "孔雀鱼（Guppy）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-3-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-3 可垂钓地点",
+              "text": "鱼类-3 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-3/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-4",
+      "category": "鱼类",
+      "title": "黄油鱼（Butterfin）",
+      "number": "鱼类-4",
+      "state": "",
+      "display": "鱼类-4",
+      "references": [
+        "FISH-4"
+      ],
+      "faces": [
+        {
+          "title": "黄油鱼（Butterfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-4-front.webp",
+              "box": [
+                0,
+                0,
+                586,
+                804
+              ],
+              "card": "鱼类-4 图鉴",
+              "text": "鱼类-4 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-4/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "黄油鱼（Butterfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-4-back.webp",
+              "box": [
+                0,
+                0,
+                584,
+                819
+              ],
+              "card": "鱼类-4 可垂钓地点",
+              "text": "鱼类-4 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-4/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-5",
+      "category": "鱼类",
+      "title": "须鱼（Whiskerfish）",
+      "number": "鱼类-5",
+      "state": "",
+      "display": "鱼类-5",
+      "references": [
+        "FISH-5"
+      ],
+      "faces": [
+        {
+          "title": "须鱼（Whiskerfish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-5-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-5 图鉴",
+              "text": "鱼类-5 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-5/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "须鱼（Whiskerfish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-5-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-5 可垂钓地点",
+              "text": "鱼类-5 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-5/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-6",
+      "category": "鱼类",
+      "title": "毛背鲤（Shaggy Carp）",
+      "number": "鱼类-6",
+      "state": "",
+      "display": "鱼类-6",
+      "references": [
+        "FISH-6"
+      ],
+      "faces": [
+        {
+          "title": "毛背鲤（Shaggy Carp）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-6-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-6 图鉴",
+              "text": "鱼类-6 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-6/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "毛背鲤（Shaggy Carp）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-6-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-6 可垂钓地点",
+              "text": "鱼类-6 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-6/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-7",
+      "category": "鱼类",
+      "title": "拉链鱼（Zipperfin）",
+      "number": "鱼类-7",
+      "state": "",
+      "display": "鱼类-7",
+      "references": [
+        "FISH-7"
+      ],
+      "faces": [
+        {
+          "title": "拉链鱼（Zipperfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-7-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-7 图鉴",
+              "text": "鱼类-7 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-7/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "拉链鱼（Zipperfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-7-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-7 可垂钓地点",
+              "text": "鱼类-7 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-7/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-8",
+      "category": "鱼类",
+      "title": "盆地石鲈（Basin Grouper）",
+      "number": "鱼类-8",
+      "state": "",
+      "display": "鱼类-8",
+      "references": [
+        "FISH-8"
+      ],
+      "faces": [
+        {
+          "title": "盆地石鲈（Basin Grouper）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-8-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-8 图鉴",
+              "text": "鱼类-8 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-8/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "盆地石鲈（Basin Grouper）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-8-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-8 可垂钓地点",
+              "text": "鱼类-8 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-8/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-9",
+      "category": "鱼类",
+      "title": "虚幻彩虹（Hollow Rainbow）",
+      "number": "鱼类-9",
+      "state": "",
+      "display": "鱼类-9",
+      "references": [
+        "FISH-9"
+      ],
+      "faces": [
+        {
+          "title": "虚幻彩虹（Hollow Rainbow）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-9-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-9 图鉴",
+              "text": "鱼类-9 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-9/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "虚幻彩虹（Hollow Rainbow）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-9-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-9 可垂钓地点",
+              "text": "鱼类-9 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-9/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-10",
+      "category": "鱼类",
+      "title": "光鱼（Glowfin）",
+      "number": "鱼类-10",
+      "state": "",
+      "display": "鱼类-10",
+      "references": [
+        "FISH-10"
+      ],
+      "faces": [
+        {
+          "title": "光鱼（Glowfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-10-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-10 图鉴",
+              "text": "鱼类-10 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-10/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "光鱼（Glowfin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-10-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-10 可垂钓地点",
+              "text": "鱼类-10 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-10/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-11",
+      "category": "鱼类",
+      "title": "幽灵鱼（Ghost Fish）",
+      "number": "鱼类-11",
+      "state": "",
+      "display": "鱼类-11",
+      "references": [
+        "FISH-11"
+      ],
+      "faces": [
+        {
+          "title": "幽灵鱼（Ghost Fish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-11-front.webp",
+              "box": [
+                0,
+                0,
+                586,
+                804
+              ],
+              "card": "鱼类-11 图鉴",
+              "text": "鱼类-11 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-11/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "幽灵鱼（Ghost Fish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-11-back.webp",
+              "box": [
+                0,
+                0,
+                584,
+                819
+              ],
+              "card": "鱼类-11 可垂钓地点",
+              "text": "鱼类-11 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-11/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-12",
+      "category": "鱼类",
+      "title": "瓶中字条",
+      "number": "鱼类-12",
+      "state": "",
+      "display": "鱼类-12",
+      "references": [
+        "FISH-12"
+      ],
+      "faces": [
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-12-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-12 图鉴",
+              "text": "鱼类-12 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-12/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-12-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-12 可垂钓地点",
+              "text": "鱼类-12 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-12/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-13",
+      "category": "鱼类",
+      "title": "三文鱼（Salmon）",
+      "number": "鱼类-13",
+      "state": "",
+      "display": "鱼类-13",
+      "references": [
+        "FISH-13"
+      ],
+      "faces": [
+        {
+          "title": "三文鱼（Salmon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-13-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-13 图鉴",
+              "text": "鱼类-13 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-13/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "三文鱼（Salmon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-13-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-13 可垂钓地点",
+              "text": "鱼类-13 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-13/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-14",
+      "category": "鱼类",
+      "title": "红鳞鲟（Red-Scale Sturgeon）",
+      "number": "鱼类-14",
+      "state": "",
+      "display": "鱼类-14",
+      "references": [
+        "FISH-14"
+      ],
+      "faces": [
+        {
+          "title": "红鳞鲟（Red-Scale Sturgeon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-14-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-14 图鉴",
+              "text": "鱼类-14 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-14/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "红鳞鲟（Red-Scale Sturgeon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-14-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-14 可垂钓地点",
+              "text": "鱼类-14 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-14/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-15",
+      "category": "鱼类",
+      "title": "水晶鳟（Crystal Trout）",
+      "number": "鱼类-15",
+      "state": "",
+      "display": "鱼类-15",
+      "references": [
+        "FISH-15"
+      ],
+      "faces": [
+        {
+          "title": "水晶鳟（Crystal Trout）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-15-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-15 图鉴",
+              "text": "鱼类-15 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-15/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "水晶鳟（Crystal Trout）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-15-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-15 可垂钓地点",
+              "text": "鱼类-15 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-15/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-16",
+      "category": "鱼类",
+      "title": "胡子梭（Bearded Pike）",
+      "number": "鱼类-16",
+      "state": "",
+      "display": "鱼类-16",
+      "references": [
+        "FISH-16"
+      ],
+      "faces": [
+        {
+          "title": "胡子梭（Bearded Pike）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-16-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-16 图鉴",
+              "text": "鱼类-16 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-16/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "胡子梭（Bearded Pike）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-16-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-16 可垂钓地点",
+              "text": "鱼类-16 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-16/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-17",
+      "category": "鱼类",
+      "title": "箭首鱼（Arrowhead）",
+      "number": "鱼类-17",
+      "state": "",
+      "display": "鱼类-17",
+      "references": [
+        "FISH-17"
+      ],
+      "faces": [
+        {
+          "title": "箭首鱼（Arrowhead）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-17-front.webp",
+              "box": [
+                0,
+                0,
+                586,
+                804
+              ],
+              "card": "鱼类-17 图鉴",
+              "text": "鱼类-17 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-17/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "箭首鱼（Arrowhead）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-17-back.webp",
+              "box": [
+                0,
+                0,
+                584,
+                820
+              ],
+              "card": "鱼类-17 可垂钓地点",
+              "text": "鱼类-17 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-17/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-18",
+      "category": "鱼类",
+      "title": "剑鱼（Swordfish）",
+      "number": "鱼类-18",
+      "state": "",
+      "display": "鱼类-18",
+      "references": [
+        "FISH-18"
+      ],
+      "faces": [
+        {
+          "title": "剑鱼（Swordfish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-18-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-18 图鉴",
+              "text": "鱼类-18 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-18/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "剑鱼（Swordfish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-18-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-18 可垂钓地点",
+              "text": "鱼类-18 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-18/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-19",
+      "category": "鱼类",
+      "title": "浪尖金枪鱼（Whitecap Tuna）",
+      "number": "鱼类-19",
+      "state": "",
+      "display": "鱼类-19",
+      "references": [
+        "FISH-19"
+      ],
+      "faces": [
+        {
+          "title": "浪尖金枪鱼（Whitecap Tuna）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-19-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-19 图鉴",
+              "text": "鱼类-19 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-19/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "浪尖金枪鱼（Whitecap Tuna）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-19-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-19 可垂钓地点",
+              "text": "鱼类-19 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-19/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-20",
+      "category": "鱼类",
+      "title": "飞鱼（Flying Fish）",
+      "number": "鱼类-20",
+      "state": "",
+      "display": "鱼类-20",
+      "references": [
+        "FISH-20"
+      ],
+      "faces": [
+        {
+          "title": "飞鱼（Flying Fish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-20-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-20 图鉴",
+              "text": "鱼类-20 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-20/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "飞鱼（Flying Fish）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-20-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                820
+              ],
+              "card": "鱼类-20 可垂钓地点",
+              "text": "鱼类-20 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-20/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-21",
+      "category": "鱼类",
+      "title": "落井地精",
+      "number": "鱼类-21",
+      "state": "",
+      "display": "鱼类-21",
+      "references": [
+        "FISH-21"
+      ],
+      "faces": [
+        {
+          "title": "落井地精",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-21-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-21 图鉴",
+              "text": "鱼类-21 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-21/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "落井地精",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-21-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-21 可垂钓地点",
+              "text": "鱼类-21 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-21/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-22",
+      "category": "鱼类",
+      "title": "玄锦鲤（Mystic Koi）",
+      "number": "鱼类-22",
+      "state": "",
+      "display": "鱼类-22",
+      "references": [
+        "FISH-22"
+      ],
+      "faces": [
+        {
+          "title": "玄锦鲤（Mystic Koi）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-22-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-22 图鉴",
+              "text": "鱼类-22 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-22/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "玄锦鲤（Mystic Koi）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-22-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-22 可垂钓地点",
+              "text": "鱼类-22 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-22/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-23",
+      "category": "鱼类",
+      "title": "深海璀钻（Deepwater Diamond）",
+      "number": "鱼类-23",
+      "state": "",
+      "display": "鱼类-23",
+      "references": [
+        "FISH-23"
+      ],
+      "faces": [
+        {
+          "title": "深海璀钻（Deepwater Diamond）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-23-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-23 图鉴",
+              "text": "鱼类-23 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-23/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "深海璀钻（Deepwater Diamond）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-23-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-23 可垂钓地点",
+              "text": "鱼类-23 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-23/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-24",
+      "category": "鱼类",
+      "title": "骑鳗龙虾（Eel-Riding Lobster）",
+      "number": "鱼类-24",
+      "state": "",
+      "display": "鱼类-24",
+      "references": [
+        "FISH-24"
+      ],
+      "faces": [
+        {
+          "title": "骑鳗龙虾（Eel-Riding Lobster）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-24-front.webp",
+              "box": [
+                0,
+                0,
+                586,
+                804
+              ],
+              "card": "鱼类-24 图鉴",
+              "text": "鱼类-24 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-24/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "骑鳗龙虾（Eel-Riding Lobster）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-24-back.webp",
+              "box": [
+                0,
+                0,
+                584,
+                819
+              ],
+              "card": "鱼类-24 可垂钓地点",
+              "text": "鱼类-24 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-24/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-25",
+      "category": "鱼类",
+      "title": "瓶中字条",
+      "number": "鱼类-25",
+      "state": "",
+      "display": "鱼类-25",
+      "references": [
+        "FISH-25"
+      ],
+      "faces": [
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-25-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-25 图鉴",
+              "text": "鱼类-25 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-25/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "瓶中字条",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-25-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-25 可垂钓地点",
+              "text": "鱼类-25 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-25/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-26",
+      "category": "鱼类",
+      "title": "呆口鲈（Slackjaw Bass）",
+      "number": "鱼类-26",
+      "state": "",
+      "display": "鱼类-26",
+      "references": [
+        "FISH-26"
+      ],
+      "faces": [
+        {
+          "title": "呆口鲈（Slackjaw Bass）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-26-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-26 图鉴",
+              "text": "鱼类-26 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-26/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "呆口鲈（Slackjaw Bass）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-26-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-26 可垂钓地点",
+              "text": "鱼类-26 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-26/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-27",
+      "category": "鱼类",
+      "title": "环河鳗（Rim-River Eel）",
+      "number": "鱼类-27",
+      "state": "",
+      "display": "鱼类-27",
+      "references": [
+        "FISH-27"
+      ],
+      "faces": [
+        {
+          "title": "环河鳗（Rim-River Eel）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-27-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-27 图鉴",
+              "text": "鱼类-27 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-27/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "环河鳗（Rim-River Eel）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-27-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-27 可垂钓地点",
+              "text": "鱼类-27 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-27/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-28",
+      "category": "鱼类",
+      "title": "法师鱼（Magefin）",
+      "number": "鱼类-28",
+      "state": "",
+      "display": "鱼类-28",
+      "references": [
+        "FISH-28"
+      ],
+      "faces": [
+        {
+          "title": "法师鱼（Magefin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-28-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-28 图鉴",
+              "text": "鱼类-28 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-28/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "法师鱼（Magefin）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-28-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-28 可垂钓地点",
+              "text": "鱼类-28 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-28/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-29",
+      "category": "鱼类",
+      "title": "牛头鱼（Bullhead）",
+      "number": "鱼类-29",
+      "state": "",
+      "display": "鱼类-29",
+      "references": [
+        "FISH-29"
+      ],
+      "faces": [
+        {
+          "title": "牛头鱼（Bullhead）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-29-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-29 图鉴",
+              "text": "鱼类-29 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-29/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "牛头鱼（Bullhead）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-29-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-29 可垂钓地点",
+              "text": "鱼类-29 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-29/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-30",
+      "category": "鱼类",
+      "title": "巨型雀鳝（Monster Gar）",
+      "number": "鱼类-30",
+      "state": "",
+      "display": "鱼类-30",
+      "references": [
+        "FISH-30"
+      ],
+      "faces": [
+        {
+          "title": "巨型雀鳝（Monster Gar）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-30-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-30 图鉴",
+              "text": "鱼类-30 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-30/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "巨型雀鳝（Monster Gar）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-30-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-30 可垂钓地点",
+              "text": "鱼类-30 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-30/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-31",
+      "category": "鱼类",
+      "title": "静水蛭蛇",
+      "number": "鱼类-31",
+      "state": "",
+      "display": "鱼类-31",
+      "references": [
+        "FISH-31"
+      ],
+      "faces": [
+        {
+          "title": "静水蛭蛇",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-31-front.webp",
+              "box": [
+                0,
+                0,
+                586,
+                804
+              ],
+              "card": "鱼类-31 图鉴",
+              "text": "鱼类-31 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-31/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "静水蛭蛇",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-31-back.webp",
+              "box": [
+                0,
+                0,
+                584,
+                819
+              ],
+              "card": "鱼类-31 可垂钓地点",
+              "text": "鱼类-31 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-31/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FISH-32",
+      "category": "鱼类",
+      "title": "赤帆巨舵鱼（Redsail Galleon）",
+      "number": "鱼类-32",
+      "state": "",
+      "display": "鱼类-32",
+      "references": [
+        "FISH-32"
+      ],
+      "faces": [
+        {
+          "title": "赤帆巨舵鱼（Redsail Galleon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-32-front.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "鱼类-32 图鉴",
+              "text": "鱼类-32 图鉴"
+            }
+          ],
+          "source": "fishing/FISH-32/front",
+          "physicalSide": "front",
+          "label": "图鉴",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "赤帆巨舵鱼（Redsail Galleon）",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fish-32-back.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "鱼类-32 可垂钓地点",
+              "text": "鱼类-32 可垂钓地点"
+            }
+          ],
+          "source": "fishing/FISH-32/back",
+          "physicalSide": "back",
+          "label": "可垂钓地点",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-1",
+      "category": "钓技",
+      "title": "快速抛投",
+      "number": "钓技-1",
+      "state": "",
+      "display": "钓技-1",
+      "references": [
+        "FST-1"
+      ],
+      "faces": [
+        {
+          "title": "快速抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-1-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-1 钓技图示",
+              "text": "钓技-1 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-1/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "快速抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-1-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-1 背面",
+              "text": "钓技-1 背面"
+            }
+          ],
+          "source": "fishing/FST-1/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-2",
+      "category": "钓技",
+      "title": "松线",
+      "number": "钓技-2",
+      "state": "",
+      "display": "钓技-2",
+      "references": [
+        "FST-2"
+      ],
+      "faces": [
+        {
+          "title": "松线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-2-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-2 钓技图示",
+              "text": "钓技-2 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-2/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "松线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-2-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-2 背面",
+              "text": "钓技-2 背面"
+            }
+          ],
+          "source": "fishing/FST-2/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-3",
+      "category": "钓技",
+      "title": "过头抛投",
+      "number": "钓技-3",
+      "state": "",
+      "display": "钓技-3",
+      "references": [
+        "FST-3"
+      ],
+      "faces": [
+        {
+          "title": "过头抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-3-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-3 钓技图示",
+              "text": "钓技-3 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-3/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "过头抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-3-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-3 背面",
+              "text": "钓技-3 背面"
+            }
+          ],
+          "source": "fishing/FST-3/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-4",
+      "category": "钓技",
+      "title": "撒网",
+      "number": "钓技-4",
+      "state": "",
+      "display": "钓技-4",
+      "references": [
+        "FST-4"
+      ],
+      "faces": [
+        {
+          "title": "撒网",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-4-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-4 钓技图示",
+              "text": "钓技-4 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-4/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "撒网",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-4-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                820
+              ],
+              "card": "钓技-4 背面",
+              "text": "钓技-4 背面"
+            }
+          ],
+          "source": "fishing/FST-4/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-5",
+      "category": "钓技",
+      "title": "诱鱼吟唱",
+      "number": "钓技-5",
+      "state": "",
+      "display": "钓技-5",
+      "references": [
+        "FST-5"
+      ],
+      "faces": [
+        {
+          "title": "诱鱼吟唱",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-5-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-5 钓技图示",
+              "text": "钓技-5 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-5/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "诱鱼吟唱",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-5-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-5 背面",
+              "text": "钓技-5 背面"
+            }
+          ],
+          "source": "fishing/FST-5/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-6",
+      "category": "钓技",
+      "title": "装配假饵",
+      "number": "钓技-6",
+      "state": "",
+      "display": "钓技-6",
+      "references": [
+        "FST-6"
+      ],
+      "faces": [
+        {
+          "title": "装配假饵",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-6-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-6 钓技图示",
+              "text": "钓技-6 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-6/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "装配假饵",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-6-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-6 背面",
+              "text": "钓技-6 背面"
+            }
+          ],
+          "source": "fishing/FST-6/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-7",
+      "category": "钓技",
+      "title": "停下吃点零嘴",
+      "number": "钓技-7",
+      "state": "",
+      "display": "钓技-7",
+      "references": [
+        "FST-7"
+      ],
+      "faces": [
+        {
+          "title": "停下吃点零嘴",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-7-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-7 钓技图示",
+              "text": "钓技-7 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-7/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "停下吃点零嘴",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-7-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-7 背面",
+              "text": "钓技-7 背面"
+            }
+          ],
+          "source": "fishing/FST-7/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-8",
+      "category": "钓技",
+      "title": "放线",
+      "number": "钓技-8",
+      "state": "",
+      "display": "钓技-8",
+      "references": [
+        "FST-8"
+      ],
+      "faces": [
+        {
+          "title": "放线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-8-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-8 钓技图示",
+              "text": "钓技-8 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-8/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "放线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-8-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-8 背面",
+              "text": "钓技-8 背面"
+            }
+          ],
+          "source": "fishing/FST-8/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-9",
+      "category": "钓技",
+      "title": "投放优质饵料",
+      "number": "钓技-9",
+      "state": "",
+      "display": "钓技-9",
+      "references": [
+        "FST-9"
+      ],
+      "faces": [
+        {
+          "title": "投放优质饵料",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-9-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-9 钓技图示",
+              "text": "钓技-9 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-9/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "投放优质饵料",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-9-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-9 背面",
+              "text": "钓技-9 背面"
+            }
+          ],
+          "source": "fishing/FST-9/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-10",
+      "category": "钓技",
+      "title": "搅水",
+      "number": "钓技-10",
+      "state": "",
+      "display": "钓技-10",
+      "references": [
+        "FST-10"
+      ],
+      "faces": [
+        {
+          "title": "搅水",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-10-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-10 钓技图示",
+              "text": "钓技-10 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-10/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "搅水",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-10-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-10 背面",
+              "text": "钓技-10 背面"
+            }
+          ],
+          "source": "fishing/FST-10/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-11",
+      "category": "钓技",
+      "title": "双击抛投",
+      "number": "钓技-11",
+      "state": "",
+      "display": "钓技-11",
+      "references": [
+        "FST-11"
+      ],
+      "faces": [
+        {
+          "title": "双击抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-11-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-11 钓技图示",
+              "text": "钓技-11 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-11/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "双击抛投",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-11-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-11 背面",
+              "text": "钓技-11 背面"
+            }
+          ],
+          "source": "fishing/FST-11/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-12",
+      "category": "钓技",
+      "title": "松弛鱼线",
+      "number": "钓技-12",
+      "state": "",
+      "display": "钓技-12",
+      "references": [
+        "FST-12"
+      ],
+      "faces": [
+        {
+          "title": "松弛鱼线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-12-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-12 钓技图示",
+              "text": "钓技-12 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-12/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "松弛鱼线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-12-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-12 背面",
+              "text": "钓技-12 背面"
+            }
+          ],
+          "source": "fishing/FST-12/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-13",
+      "category": "钓技",
+      "title": "观察水情",
+      "number": "钓技-13",
+      "state": "",
+      "display": "钓技-13",
+      "references": [
+        "FST-13"
+      ],
+      "faces": [
+        {
+          "title": "观察水情",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-13-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-13 钓技图示",
+              "text": "钓技-13 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-13/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "观察水情",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-13-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-13 背面",
+              "text": "钓技-13 背面"
+            }
+          ],
+          "source": "fishing/FST-13/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-14",
+      "category": "钓技",
+      "title": "检查钓具盒",
+      "number": "钓技-14",
+      "state": "",
+      "display": "钓技-14",
+      "references": [
+        "FST-14"
+      ],
+      "faces": [
+        {
+          "title": "检查钓具盒",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-14-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-14 钓技图示",
+              "text": "钓技-14 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-14/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "检查钓具盒",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-14-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-14 背面",
+              "text": "钓技-14 背面"
+            }
+          ],
+          "source": "fishing/FST-14/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-15",
+      "category": "钓技",
+      "title": "滚抛",
+      "number": "钓技-15",
+      "state": "",
+      "display": "钓技-15",
+      "references": [
+        "FST-15"
+      ],
+      "faces": [
+        {
+          "title": "滚抛",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-15-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-15 钓技图示",
+              "text": "钓技-15 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-15/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "滚抛",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-15-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-15 背面",
+              "text": "钓技-15 背面"
+            }
+          ],
+          "source": "fishing/FST-15/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FST-16",
+      "category": "钓技",
+      "title": "收线",
+      "number": "钓技-16",
+      "state": "",
+      "display": "钓技-16",
+      "references": [
+        "FST-16"
+      ],
+      "faces": [
+        {
+          "title": "收线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-16-front.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-16 钓技图示",
+              "text": "钓技-16 钓技图示"
+            }
+          ],
+          "source": "fishing/FST-16/front",
+          "physicalSide": "front",
+          "label": "钓技图示",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "收线",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fst-16-back.webp",
+              "box": [
+                0,
+                0,
+                578,
+                819
+              ],
+              "card": "钓技-16 背面",
+              "text": "钓技-16 背面"
+            }
+          ],
+          "source": "fishing/FST-16/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FJ-1",
+      "category": "垂钓日志",
+      "title": "垂钓日志",
+      "number": "垂钓日志",
+      "state": "",
+      "display": "垂钓日志",
+      "references": [
+        "FJ-1"
+      ],
+      "faces": [
+        {
+          "title": "垂钓日志",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fj-1-front.webp",
+              "box": [
+                0,
+                0,
+                583,
+                819
+              ],
+              "card": "垂钓日志 设置",
+              "text": "垂钓日志 设置"
+            }
+          ],
+          "source": "fishing/FJ-1/front",
+          "physicalSide": "front",
+          "label": "设置",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "垂钓日志",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/fj-1-back.webp",
+              "box": [
+                0,
+                0,
+                585,
+                804
+              ],
+              "card": "垂钓日志 清单",
+              "text": "垂钓日志 清单"
+            }
+          ],
+          "source": "fishing/FJ-1/back",
+          "physicalSide": "back",
+          "label": "清单",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FTL-1",
+      "category": "垂钓板块",
+      "title": "肩甲袋",
+      "number": "板块-垂钓1",
+      "state": "",
+      "display": "板块-垂钓1",
+      "references": [
+        "FTL-1"
+      ],
+      "faces": [
+        {
+          "title": "肩甲袋",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-1-front.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                1055
+              ],
+              "card": "板块-垂钓1 正面",
+              "text": "板块-垂钓1 正面"
+            }
+          ],
+          "source": "fishing/FTL-1/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "肩甲袋",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-1-back.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                1073
+              ],
+              "card": "板块-垂钓1 背面",
+              "text": "板块-垂钓1 背面"
+            }
+          ],
+          "source": "fishing/FTL-1/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FTL-2",
+      "category": "垂钓板块",
+      "title": "鸟哨",
+      "number": "板块-垂钓2",
+      "state": "",
+      "display": "板块-垂钓2",
+      "references": [
+        "FTL-2"
+      ],
+      "faces": [
+        {
+          "title": "鸟哨",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-2-front.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                1080
+              ],
+              "card": "板块-垂钓2 正面",
+              "text": "板块-垂钓2 正面"
+            }
+          ],
+          "source": "fishing/FTL-2/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "鸟哨",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-2-back.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                1062
+              ],
+              "card": "板块-垂钓2 背面",
+              "text": "板块-垂钓2 背面"
+            }
+          ],
+          "source": "fishing/FTL-2/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    },
+    {
+      "key": "FTL-3",
+      "category": "垂钓板块",
+      "title": "发光钻石",
+      "number": "板块-垂钓3",
+      "state": "",
+      "display": "板块-垂钓3",
+      "references": [
+        "FTL-3"
+      ],
+      "faces": [
+        {
+          "title": "发光钻石",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-3-front.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                936
+              ],
+              "card": "板块-垂钓3 正面",
+              "text": "板块-垂钓3 正面"
+            }
+          ],
+          "source": "fishing/FTL-3/front",
+          "physicalSide": "front",
+          "label": "正面",
+          "proofread": true,
+          "workbookText": ""
+        },
+        {
+          "title": "发光钻石",
+          "blocks": [
+            {
+              "kind": "map_scan",
+              "asset": "cards/fishing/ftl-3-back.webp",
+              "box": [
+                0,
+                0,
+                1080,
+                926
+              ],
+              "card": "板块-垂钓3 背面",
+              "text": "板块-垂钓3 背面"
+            }
+          ],
+          "source": "fishing/FTL-3/back",
+          "physicalSide": "back",
+          "label": "背面",
+          "proofread": true,
+          "workbookText": ""
+        }
+      ],
+      "search": "\n",
+      "workbookRows": []
+    }
+  ]
+}

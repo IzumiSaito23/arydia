@@ -1,9 +1,18 @@
 (function(root){
 'use strict';
 const clone=value=>JSON.parse(JSON.stringify(value));
-const codes={'事件':'EVT','人物':'NPC','互动':'POI','键钥':'KEY','敌人':'FOE','威胁':'THR','委托':'JOB','当日':'DAY','参考':'REF','旅行':'TRV','技能':'SKL','角色':'RACE','游荡':'ROG','法师':'MAG','游侠':'RNG','诗人':'BRD','牧师':'CLR','战士':'WAR'};
+const codes={'事件':'EVT','人物':'NPC','互动':'POI','键钥':'KEY','敌人':'FOE','威胁':'THR','委托':'JOB','当日':'DAY','参考':'REF','旅行':'TRV','技能':'SKL','角色':'RACE','游荡':'ROG','法师':'MAG','游侠':'RNG','诗人':'BRD','牧师':'CLR','战士':'WAR','大型':'BIG','中型':'MED','小型':'SML','长条':'LNG','鱼类':'FISH','钓技':'FST','板块-垂钓':'FTL','垂钓日志':'FJ'};
 function identifier(raw){let s=String(raw||'').normalize('NFKC').replace(/[\s#]/g,'').toUpperCase().replace(/[－—–]/g,'-');for(const [name,code]of Object.entries(codes))s=s.replace(name,code);if(/^\d+[A-E]?$/.test(s))s='KEY-'+s;const m=/^([A-Z]+)-?(\d+)([A-E]?)$/.exec(s);return m?`${m[1]}-${m[1]==='EVT'&&m[2]==='000'?'000':Number(m[2])}${m[3]}`:s;}
 const searchIndexes=new WeakMap();
+function indexRecords(records,cards){
+ const combined=[...records];
+ const known=new Set(records.map(r=>identifier(r.id).replace(/(\d)A$/,'$1')));
+ for(const card of cards){
+  const id=identifier(card.references[0]||card.key).replace(/(\d)A$/,'$1');
+  if(!known.has(id)){known.add(id);combined.push({id,zh:card.title});}
+ }
+ return combined;
+}
 const searchFold=text=>String(text||'').normalize('NFKC').toLowerCase().replace(/\{[^}]*}/g,'').replace(/[\s\p{P}\p{S}]/gu,'');
 const searchNumber=raw=>raw==='000'?'000':String(Number(raw));
 function searchIdentity(card,digits,letter,code){return card.references.some(ref=>{const m=/^([A-Z]+)-(\d+)([A-E]?)$/.exec(identifier(ref));return m&&(!code||code===m[1])&&searchNumber(m[2])===searchNumber(digits)&&(!letter||m[3]===letter||(letter==='A'&&!m[3]&&!card.state));});}
@@ -106,8 +115,8 @@ function searchIndex(records,core,cards,meta,query){
  const allowed=records.filter(r=>!excluded.has(r.id.split('-')[0]));
  if(numeric||typed){const digits=numeric?numeric[1]:typed[2],letter=(numeric?numeric[2]:typed[3]).toUpperCase(),code=numeric?null:typed[1];return allowed.filter(r=>searchIdentity({references:[r.id]},digits,letter,code)&& (letter||!/[B-E]$/.test(r.id)));}
  if(!raw)return allowed;const term=raw.toLowerCase(),norm=core.norm(raw),source=new Set(searchCards(cards,meta,raw).flatMap(c=>c.references).map(ref=>core.resolve(ref)?.id||core.norm(ref)));
- return allowed.filter(r=>core.norm(r.id).includes(norm)||String(r.zh||'').toLowerCase().includes(term)||source.has(r.id));
+ return allowed.filter(r=>identifier(r.id).includes(norm)||String(r.zh||'').toLowerCase().includes(term)||source.has(r.id)||source.has(r.id+'A'));
 }
-const M={validateCarriedSkills,mapSaves,saveCurrentMap,switchMapSave,createMapSave,renameMapSave,deleteMapSave,validateMapSaves,searchIndex,replacementTargets,mapReplacementCode,mapReplace,mapReset,carriedRacialSkill,setCarriedRacialSkill,cardRelations,lanMapUrl,clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
+const M={indexRecords,validateCarriedSkills,mapSaves,saveCurrentMap,switchMapSave,createMapSave,renameMapSave,deleteMapSave,validateMapSaves,searchIndex,replacementTargets,mapReplacementCode,mapReplace,mapReset,carriedRacialSkill,setCarriedRacialSkill,cardRelations,lanMapUrl,clone,codes,identifier,searchCards,searchHint,bag,held,keywords,coins,addCoin,removeCoin,exact,add,archive,update,setNote,mapArrive,mapUndo,mapOptions,mapSettings,mapSetToken,mapRestoreProgress,mapTravelBlockReason,mapBeginTravel,mapCompleteTravel,mapCancelTravel,fishing,fishMark,fishingComplete,validateBag,validateFishing,validateMap,preserveModernState};
 root.CampaignModel=M;if(root.Core){const original=root.Core.validate;root.Core.validate=raw=>preserveModernState(raw,original(raw));}
 })(typeof window==='undefined'?globalThis:window);

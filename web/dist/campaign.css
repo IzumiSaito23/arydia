@@ -57,3 +57,14 @@ body[data-search-workspace=true]{overflow:hidden}body[data-search-workspace=true
 .camp-search-field{display:flex;align-items:center;gap:10px;min-height:56px;padding:0 12px;border:1px solid var(--camp-accent);border-radius:18px;background:var(--paper);color:var(--teal)}.camp-search-field>svg{width:22px;height:22px;flex-shrink:0}.camp-search-field #camp-search-query{flex:1;min-width:0;width:100%;min-height:54px;padding:10px 0;border:0!important;border-radius:0;background:transparent;outline:none;box-shadow:none;font:inherit!important;color:var(--ink)}.camp-search-field:focus-within{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal)}.camp-search-field .camp-search-clear{min-width:32px;width:32px;min-height:40px;height:40px;background:transparent;padding:0;font-size:24px;color:var(--teal);flex-shrink:0}.camp-search-clear[hidden]{display:none}.camp-search-field input::-webkit-search-cancel-button{display:none}
 
 .camp-character-tab-row .record-tabs{background:var(--sage)}.camp-character-tab-row .record-tabs button{color:var(--teal)}.camp-character-tab-row .record-tabs button[aria-pressed=true]{background:var(--forest);color:#f5faeb}
+.camp-card-scan{display:block;margin-block:10px}
+.camp-card-scan img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain;border-radius:10px}
+.camp-map-top .camp-map-battle{white-space:nowrap;padding-inline:12px}
+.camp-map-top #camp-map-references{min-width:0;overflow-x:auto;scrollbar-width:none;pointer-events:auto}
+.camp-map-top>div:last-child{flex-shrink:0}
+body[data-view=combat95]>#nav,body[data-view=combat95]>#mini-player,body[data-view=combat95]>.masthead{display:none!important}
+body[data-view=combat95] #main{position:fixed;inset:0;margin:0;padding:0;width:100%;max-width:none}
+.camp-battle-frame{width:100%;height:100%;display:block;border:0}
+.camp-storage-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.camp-storage-photos img{display:block;width:100%;border-radius:12px}
+#camp-storage-share{width:100%}

@@ -88,6 +88,7 @@
       document.removeEventListener('keydown', trap, true);
       const target = returnFocus && returnFocus !== document.body && returnFocus.isConnected ? returnFocus : document.querySelector('#main button, .masthead button');
       target?.focus({preventScroll:true});
+      window.dispatchEvent(new Event('arydia-intro-accepted'));
     }
     root.addEventListener('animationend', e => { if (e.animationName === 'intro-card-receive') finish(); });
     setTimeout(finish, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);

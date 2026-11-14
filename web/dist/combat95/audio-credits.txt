@@ -1,0 +1,4 @@
+Battle SFX: CC0
+Cube: pop! by 0f9ran — https://opengameart.org/content/pop
+Sword: 3 Melee sounds by remaxim / qubodup — https://opengameart.org/content/3-melee-sounds
+Trimmed, filtered and gain adjusted.
