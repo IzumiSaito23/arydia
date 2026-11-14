@@ -59,7 +59,8 @@ function cardRelations(){const v=cardView,p=state().prefs;
 function sourceArt(block){
  const url=esc(block.asset),label=esc(block.text||'卡牌图示');
  const width=block.box[2]-block.box[0],height=block.box[3]-block.box[1];
- return '<a class="camp-card-scan" href="'+url+'" target="_blank" rel="noopener"><img src="'+url+'" alt="'+label+'" loading="lazy" width="'+width+'" height="'+height+'"></a>';
+ const style=block.transparentArt?'camp-card-scan camp-card-cutout':'camp-card-scan';
+ return '<a class="'+style+'" href="'+url+'" target="_blank" rel="noopener"><img src="'+url+'" alt="'+label+'" loading="lazy" width="'+width+'" height="'+height+'"></a>';
 }
 function paintCard(){const v=cardView,c=v.card,f=c.faces[v.face],visible=v.owned||state().prefs.databaseText||v.revealed.has(v.face),title=v.named?esc(f.title||c.title):button('cardTitle','显示卡牌标题');const variants=assets.cards.filter(x=>x.category===c.category&&x.number===c.number&&x.state);
  const photo=assets.portraits[f.source],body=visible?`<article class="camp-card-body" data-category="${esc(c.category)}">${photo?`<img class="camp-npc" src="${esc(photo)}" alt="${esc(f.title||c.title)}">`:''}${f.blocks?.length?f.blocks.map(b=>b.kind==='map_scan'?sourceArt(b):b.text?(b.kind==='heading'?`<h3>${tokenize(b.text)}</h3>`:`<${b.style==='dialogue'?'blockquote':'p'}>${tokenize(b.text).replace(/\n/g,'<br>')}</${b.style==='dialogue'?'blockquote':'p'}>`):'').join(''):`<p>${tokenize(f.workbookText||'请参照实体卡牌。').replace(/\n/g,'<br>')}</p>`}</article>`:`<div class="panel"><p>正文可能包含剧情，请按实体游戏指示查阅。</p>${button('revealCard','展开卡牌正文','','primary')}</div>`;

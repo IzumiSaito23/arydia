@@ -59,6 +59,7 @@ body[data-search-workspace=true]{overflow:hidden}body[data-search-workspace=true
 .camp-character-tab-row .record-tabs{background:var(--sage)}.camp-character-tab-row .record-tabs button{color:var(--teal)}.camp-character-tab-row .record-tabs button[aria-pressed=true]{background:var(--forest);color:#f5faeb}
 .camp-card-scan{display:block;margin-block:10px}
 .camp-card-scan img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain;border-radius:10px}
+.camp-card-cutout img{width:auto;max-width:100%;max-height:min(235px,34dvh);margin-inline:auto;border-radius:0}
 .camp-map-top .camp-map-battle{white-space:nowrap;padding-inline:12px}
 .camp-map-top #camp-map-references{min-width:0;overflow-x:auto;scrollbar-width:none;pointer-events:auto}
 .camp-map-top>div:last-child{flex-shrink:0}

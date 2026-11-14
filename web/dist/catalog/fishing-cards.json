@@ -941,15 +941,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-1-art.webp",
+              "asset": "cards/fishing/fish-1-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                1000
               ],
               "card": "旧靴子",
-              "text": "旧靴子插画"
+              "text": "旧靴子插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -996,15 +997,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-2-art.webp",
+              "asset": "cards/fishing/fish-2-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                708
+                695,
+                1232
               ],
               "card": "瓶中字条",
-              "text": "瓶中字条插画"
+              "text": "瓶中字条插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1075,15 +1077,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-3-art.webp",
+              "asset": "cards/fishing/fish-3-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                978
               ],
               "card": "孔雀鱼（Guppy）",
-              "text": "孔雀鱼（Guppy）插画"
+              "text": "孔雀鱼（Guppy）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1154,15 +1157,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-4-art.webp",
+              "asset": "cards/fishing/fish-4-cutout.webp",
               "box": [
                 0,
                 0,
-                1172,
-                692
+                1432,
+                1223
               ],
               "card": "黄油鱼（Butterfin）",
-              "text": "黄油鱼（Butterfin）插画"
+              "text": "黄油鱼（Butterfin）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1233,15 +1237,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-5-art.webp",
+              "asset": "cards/fishing/fish-5-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                1141
               ],
               "card": "须鱼（Whiskerfish）",
-              "text": "须鱼（Whiskerfish）插画"
+              "text": "须鱼（Whiskerfish）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1312,15 +1317,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-6-art.webp",
+              "asset": "cards/fishing/fish-6-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                768
               ],
               "card": "毛背鲤（Shaggy Carp）",
-              "text": "毛背鲤（Shaggy Carp）插画"
+              "text": "毛背鲤（Shaggy Carp）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1391,15 +1397,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-7-art.webp",
+              "asset": "cards/fishing/fish-7-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                892
               ],
               "card": "拉链鱼（Zipperfin）",
-              "text": "拉链鱼（Zipperfin）插画"
+              "text": "拉链鱼（Zipperfin）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1470,15 +1477,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-8-art.webp",
+              "asset": "cards/fishing/fish-8-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                816
               ],
               "card": "盆地石鲈（Basin Grouper）",
-              "text": "盆地石鲈（Basin Grouper）插画"
+              "text": "盆地石鲈（Basin Grouper）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1549,15 +1557,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-9-art.webp",
+              "asset": "cards/fishing/fish-9-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1247,
+                1232
               ],
               "card": "虚幻彩虹（Hollow Rainbow）",
-              "text": "虚幻彩虹（Hollow Rainbow）插画"
+              "text": "虚幻彩虹（Hollow Rainbow）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1628,15 +1637,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-10-art.webp",
+              "asset": "cards/fishing/fish-10-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                898
               ],
               "card": "光鱼（Glowfin）",
-              "text": "光鱼（Glowfin）插画"
+              "text": "光鱼（Glowfin）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1695,15 +1705,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-11-art.webp",
+              "asset": "cards/fishing/fish-11-cutout.webp",
               "box": [
                 0,
                 0,
-                1172,
-                692
+                1271,
+                1232
               ],
               "card": "幽灵鱼（Ghost Fish）",
-              "text": "幽灵鱼（Ghost Fish）插画"
+              "text": "幽灵鱼（Ghost Fish）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1762,15 +1773,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-12-art.webp",
+              "asset": "cards/fishing/fish-12-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1367,
+                1232
               ],
               "card": "瓶中字条",
-              "text": "瓶中字条插画"
+              "text": "瓶中字条插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1841,15 +1853,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-13-art.webp",
+              "asset": "cards/fishing/fish-13-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                708
+                1432,
+                1067
               ],
               "card": "三文鱼（Salmon）",
-              "text": "三文鱼（Salmon）插画"
+              "text": "三文鱼（Salmon）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1920,15 +1933,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-14-art.webp",
+              "asset": "cards/fishing/fish-14-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                698
               ],
               "card": "红鳞鲟（Red-Scale Sturgeon）",
-              "text": "红鳞鲟（Red-Scale Sturgeon）插画"
+              "text": "红鳞鲟（Red-Scale Sturgeon）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -1999,15 +2013,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-15-art.webp",
+              "asset": "cards/fishing/fish-15-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                666
               ],
               "card": "水晶鳟（Crystal Trout）",
-              "text": "水晶鳟（Crystal Trout）插画"
+              "text": "水晶鳟（Crystal Trout）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2078,15 +2093,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-16-art.webp",
+              "asset": "cards/fishing/fish-16-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                755
               ],
               "card": "胡子梭（Bearded Pike）",
-              "text": "胡子梭（Bearded Pike）插画"
+              "text": "胡子梭（Bearded Pike）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2157,15 +2173,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-17-art.webp",
+              "asset": "cards/fishing/fish-17-cutout.webp",
               "box": [
                 0,
                 0,
-                1172,
-                692
+                1432,
+                956
               ],
               "card": "箭首鱼（Arrowhead）",
-              "text": "箭首鱼（Arrowhead）插画"
+              "text": "箭首鱼（Arrowhead）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2236,15 +2253,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-18-art.webp",
+              "asset": "cards/fishing/fish-18-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                978
+                917,
+                1232
               ],
               "card": "剑鱼（Swordfish）",
-              "text": "剑鱼（Swordfish）插画"
+              "text": "剑鱼（Swordfish）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2315,15 +2333,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-19-art.webp",
+              "asset": "cards/fishing/fish-19-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1235,
+                1232
               ],
               "card": "浪尖金枪鱼（Whitecap Tuna）",
-              "text": "浪尖金枪鱼（Whitecap Tuna）插画"
+              "text": "浪尖金枪鱼（Whitecap Tuna）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2394,15 +2413,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-20-art.webp",
+              "asset": "cards/fishing/fish-20-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                868
+                1185,
+                1232
               ],
               "card": "飞鱼（Flying Fish）",
-              "text": "飞鱼（Flying Fish）插画"
+              "text": "飞鱼（Flying Fish）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2473,15 +2493,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-21-art.webp",
+              "asset": "cards/fishing/fish-21-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                756
+                1258,
+                1232
               ],
               "card": "落井地精",
-              "text": "落井地精插画"
+              "text": "落井地精插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2540,15 +2561,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-22-art.webp",
+              "asset": "cards/fishing/fish-22-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                1192
               ],
               "card": "玄锦鲤（Mystic Koi）",
-              "text": "玄锦鲤（Mystic Koi）插画"
+              "text": "玄锦鲤（Mystic Koi）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2607,15 +2629,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-23-art.webp",
+              "asset": "cards/fishing/fish-23-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                951,
+                1232
               ],
               "card": "深海璀钻（Deepwater Diamond）",
-              "text": "深海璀钻（Deepwater Diamond）插画"
+              "text": "深海璀钻（Deepwater Diamond）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2674,15 +2697,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-24-art.webp",
+              "asset": "cards/fishing/fish-24-cutout.webp",
               "box": [
                 0,
                 0,
-                1172,
-                692
+                1432,
+                888
               ],
               "card": "骑鳗龙虾（Eel-Riding Lobster）",
-              "text": "骑鳗龙虾（Eel-Riding Lobster）插画"
+              "text": "骑鳗龙虾（Eel-Riding Lobster）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2745,15 +2769,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-25-art.webp",
+              "asset": "cards/fishing/fish-25-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                1073
               ],
               "card": "瓶中字条",
-              "text": "瓶中字条插画"
+              "text": "瓶中字条插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2824,15 +2849,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-26-art.webp",
+              "asset": "cards/fishing/fish-26-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                708
+                1432,
+                750
               ],
               "card": "呆口鲈（Slackjaw Bass）",
-              "text": "呆口鲈（Slackjaw Bass）插画"
+              "text": "呆口鲈（Slackjaw Bass）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2903,15 +2929,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-27-art.webp",
+              "asset": "cards/fishing/fish-27-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1385,
+                1232
               ],
               "card": "环河鳗（Rim-River Eel）",
-              "text": "环河鳗（Rim-River Eel）插画"
+              "text": "环河鳗（Rim-River Eel）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -2982,15 +3009,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-28-art.webp",
+              "asset": "cards/fishing/fish-28-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                692
+                1432,
+                888
               ],
               "card": "法师鱼（Magefin）",
-              "text": "法师鱼（Magefin）插画"
+              "text": "法师鱼（Magefin）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -3061,15 +3089,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-29-art.webp",
+              "asset": "cards/fishing/fish-29-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                708
+                1432,
+                1090
               ],
               "card": "牛头鱼（Bullhead）",
-              "text": "牛头鱼（Bullhead）插画"
+              "text": "牛头鱼（Bullhead）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -3140,15 +3169,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-30-art.webp",
+              "asset": "cards/fishing/fish-30-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                840
+                1019,
+                1232
               ],
               "card": "巨型雀鳝（Monster Gar）",
-              "text": "巨型雀鳝（Monster Gar）插画"
+              "text": "巨型雀鳝（Monster Gar）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -3219,15 +3249,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-31-art.webp",
+              "asset": "cards/fishing/fish-31-cutout.webp",
               "box": [
                 0,
                 0,
-                1172,
-                692
+                1292,
+                1232
               ],
               "card": "静水蛭蛇",
-              "text": "静水蛭蛇插画"
+              "text": "静水蛭蛇插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
@@ -3294,15 +3325,16 @@
           "blocks": [
             {
               "kind": "map_scan",
-              "asset": "cards/fishing/fish-32-art.webp",
+              "asset": "cards/fishing/fish-32-cutout.webp",
               "box": [
                 0,
                 0,
-                1170,
-                784
+                1432,
+                969
               ],
               "card": "赤帆巨舵鱼（Redsail Galleon）",
-              "text": "赤帆巨舵鱼（Redsail Galleon）插画"
+              "text": "赤帆巨舵鱼（Redsail Galleon）插画",
+              "transparentArt": true
             },
             {
               "kind": "body",
