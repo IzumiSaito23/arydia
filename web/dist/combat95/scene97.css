@@ -188,11 +188,16 @@
 .battle-settings .setting-line + .setting-line {margin-top:3px}
 .battle-settings .setting-section > p {margin:2px 0 0;font-size:16px;font-weight:500}
 .sheet:has(.battle-settings) h2 {font-size:23px}
-.ai-heading{flex-wrap:wrap}
-.ai-classes{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
-.ai-class{padding:2px 8px;border-radius:99px;background:var(--sage);color:var(--pine);font-size:12px;font-weight:800}
-.ai-class[data-class="首领"]{background:#a5322f;color:#fff5e7}
-.ai-class[data-class="悍卒"]{background:#1c6771;color:#fff}
+.ai-heading,.ai-identity,.ai-classes{display:flex;align-items:center;flex-wrap:wrap}
+.ai-heading,.ai-identity{gap:6px 8px}
+.ai-identity h3,.ai-identity small{line-height:1.25}
+.ai-classes{gap:5px}
+.ai-class{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:0 9px;border:1px solid #315e63;border-radius:7px;background:#e1eff0;color:#194147;font-size:12px;line-height:1;font-weight:800;white-space:nowrap}
+.ai-class[data-class="首领"]{border-color:#96362b;background:#f5dfd8;color:#7e2a20}
+.ai-class[data-class="悍卒"]{border-color:#8b730e;background:#f4e6a2;color:#473904}
+.card-note-bg{fill:#fff8e8;stroke:#60523f;stroke-width:1.6}
+.card-note-ink{fill:#231e17;stroke:#231e17;stroke-width:17;stroke-linejoin:round;paint-order:stroke fill}
+.card-note-reader{display:grid;gap:8px;padding:12px 0;color:var(--ink);font-size:17px;font-weight:650;line-height:1.65}
 #card-actions{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:5px 10px;color:var(--pine);font-size:13px;font-weight:700;flex:none}
 #card-actions[hidden]{display:none}
 #card-actions button{min-height:32px;padding:3px 11px;border-radius:99px;background:var(--sage);color:var(--pine);font-weight:750}

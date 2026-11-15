@@ -66,7 +66,7 @@ function updateCardActions(){
    note='骸骨堆';
    actions=button('rise','复苏')+button('destroyBones','确认摧毁')+button('bonesRules','规则');
   }else if(effects?.phase==='bonesDestroyed')note='骸骨堆已摧毁';
-  else if(['FOE-59','FOE-60','FOE-61'].includes(t.cardId)&&B.defeated(t,f))actions=button('markBones','翻到骸骨堆');
+  else if(t.bonesImage&&B.defeated(t,f))actions=button('markBones','翻到骸骨堆');
   else if(effects?.phase==='iceArmor')note='护甲已清空 · 翻转事件-15，放到大型-2';
   else if(effects?.phase==='iceWounds')note='生命点耗尽 · 人物-21 转 B，再翻转事件-15，放到大型-2';
   else if(effects?.regen){
@@ -87,6 +87,8 @@ function updateCardActions(){
    note=spiritOverride===f.id?'释放已生效 · 本次攻击可命中':'灵体免疫';
    actions=button('spiritOverride',spiritOverride===f.id?'取消':'宝珠释放');
   }else if(effects?.phase==='revived'&&!B.defeated(t,f))note='不灭已触发 · 1 个力量标记';
+  const lettering=B.cardFace(t,f).textOverlay;
+  if(lettering?.note||lettering?.labels?.length)actions+=button('cardNote','卡面提示');
  }
  const html=(note?`<span role="status">${E(note)}</span>`:'')+actions;
  if(box.innerHTML!==html)box.innerHTML=html;
@@ -118,6 +120,14 @@ async function performCardAction(id,action,value){
 $('card-actions').addEventListener('click',event=>{
  const action=event.target.closest('button')?.dataset.cardAction,f=current();
  if(!action||!f||pending||draining)return;
+ if(action==='cardNote'){
+  const overlay=B.cardFace(template(f),f).textOverlay;
+  const labels=(overlay?.labels||[]).map(label=>label.text);
+  const note=overlay?.note?.lines.join('\n').split(/\n(?=•)/).map(paragraph=>paragraph.replace(/\n\s*/g,''))||[];
+  const lines=[...labels,...note];
+  modal('卡面提示',`<div class="card-note-reader">${lines.map(line=>`<div>${E(line.trim())}</div>`).join('')}</div>`);
+  return;
+ }
  if(action==='regenerate'||action==='setLeaf'){
   const regen=action==='regenerate',label=regen?'弱点生效前的威胁值':'剩余叶盾';
   modal(regen?'再生':'调整叶盾',`<form id="card-value-form"><label>${label}<input id="card-value" type="number" min="0" max="${regen?999:3}" inputmode="numeric" value="${regen?'':f.effects?.leaf??3}" required></label><button class="primary" type="submit">确认</button></form>`,()=>{
@@ -126,7 +136,7 @@ $('card-actions').addEventListener('click',event=>{
   return;
  }
  if(action==='bonesRules'){
-  modal('骸骨堆','<p>骸骨堆无法主动移动或攻击，仍消耗威胁值。任一敌人发动「复苏」时，可翻回网格面，清除伤口，护甲不恢复，当回合不行动。</p><p>流放者可用次级行动尝试重踏，力量 14 检定成功即摧毁。受到至少 1 点治疗也会被摧毁。</p>');
+  modal('骸骨堆','<p>将模型侧放。骸骨堆消耗威胁值，无法主动移动或攻击，可被复苏或重踏。其他角色可穿过它，若停在同一格，将骸骨堆移到最近的可通行空格。</p><p>任一敌人发动「复苏」时，将模型扶起并翻回网格面。清除伤口，护甲不恢复，本回合不行动。</p><p>相邻流放者可用次级行动重踏，力量 14 检定成功即摧毁。受到至少 1 点治疗也会被摧毁。</p>');
   return;
  }
  if(action==='spiritOverride'){
@@ -187,30 +197,37 @@ function forecastArrows104(result,t){
  return out;
 }
 
-// Fixed outlines for the explanatory notes printed over the card artwork.
-function printedCardLine(text,x,y,size,{center=true,vertical=false,color=null,symbolColors=false}={}){
- const run=Array.from(text,char=>({char,glyph:window.COMBAT_CARD_GLYPHS[char]}));
- const width=run.reduce((sum,{glyph})=>sum+glyph[0],0),scale=size/1000;
- const baseline=vertical?-(Math.min(...run.map(({glyph})=>glyph[1]))+Math.max(...run.map(({glyph})=>glyph[2])))/2:0;
- let pen=center?-width/2:0;
- const paths=run.map(({char,glyph},index)=>{
-  const [advance,,,outline]=glyph;
-  const skill=char==='敏'&&run[index+1]?.char==='捷'||char==='捷'&&run[index-1]?.char==='敏';
-  const shade=symbolColors?(char==='♥'||char==='×'?'#b62d38':char==='◎'||skill?'#50764e':null):null;
-  const path=outline?`<path d="${outline}" transform="translate(${pen} ${baseline})"${shade?` fill="${shade}"`:''}/>`:'';
-  pen+=advance;return path;
+// Draw vector lettering over a solid backing to keep the printed notes readable on artwork.
+function printedCardBlock(lines,style,W,H){
+ const glyphs=window.COMBAT_CARD_GLYPHS, pad=9;
+ const rows=lines.map(line=>Array.from(line,char=>glyphs[char]));
+ const widths=rows.map(row=>row.reduce((sum,glyph)=>sum+glyph[0],0));
+ const maxWidth=Math.max(...widths);
+ const size=Math.min(style.size+4,(W-pad*4)*1000/maxWidth);
+ const scale=size/1000,width=maxWidth*scale+pad*2;
+ const centered=style.anchor!=='start', leading=Math.max((style.lineHeight||0)*H,size*1.15);
+ const height=size*1.15+pad*2+(rows.length-1)*leading;
+ const left=Math.max(pad,Math.min(W-width-pad,W*style.x-(centered?width/2:pad)));
+ const top=Math.max(pad,Math.min(H-height-pad,H*style.y-size*.9-pad));
+ const body=rows.map((row,i)=>{
+  let pen=centered?(maxWidth-widths[i])/2:0;
+  const paths=row.map(([advance,,,outline])=>{
+   const path=outline?`<path d="${outline}" transform="translate(${pen} 0)"/>`:'';
+   pen+=advance;
+   return path;
+  }).join('');
+  return `<g transform="translate(${left+pad} ${top+pad+size*.9+i*leading}) scale(${scale})">${paths}</g>`;
  }).join('');
- return `<g aria-label="${E(text)}" transform="translate(${x} ${y}) ${vertical?'rotate(-90) ':''}scale(${scale})"${color?` fill="${E(color)}"`:' stroke="#fffdf4" stroke-width="29" stroke-linejoin="round"'}>${paths}</g>`;
+ return `<rect class="card-note-bg" x="${left}" y="${top}" width="${width}" height="${height}" rx="7"/>`+
+  `<g class="card-note-ink">${body}</g>`;
 }
 
 function cardLettering(t){
  if(!t.textOverlay)return '';
  const v=t.textOverlay,W=t.width,H=t.height,note=v.note;
  if(!note&&!v.labels?.length)return '';
- const body=note?note.lines.map((line,i)=>printedCardLine(line,W*note.x,H*(note.y+i*note.lineHeight),note.size||24,
-  {center:note.anchor!=='start',color:note.color||'#492f28',symbolColors:true})).join(''):'';
- const labels=(v.labels||[]).map(l=>printedCardLine(l.text,W*l.x,H*l.y,l.size||26,
-  {center:l.anchor!=='start',color:l.color||'#241f18',symbolColors:true})).join('');
+ const body=note?printedCardBlock(note.lines,note,W,H):'';
+ const labels=(v.labels||[]).map(label=>printedCardBlock([label.text],label,W,H)).join('');
  return `<svg class="card-lettering" viewBox="0 0 ${W} ${H}" aria-hidden="true">${body}${labels}</svg>`;
 }
 
@@ -249,17 +266,17 @@ function defeatStamp(id){
 }
 const cardNodes=new Map(),poses=new Map(),goals=new Map(),velocities=new Map();
 let camera={x:0,y:0,z:1},cameraGoal={...camera},cameraVelocity={x:0,y:0,z:0},sceneFrame=0,sceneLast=0,pointers=new Map(),gesture=null,drawPoints=[],drawHits=[],shelfLift=0,visualMarks=null,sceneBounds={w:1,h:1};
-function makeCard(f,i){const t=B.cardFace(D.templates,template(f),f),card=document.createElement('div');card.className='foe-card';card.dataset.id=f.id;card.dataset.foe=i;card.dataset.face=t.key;card.style.height=512*t.height/t.width+'px';
+function makeCard(f,i){const t=B.cardFace(template(f),f),card=document.createElement('div');card.className='foe-card';card.dataset.id=f.id;card.dataset.foe=i;card.dataset.face=t.key;card.style.height=512*t.height/t.width+'px';
  const rotated=t.imageRotation?`style="position:absolute;left:50%;top:50%;width:${t.height/t.width*100}%;height:${t.width/t.height*100}%;transform:translate(-50%,-50%) rotate(90deg)"`:'';
  card.innerHTML=`<div class="card-surface"><div class="card-art"><img src="${E(t.image)}" ${rotated} alt="${E(t.name)}" draggable="false" decoding="async"></div>${cardLettering(t)}<svg class="overlay" viewBox="0 0 ${t.width} ${t.height}"></svg><canvas class="hit-fx" aria-hidden="true"></canvas><div class="card-shine"></div></div><span class="defeated-badge" role="status" aria-label="已击败">${defeatStamp(f.id)}</span>`;
  const arrowLayer=document.createElementNS('http://www.w3.org/2000/svg','svg');arrowLayer.setAttribute('class','forecast-arrows');arrowLayer.setAttribute('viewBox',`0 0 ${t.width} ${t.height}`);arrowLayer.setAttribute('aria-hidden','true');card.append(arrowLayer);
  const image=card.querySelector('img');Promise.all([image.decode(),t.repair?warmSprite(t.repair.file):Promise.resolve()]).then(()=>{if(card.isConnected)card.querySelector('.card-surface').classList.add('ready');}).catch(()=>{if(card.isConnected){card.querySelector('.card-surface').classList.add('ready');toast('有一张卡面未能加载，请重新进入战斗');}});return card;
 }
-function reconcileCards(){const ids=new Set(state.foes.map(f=>f.id));for(const [id,c]of cardNodes)if(!ids.has(id)){c.remove();cardNodes.delete(id);poses.delete(id);goals.delete(id);velocities.delete(id);}state.foes.forEach((f,i)=>{let c=cardNodes.get(f.id);if(c&&c.dataset.face!==B.cardFace(D.templates,template(f),f).key){c.remove();c=null;}if(!c){c=makeCard(f,i);cardNodes.set(f.id,c);$('cards').append(c);}c.dataset.foe=i;});if(!state.foes.length)scene='overview';else if(state.foes.length===1)scene='focus';updateThumbnails();paintAll();updateChrome();layoutScene();}
+function reconcileCards(){const ids=new Set(state.foes.map(f=>f.id));for(const [id,c]of cardNodes)if(!ids.has(id)){c.remove();cardNodes.delete(id);poses.delete(id);goals.delete(id);velocities.delete(id);}state.foes.forEach((f,i)=>{let c=cardNodes.get(f.id);if(c&&c.dataset.face!==B.cardFace(template(f),f).key){c.remove();c=null;}if(!c){c=makeCard(f,i);cardNodes.set(f.id,c);$('cards').append(c);}c.dataset.foe=i;});if(!state.foes.length)scene='overview';else if(state.foes.length===1)scene='focus';updateThumbnails();paintAll();updateChrome();layoutScene();}
 function paintAll(){
  if(!state)return;state.foes.forEach((f,i)=>{
   const card=cardNodes.get(f.id);if(!card)return;const t=template(f),predicted=proposal?.valid&&proposalOwner===f.id,actual=visualMarks?.id===f.id?visualMarks.marks:f.marks,marks=predicted?proposal.marks:actual;
-  const selected=i===state.selected,trackPreview=weaponPreview103&&predicted,face=B.cardFace(D.templates,t,f);
+  const selected=i===state.selected,trackPreview=weaponPreview103&&predicted,face=B.cardFace(t,f);
   const stamp=marks.join(',')+options.hitStyle+selected+predicted+JSON.stringify(f.effects)+(trackPreview?JSON.stringify([weaponPreview103.index,proposal.events.map(e=>e.index),proposal.paths]):'');if(card.dataset.paintStamp===stamp)return;card.dataset.paintStamp=stamp;
   const forecastTargets=trackPreview?new Set(proposal.events.map(e=>e.index)):null;
   let out='';
@@ -284,7 +301,7 @@ function layoutScene(){
  const gap=18,pad=16;let cols=1,L=0;
  for(let c=1;c<=Math.min(6,n);c++){const rows=Math.ceil(n/c),fit=Math.min((w-pad*2-gap*(c-1))/c,(h-pad*2-gap*(rows-1))/rows);if(fit>L){L=fit;cols=c;}}
  const rows=Math.ceil(n/cols);L=Math.max(32,L);sceneBounds={w:cols*(L+gap)-gap,h:rows*(L+gap)-gap};
- state.foes.forEach((f,i)=>{const t=B.cardFace(D.templates,template(f),f),d=i-state.selected;let p;
+ state.foes.forEach((f,i)=>{const t=B.cardFace(template(f),f),d=i-state.selected;let p;
   if(scene==='overview'){const row=Math.floor(i/cols),col=i%cols,items=Math.min(cols,n-row*cols);p={x:(col-(items-1)/2)*(L+gap),y:(row-(rows-1)/2)*(L+gap),s:L*t.width/Math.max(t.width,t.height)/512,rx:0,ry:0,rz:0,a:1};}
   else{const longEdge=Math.min(w*.965,Math.max(32,h-24-shelfLift)),cw=longEdge*t.width/Math.max(t.width,t.height);p={x:Math.max(-2.4,Math.min(2.4,d))*w*1.14,y:0,s:cw/512,rx:0,ry:0,rz:0,a:d?0:1};}
   goals.set(f.id,p);if(!poses.has(f.id)){poses.set(f.id,{...p,s:p.s*.94,y:p.y+10,a:0});velocities.set(f.id,{x:0,y:0,s:0,rx:0,ry:0,rz:0,a:0});}
@@ -427,8 +444,8 @@ function aiTrait(text){const i=text.indexOf('：');return i>0&&i<14?`<p><strong>
 function enemyAI(tab='action'){
  const f=current(),t=template(f);if(!t)return;const id=t.cardId.replace('FOE-',''),data=window.COMBAT_AI?.[id];
  if(!data){toast('这个敌人的AI卡暂未收录');return;}
- const classes=(data.classes||[]).map(v=>`<span class="ai-class" data-class="${E(v)}">${E(v==='首领'?'BOSS':v)}</span>`).join('');
- const heading=`<div class="ai-heading"><small>敌人-${E(id)}</small><h3>${E(t.name)}</h3>${classes?`<div class="ai-classes" aria-label="敌人类别">${classes}</div>`:''}</div>`;
+ const classes=(data.classes||[]).map(v=>`<span class="ai-class" role="listitem" data-class="${E(v)}">${E(v==='首领'?'BOSS':v)}</span>`).join('');
+ const heading=`<div class="ai-heading"><div class="ai-identity"><small>敌人-${E(id)}</small><h3>${E(t.name)}</h3></div>${classes?`<div class="ai-classes" role="list" aria-label="敌人类别">${classes}</div>`:''}</div>`;
  const tabs=`<div class="ai-tabs" role="tablist" aria-label="AI卡内容"><button id="ai-action" role="tab" aria-selected="${tab==='action'}">AI 卡</button><button id="ai-faq" role="tab" aria-selected="${tab==='faq'}">常见问答${data.faq.length?' · '+data.faq.length:''}</button></div>`;
  const behaviors=data.behaviors.length?`<div class="ai-behavior-scroll"><table class="ai-behaviors"><thead><tr><th>威胁</th><th>目标</th><th>移动</th><th>行动</th></tr></thead><tbody>${data.behaviors.map(([threat,target,move,action])=>`<tr><td><b>${E(threat)}</b></td><td>${aiTarget(target)}</td><td>${move===null?'—':`<b>${E(move)}</b>${AI_SYMBOLS.move}`}</td><td>${aiText(action)}</td></tr>`).join('')}</tbody></table></div>`:'';
  const abilities=data.abilities.map(a=>`<article class="ai-ability"><h3>${a.die?AI_SYMBOLS['die_'+a.die]:''}${E(a.name)}${a.attackType?`<span class="ai-attack-type">${AI_SYMBOLS[a.attackType]}<small>${AI_NAMES[a.attackType]}</small></span>`:''}</h3><div class="ai-ability-content ${a.grid?'has-range':''}"><div>${aiText(a.body)}</div>${aiGrid(a)}</div></article>`).join('');

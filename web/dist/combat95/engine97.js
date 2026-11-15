@@ -5,7 +5,6 @@ const hasWound=n=>n.hasWound!==false&&!n.armorOnly;
 const hittable=(n,m)=>m===1||m===3||m===0&&hasWound(n);
 const cleanMarks=(t,marks)=>marks.map((m,i)=>!hasWound(t.nodes[i])&&m===2?0:m);
 const weakPoint=n=>n.weak||n.kind==='weak';
-const boneFaces={'FOE-59':'FOE-59-26-49','FOE-60':'FOE-60-26-53','FOE-61':'FOE-61-26-57'};
 const healing={'FOE-22':1,'FOE-24':2,'FOE-73':3};
 const ice='FOE-11', lizard='FOE-167', wolf='FOE-177', storm='FOE-179', water='FOE-185', spirit='FOE-194';
 const allWounded=(t,marks)=>t.nodes.some(hasWound)&&t.nodes.every((n,i)=>!hasWound(n)||marks[i]===2);
@@ -19,7 +18,7 @@ function validateEffects(t,value){
  need(value&&typeof value==='object'&&!Array.isArray(value)&&!t.reference&&(!t.scene||t.cardId===ice));
  for(const [key,v] of Object.entries(value)){
   if(key==='phase'){
-   need((boneFaces[t.cardId]&&['bones','bonesDestroyed'].includes(v))||
+   need((t.bonesImage&&['bones','bonesDestroyed'].includes(v))||
     (t.cardId===wolf&&v==='revived')||(t.cardId===ice&&['iceArmor','iceWounds'].includes(v)));
   }else{
    const allow=key==='leaf'&&t.cardId===lizard?3:key==='regen'&&t.cardId==='FOE-42'?t.nodes.length:
@@ -77,7 +76,10 @@ function defeated(t,f){
  if(boneState(f))return f.effects.phase==='bonesDestroyed';
  return !iceState(f)&&!t.reference&&!t.manualOnly&&allWounded(t,f.marks);
 }
-function cardFace(catalog,t,f){return boneState(f)?catalog.find(face=>face.key===boneFaces[t.cardId])||t:t;}
+function cardFace(t,f){
+ if(!boneState(f)||!t.bonesImage)return t;
+ return {key:t.key+'-bones',name:t.name+' · 骸骨堆',image:t.bonesImage,width:t.width,height:t.height,nodes:[],reference:true};
+}
 function canRespawn(t,f){
  return t.cardId===water&&!t.scene&&!t.reference&&(allWounded(t,f.marks)||
   t.nodes.filter(weakPoint).length===2&&t.nodes.every((n,i)=>!weakPoint(n)||f.marks[i]===2));
@@ -97,7 +99,7 @@ function configureRegeneration(t,f,threat){
  return record(f,f.marks,{...f.effects,regen:0,heal:Math.min(eligibleHealing(t,f).length,(f.effects.heal||0)+amount)});
 }
 function settleCardAction(t,f,action,value){
- if(action==='markBones'&&boneFaces[t.cardId]&&!inactive(f)&&allWounded(t,f.marks))
+ if(action==='markBones'&&t.bonesImage&&!inactive(f)&&allWounded(t,f.marks))
   return record(f,f.marks.map(m=>m===2?0:m),{...f.effects,phase:'bones'});
  if(action==='rise'&&f.effects?.phase==='bones')return record(f,f.marks,{});
  if(action==='destroyBones'&&f.effects?.phase==='bones')return record(f,f.marks,{...f.effects,phase:'bonesDestroyed'});
@@ -174,7 +176,7 @@ function finish(t,r){
  }
  const down=allWounded(t,r.marks)&&!t.manualOnly;
  r.weak=down?[]:[...new Set(r.weak)];
- if(down&&boneFaces[t.cardId]){
+ if(down&&t.bonesImage){
   r.marks=r.marks.map(m=>m===2?0:m);
   r.effects={...r.effects,phase:'bones'};
   r.message='已倒下，翻到骸骨堆';
