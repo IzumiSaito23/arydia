@@ -233,14 +233,19 @@ function cardLettering(t){
 
 function repairedPoint(t,n,m,index,uid){
  const tile=t.repair?.tiles[index];if(!tile)return '';
- const x=tile.cx,y=tile.cy,inner=tile.inner,kx=tile.width/tile.pixelWidth,ky=tile.height/tile.pixelHeight,id='under_'+uid+'_'+t.key+'_'+index;
- const weak=n.weak||n.kind==='weak',keep=m===0&&B.hasWound(n)&&B.initialMark(n)<=1,hole=id+'_inner';
+ const x=tile.cx,y=tile.cy,kx=tile.width/tile.pixelWidth,ky=tile.height/tile.pixelHeight,id='under_'+uid+'_'+t.key+'_'+index;
+ const weak=n.weak||n.kind==='weak';
+ // The scan of an armored weak point has a red center but no complete silver rim.
+ // Clear the entire old symbol and use the original, unarmored weak-point sprite.
+ const keep=m===0&&!weak&&B.hasWound(n)&&B.initialMark(n)<=1,hole=id+'_inner';
+ const bareWeak=weak?t.nodes.findIndex(point=>(point.weak||point.kind==='weak')&&B.hasWound(point)&&B.initialMark(point)===0):-1;
+ const inner=weak?(t.repair.tiles[bareWeak]?.inner??Math.max(tile.inner,n.r*t.width)):tile.inner;
  const holeMask=keep?`<mask id="${hole}" maskUnits="userSpaceOnUse" x="${tile.left}" y="${tile.top}" width="${tile.width}" height="${tile.height}"><rect x="${tile.left}" y="${tile.top}" width="${tile.width}" height="${tile.height}" fill="white"/><circle cx="${x}" cy="${y}" r="${inner}" fill="black"/></mask>`:'';
  let s=`<defs>${holeMask}<clipPath id="${id}"><rect x="${tile.left}" y="${tile.top}" width="${tile.width}" height="${tile.height}"/></clipPath></defs><g clip-path="url(#${id})" ${keep?`mask="url(#${hole})"`:""}><image href="${E(t.repair.file)}" x="${tile.left-tile.ax*kx}" y="${tile.top-tile.ay*ky}" width="${t.repair.width*kx}" height="${t.repair.height*ky}"/></g>`;
  if(!B.hasWound(n)&&m===0)return s;
  if(m===2&&options.hitStyle==='cube')return s+printedPoint(weak?'weak':'plain',x,y,inner,uid+'_'+index+'_under');
  if(m===2)return s+woundedPoint104(x,y,inner,index);
- if(keep)return s+(m===1?`<g mask="url(#${hole})">${printedPoint('blue',x,y,inner,uid+'_'+t.key+'_'+index)}</g>`:'');
+ if(keep)return s;
  if(m===3)return s+printedPoint('gold',x,y,inner,uid+'_'+t.key+'_'+index);
  if(m===1){s+=printedPoint('blue',x,y,inner,uid+'_'+t.key+'_'+index);if(weak)s+=printedPoint('weak',x,y,inner*.96,uid+'_'+t.key+'_'+index+'_weak');}
  else s+=printedPoint(weak?'weak':'plain',x,y,inner,uid+'_'+t.key+'_'+index);return s;
