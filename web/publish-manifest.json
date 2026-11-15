@@ -1,7 +1,7 @@
 {
-  "version": "3.9.2",
+  "version": "3.9.3",
   "files": {
-    "app.js": "0013fa3a137eb884a28c8daeb920920493825787053e276e467222fd48387bf4",
+    "app.js": "b71091aba6f23c0dbf7d2a1a617e0e264d10fda6d96a841534af60d6c6675234",
     "app38.css": "0d675d3f40d4179790c7e03052b29bedf74206333eee8816662798dc778bc302",
     "art/approved-concept.png": "df72fbc93cee8358fd352ed3b4010e067da745d9b3493e48aa90b4ebb095cb1a",
     "art/arcana-back.jpg": "535e8b11cb9d13a36ae27456065f33d90c594ec44d002396a0663b9a340f888b",
@@ -76,7 +76,7 @@
     "art/wandering-symbol.png": "d7b1c6c514fa611cd897f6912d33254bc7ce392f73d653a036ecb98cd65c7de9",
     "campaign-model.js": "cb291ff06bc8ecf2fa141e4169b0c6d25fb5a7a3e75d984e116a98515b84ddb6",
     "campaign.css": "0c026d2c58f6c0b54fd1bfc7f150001c26b763c6170b2a60f288f2fbc45ca4c9",
-    "campaign.js": "a708b9b97cfbf6941c2718e6424ae62be7870f81957dc70e48ceae554f5c80f0",
+    "campaign.js": "a56568499b3f7d673c064f47f24310aaa539586a483846063bd972caed19301e",
     "card-layout.js": "2bbea486076f5a77f46cd894de5f4d9aae5316190b532f7d31d501dc55753941",
     "cards/art/reviewed67/NPC-0A.png": "761f296041c4ba1f421a81dc1e4848335b80237be85bf3983781ae7786078540",
     "cards/art/reviewed67/NPC-0B.png": "7920560c4fc5e637829e75f561f56d758aa25e3ea107ca570c3a6e1842f1f3a0",
@@ -1191,7 +1191,7 @@
     "music/4.mp3": "bae2df65c267b6310d79cb814eb4f7d8c4410a9230cd621d8f2ec9eedd6982a2",
     "music/5.mp3": "8fe359c1bd119fc53b1876f59b8dbd5d562afb05c5aa7e5c5bd890d86bcc693d",
     "music/theme.mp3": "e6dbcb5033fadb9ccfed69754d6c904afb9e00ce9411fac6400c1bd175556a38",
-    "precache.js": "bba097102c9319869d62519d0ca66b975f38865aaf2a0326a320656e8a7016f0",
+    "precache.js": "297d776937e35266083942ffe78a76477f8ba4eadd64a0e65acb1eea89bdc433",
     "skill-rules.js": "f80813fcc265cd2c9a7202e8cda1ed1e696439d8ebe2c59e93c54b886c390cc3",
     "skills92-data.js": "15ba167aa0cebce0c7b1a1235c3ed4384eb15006633ff4f21bced3242a22ff0d",
     "skills92.css": "6dc01e28b19375cb90082b1f04540ccbd1846440b3e171f1e51cde633baf696d",
