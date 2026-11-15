@@ -375,13 +375,14 @@ function inspectPoint(id,index){
 function renderPointTokens(card,t,marks,id){
  let host=card.querySelector('.point-tokens');if(!host){host=document.createElement('div');host.className='point-tokens';card.append(host);}
  const wanted=new Set();
+ // The physical cubes share one size relative to the long edge of the card.
+ const tokenSide=.052*512*Math.max(t.width,t.height)/t.width;
  if(options.hitStyle==='cube')t.nodes.forEach((n,i)=>{
   const mark=marks[i];if(mark!==1&&mark!==3&&!(mark===2&&B.hasWound(n)))return;
   const key=i+'_'+mark;wanted.add(key);const retained=host.querySelector(`[data-token="${key}"]:not(.token-leaving)`);if(retained){retained.classList.toggle('preview-token',!!(proposal?.valid&&proposalOwner===id&&state.foes.find(f=>f.id===id)?.marks[i]!==mark));return;}
-  const tile=t.repair?.tiles[i],x=tile?.cx??(n.drawX??n.x)*t.width,y=tile?.cy??(n.drawY??n.y)*t.height,r=tile?.inner??n.r*t.width;
-  const size=r*2.02*512/t.width,angle=0;
+  const tile=t.repair?.tiles[i],x=tile?.cx??(n.drawX??n.x)*t.width,y=tile?.cy??(n.drawY??n.y)*t.height;
   const token=document.createElement('div');token.className='point-token token-'+mark;token.dataset.token=key;token.dataset.point=i;token.dataset.mark=mark;
-  token.style.left=x/t.width*100+'%';token.style.top=y/t.height*100+'%';token.style.setProperty('--token-side',size+'px');token.style.setProperty('--token-depth',size*.23+'px');token.style.setProperty('--token-angle',angle+'deg');
+  token.style.left=x/t.width*100+'%';token.style.top=y/t.height*100+'%';token.style.setProperty('--token-side',tokenSide+'px');
   token.innerHTML='<div class="flat-marker"></div>';
   token.classList.toggle('preview-token',!!(proposal?.valid&&proposalOwner===id&&state.foes.find(f=>f.id===id)?.marks[i]!==mark));host.append(token);
   if(!reducedMotion){const body=token.querySelector('.flat-marker');body.animate([{opacity:0,transform:'translateY(-28%) rotate(-9deg) scale(.58)'},{opacity:1,transform:'translateY(4%) rotate(2deg) scale(1.18,.80)',offset:.43},{transform:'translateY(-5%) rotate(-1deg) scale(.94,1.09)',offset:.68},{transform:'translateY(0) rotate(0) scale(1)',offset:1}],{duration:360,easing:'cubic-bezier(.2,.8,.3,1)'});}
